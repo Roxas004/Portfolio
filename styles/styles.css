@@ -1,0 +1,406 @@
+/* Importation de la police 'Inter' depuis Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
+
+/* Réinitialisation des marges et des espacements */
+*{
+    margin:0;
+    padding:0;
+}
+
+/* Styles de base pour le corps de la page */
+body {
+    font-family: 'Inter', sans-serif;    
+}
+
+/* Style du slider en plein écran */
+.slider{
+    width:100%;
+    min-height:80vh;
+    aspect-ratio:16/9;
+    background: #000;
+    position: relative;
+}
+
+/* Image de fond pour le slider avec effet d'obscurcissement */
+.slider-background{
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    filter: brightness(30%);
+}
+
+/* Contenu centralisé et superposé sur le slider */
+.slider-content{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    text-align: center;
+}
+
+/* Style des titres (h1) */
+h1{
+    color: #fff;
+    font-size:5rem;
+}
+
+/* Style des sous-titres (h2) */
+h2{
+    font-size:3rem;
+    margin-bottom: 100px;
+}
+
+/* Style des paragraphes généraux */
+p{
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+}
+
+/* Style des paragraphes dans le slider */
+.slider-content p{
+    color: #fff;
+    font-size:2rem;
+    font-weight: 300;
+}
+
+/* Marges et espacement vertical pour chaque section */
+.section{
+    padding: 100px 0;
+}
+
+/* Conteneur pour centrer et limiter la largeur du contenu */
+.boxed{
+    max-width: 1280px;
+    margin-inline:auto;
+}
+
+/* Classe pour afficher en flex */
+.flex{
+    display: flex; 
+}
+
+/* Style pour les sections sombres */
+.dark{
+    background: #000;
+    color: #fff;
+}
+
+/* Classe pour fixer la largeur à 40% */
+.w40{
+    width: 40%;
+}
+
+/* Classe pour fixer la largeur à 60% */
+.w60{
+    width: 60%;
+}
+
+/* Classe pour centrer le texte */
+.text-center{
+    text-align: center;
+}
+
+/* Classe pour fixer la largeur à 25% */
+.w25{
+    width: 25%;
+}
+
+/* Classe pour fixer la largeur à 32% */
+.w32{
+    width: 32%;
+}
+
+/* Classe pour espacement avec justification */
+.space-between{
+    justify-content: space-between;
+}
+
+/* Classe pour définir un espace de 20px entre les éléments */
+.gap20{
+    gap: 20px;
+}
+
+/* Classe pour autoriser le retour à la ligne dans le flex */
+.wrap{
+    flex-wrap: wrap;
+}
+
+/* Style de la boîte de compétences */
+.skill{
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Style des images dans la boîte de compétences */
+.skill img{
+    width: 100px;
+    height:100px;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+
+/* Style des titres dans la boîte de compétences */
+.skill h3{
+    color: #000;
+    margin-top: 10px;
+}
+
+/* Conteneur pour les réalisations */
+.realisations{
+    height: auto;
+    aspect-ratio: 1/1;
+    position: relative;
+}
+
+/* Titre central pour les réalisations, avec animation d'opacité */
+.realisations h3{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size:2rem;
+    width:max-content;
+    opacity: 0;
+    transition: .4s ease;
+}
+
+/* Lien vers les réalisations */
+.realisations a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Image de la réalisation avec un filtre sombre */
+.realisations img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(50%);
+    transition: .4s ease;
+}
+
+/* Effet au survol des réalisations (réduit le filtre et montre le titre) */
+.realisations:hover img{
+    filter: brightness(80%);
+}
+
+.realisations:hover h3{
+    opacity: 1;
+}
+
+/* Style de l'icône avec taille ajustée */
+.icon{
+    display: block;
+    font-size: 1.9rem !important;
+}
+
+/* Label en majuscule et gras */
+.label{
+    display: block;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 10px 0;
+    font-size: 1.2rem;
+}
+
+/* Valeur en style normal */
+.value{
+    display: block;
+    font-size: 1.0rem;
+}
+
+/* Boîte pour la section de contact */
+.contact{
+    border: 2px dashed #fff;
+    border-radius: 15px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* Centrer les éléments en flex */
+.aligncenter{
+    align-items: center;
+}
+
+/* Style de l'en-tête (menu) */
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 999;
+    padding-block: 10px;
+    box-shadow: 1px 1px 25px rgba(0,0,0,0.7);
+}
+
+/* Logo dans l'en-tête */
+.header-logo{
+    display: block;
+}
+
+.header-logo img{
+    width: 90px;
+}
+
+/* Menu en flex */
+.header-menu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+/* Lien du menu */
+.header-menu li a{
+    text-decoration: none;
+    color: #000;
+    padding: 10px 20px;
+    display: block;
+    box-sizing: border-box;
+    transition: .2s ease;
+}
+
+/* Effet de survol du lien du menu */
+.header-menu li a:hover{
+    background-color: #000;
+    color: #fff;
+}
+
+/* Dernier lien du menu avec style différent */
+.header-menu li:last-child a{
+    background-color: #000000;
+    color: #fff;
+}
+
+/* Menu pour la version mobile */
+.header-menu-mobile{
+    display: none;
+}
+
+/* Media Query pour l'adaptation mobile */
+@media(max-width:810px){
+    header{
+        height: 70px !important;
+    }
+
+    /* Bouton mobile du menu */
+    .header-menu-mobile{
+        display: block;
+        border: 0px;
+        background-color: #fff;
+        position: absolute;
+        left: 5%;
+        top: 50%;
+        transform: translate(-50%);
+        z-index: 991;
+    }
+
+    /* Logo centré dans le menu mobile */
+    .header-logo{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 991;
+    }
+
+    /* Style du menu mobile en plein écran */
+    .header-menu{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #fff;
+        flex-direction: column;
+        align-items:center;
+        justify-content: center;
+        gap: 30px;
+        display: none;
+    }
+
+    /* Afficher le menu lorsqu'il est actif */
+    .active{
+        display: flex;
+    }
+
+    /* Espacement du dernier lien */
+    .header-menu li:last-child a{
+        margin-top: 10px;
+    }
+
+    /* Taille réduite des sous-titres et du slider */
+    h2{
+        font-size: 1.75rem;
+        margin-bottom: 30px;
+    }
+
+    .slider{
+        height: 60vh;
+    }
+    
+    /* Largeur adaptée pour le contenu du slider */
+   .slider-content{
+        width: 90%;
+    }
+
+    /* Ajustement des paragraphes du slider */
+    .slider-content p{
+        margin-top: 20px;
+        font-size: 1.5rem;
+        text-wrap: balance;
+    }
+
+    /* Ajustement des titres principaux */
+    h1{
+        font-size: 2rem;
+    }
+
+    /* Ajustement des paragraphes */
+    p{
+        font-size: 1rem;
+        text-wrap: balance;
+    }
+
+    /* Changer en colonne pour mobile */
+    .toColumn{
+        flex-direction: column;
+    }
+
+    /* Centrage du contenu */
+    .mCenter{
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    /* Largeur maximale en mobile */
+    .wm100{
+        width: 100% !important;
+    }
+
+    /* Ajustement de la marge verticale des sections */
+    .section{
+        padding: 50px 0;
+    }
+
+    /* Largeur limitée du conteneur principal */
+    .boxed{
+        max-width: 90%;
+    }
+
+    /* Ajustement de largeur pour les éléments de la section */
+    .wm47{
+        width: 47%;
+    }
+
+    /* Espace entre éléments en mobile */
+    .mgap20{
+        gap: 20px;
+    }
+}
