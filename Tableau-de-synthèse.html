@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <!-- Spécifie l'encodage des caractères en UTF-8 -->
+        <meta charset="utf-8" />
+        <!-- Configure l'affichage pour une bonne adaptation sur les écrans mobiles -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- Titre de la page -->
+        <title>Tableau de synthèse</title>
+        <!-- Balise de description pour le SEO -->
+        <meta type="description" content="Ceci est mon portfolio étudiant" />
+        <!-- Lien vers la police Material Symbols pour les icônes -->
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+        <!-- Lien vers la feuille de style CSS du portfolio -->
+        <link rel="stylesheet" href="styles/styles.css" types="text/css">
+    </head>
+
+    <body>
+        <!-- En-tête de la page avec le logo et le menu de navigation -->
+        <header>
+            <div class="boxed">
+                <div class="flex aligncenter space-between">
+                    <!-- Bouton du menu pour la version mobile -->
+                    <button onclick="openMenu()" class="header-menu-mobile">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                    <!-- Logo avec lien vers l'accueil -->
+                    <a href="/" class="header-logo">
+                        <img src="img/portfolio-logo.png">
+                    </a>
+                    <!-- Menu de navigation principal -->
+                    <ul class="header-menu">
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#Tableau-de-synthèse">Tableau de synthèse</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>                    
+                </div>
+            </div>
+        </header>
+
+        <!-- Section d'accueil avec image de fond et texte -->
+        <div id="accueil" class="slider">
+            <img src="img/slider.jpg" class="slider-background">
+            <div class="slider-content">
+                <h1>Rosa Axel</h1>
+                <p>Etudiant en BTS SIO</p>
+            </div>
+        </div>
+
+        <!-- Section 'Réalisations' avec projets sous forme de cartes -->
+        <div id="Tableau-de-synthèse" class="section">
+            <div class="boxed text-center">
+                <h2>Mon Tableau de synthèse</h2>
+                <div class="flex" style="justify-content: center">
+                    <div >                        
+                        <img src="img/Tableau-de-synthèse.png">                                                                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section de contact avec informations et icônes -->
+        <div id="contact" class="section dark">
+            <div class="boxed text-center">
+                <h2>Contactez-moi</h2>
+                <div class="flex toColumn space-between mgap20">
+                    <div class="w32 wm100 contact">
+                        <span class="material-symbols-outlined icon">mail</span>
+                        <span class="label">E-Mail</span>
+                        <span class="value">axelalmeidarosa@gmail.com</span>
+                    </div>
+                    <div class="w32 wm100 contact">
+                        <span class="material-symbols-outlined">call</span>
+                        <span class="label">Téléphone</span>
+                        <span class="value">07.86.89.58.90</span>
+                    </div>
+                    <div class="w32 wm100 contact">
+                        <span class="material-symbols-outlined">account_box</span>
+                        <span class="label">Github</span>
+                        <a href="https://github.com/Roxas004"><span class="value">https://github.com/Roxas004</span></a>                        
+                    </div>
+                </div>
+            </div>
+        </div> 
+        
+        <!-- En-tête de la page avec le logo et le menu de navigation -->
+        <div class="boxed">
+            <div class="flex aligncenter space-between">
+                <!-- Bouton du menu pour la version mobile -->
+                <button onclick="openMenu()" class="header-menu-mobile">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
+                <!-- Logo avec lien vers l'accueil -->
+                <a href="/" class="header-logo">
+                    <img src="img/portfolio-logo.png">
+                </a>
+                <!-- Menu de navigation secondaire -->
+                <div class="header-menu">
+                    <li><a href="Hub.html">Hub</a></li>
+                    <a href="veille technologique.html">veille</a>
+                </div>                   
+            </div>
+        </div>
+    </body>
+
+    
+
+    <!-- Inclusion du fichier JavaScript pour la logique de la page -->
+    <script src="js/app.js"></script>  
+</html>

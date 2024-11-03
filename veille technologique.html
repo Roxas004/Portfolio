@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <!-- Spécifie l'encodage des caractères en UTF-8 -->
+        <meta charset="utf-8" />
+        <!-- Configure l'affichage pour une bonne adaptation sur les écrans mobiles -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- Titre de la page -->
+        <title>Mon portfolio</title>
+        <!-- Balise de description pour le SEO -->
+        <meta type="description" content="Ceci est mon portfolio étudiant" />
+        <!-- Lien vers la police Material Symbols pour les icônes -->
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+        <!-- Lien vers la feuille de style CSS du portfolio -->
+        <link rel="stylesheet" href="styles/styles.css" types="text/css">
+    </head>
+
+    <body>
+        <!-- En-tête de la page avec le logo et le menu de navigation -->
+        <header>
+            <div class="boxed">
+                <div class="flex aligncenter space-between">
+                    <!-- Bouton du menu pour la version mobile -->
+                    <button onclick="openMenu()" class="header-menu-mobile">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                    <!-- Logo avec lien vers l'accueil -->
+                    <a href="/" class="header-logo">
+                        <img src="img/portfolio-logo.png">
+                    </a>
+                    <!-- Menu de navigation principal -->
+                    <ul class="header-menu">
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#a-propos">À propos</a></li>
+                        <li><a href="#competences">Compétences</a></li>
+                        <li><a href="#realisations">Réalisations</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>                    
+                </div>
+            </div>
+        </header>
+
+        <!-- Section d'accueil avec image de fond et texte -->
+        <div id="accueil" class="slider">
+            <img src="img/slider.jpg" class="slider-background">
+            <div class="slider-content">
+                <h1>Rosa Axel</h1>
+                <p>Etudiant en BTS SIO</p>
+            </div>
+        </div>
+        
+    <!-- Inclusion du fichier JavaScript pour la logique de la page -->
+    <script src="js/app.js"></script>  
+</html>

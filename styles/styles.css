@@ -74,6 +74,12 @@ p{
     margin-inline:auto;
 }
 
+/* Conteneur pour centrer et limiter la largeur du contenu */
+.boxed-veille{
+    max-width: 1280px;
+    margin-inline:auto;
+}
+
 /* Classe pour afficher en flex */
 .flex{
     display: flex; 
@@ -147,6 +153,68 @@ p{
     margin-top: 10px;
 }
 
+/* Style de la boîte de synthèse */
+.synthèse{
+    background: #090909;
+    border-radius: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Image de la Tableau-de-synthèse avec un filtre sombre */
+.Tableau-de-synthèse img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(50%);
+    transition: .4s ease;
+}
+
+/* Effet au survol de la Tableau-de-synthèse (réduit le filtre et montre le titre) */
+.Tableau-de-synthèse:hover img{
+    filter: brightness(80%);
+}
+
+/* Style des images dans la boîte de veille */
+.veille img {
+    width: 100%; /* Faire en sorte que l'image remplisse tout l'espace disponible */
+    height: auto;
+    display: block; /* Enlever tout espace résiduel autour de l'image */
+    margin: 0; /* Supprime la marge autour de l'image */
+    padding: 0; /* Supprime le padding autour de l'image */
+}
+
+/* Style de la boîte de veille */
+.veille {
+    background: #fff;
+    border-radius: 15px;
+    padding: 10px; /* Réduire l’espace autour de l'image */
+    box-sizing: border-box;
+}
+
+/* Style des images dans la boîte de veille */
+.veille img {
+    width: 100%; /* Faire en sorte que l'image remplisse tout l'espace disponible */
+    height: auto;
+    display: block; /* Enlever tout espace résiduel autour de l'image */
+    margin: 0; /* Supprime la marge autour de l'image */
+    padding: 0; /* Supprime le padding autour de l'image */
+}
+
+/* Image de la veille-technologique avec un filtre sombre */
+.veille-technologique img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(50%);
+    transition: .4s ease;
+}
+
+/* Effet au survol de la veille-technologique (réduit le filtre et montre le titre) */
+.veille-technologique:hover img{
+    filter: brightness(80%);
+}
+
 /* Conteneur pour les réalisations */
 .realisations{
     height: auto;
@@ -174,6 +242,7 @@ p{
     text-decoration: none;
     color: #fff;
 }
+
 
 /* Image de la réalisation avec un filtre sombre */
 .realisations img{

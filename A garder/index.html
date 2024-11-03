@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <!-- Spécifie l'encodage des caractères en UTF-8 -->
+        <meta charset="utf-8" />
+        <!-- Configure l'affichage pour une bonne adaptation sur les écrans mobiles -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <!-- Titre de la page -->
+        <title>Mon portfolio</title>
+        <!-- Balise de description pour le SEO -->
+        <meta type="description" content="Ceci est mon portfolio étudiant" />
+        <!-- Lien vers la police Material Symbols pour les icônes -->
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+        <!-- Lien vers la feuille de style CSS du portfolio -->
+        <link rel="stylesheet" href="styles/styles.css" types="text/css">
+    </head>
+
+    <body>
+        <!-- En-tête de la page avec le logo et le menu de navigation -->
+        <header>
+            <div class="boxed">
+                <div class="flex aligncenter space-between">
+                    <!-- Bouton du menu pour la version mobile -->
+                    <button onclick="openMenu()" class="header-menu-mobile">
+                        <span class="material-symbols-outlined">menu</span>
+                    </button>
+                    <!-- Logo avec lien vers l'accueil -->
+                    <a href="/" class="header-logo">
+                        <img src="img/portfolio-logo.png">
+                    </a>
+                    <!-- Menu de navigation principal -->
+                    <ul class="header-menu">
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#a-propos">À propos</a></li>
+                        <li><a href="#competences">Compétences</a></li>
+                        <li><a href="#realisations">Réalisations</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>                    
+                </div>
+            </div>
+        </header>
+
+        <!-- Section d'accueil avec image de fond et texte -->
+        <div id="accueil" class="slider">
+            <img src="img/slider.jpg" class="slider-background">
+            <div class="slider-content">
+                <h1>Rosa Axel</h1>
+                <p>Etudiant en BTS SIO</p>
+            </div>
+        </div>
+
+        <!-- Section 'À propos' avec texte descriptif -->
+        <div id="a-propos" class="section">
+            <div class="boxed">
+                <div class="flex toColumn mCenter">
+                    <div class="w40 wm100">
+                        <h2>A propos de moi</h2>                        
+                    </div>
+                    <div class="w60 wm100">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in volutpat leo. In rhoncus feugiat facilisis. Sed convallis, lectus vel ultricies ornare, sapien ante placerat metus, sed consectetur massa nunc non tellus. Mauris eget magna at lacus rhoncus convallis. Duis ac facilisis dolor, at euismod lacus. Nulla facilisi. Donec metus ante, pretium sit amet justo ac, rutrum vulputate ipsum. Donec metus ex, suscipit vestibulum rutrum dignissim, elementum sit amet tortor.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 'Compétences' avec icônes et titres -->
+        <div id="competences" class="section dark">
+            <div class="boxed text-center">
+                <h2>Découvrez mes compétence</h2>
+                <div class="flex toColumn gap20">
+                    <div class="w25 wm100 skill">
+                        <img src="img/html-logo.png">
+                        <h3>HTML</h3>                                                 
+                    </div>
+                    <div class="w25 wm100 skill">
+                        <img src="img/css-logo.png">
+                        <h3>CSS</h3>                                                 
+                    </div>
+                    <div class="w25 wm100 skill">
+                        <img src="img/js-logo.png">
+                        <h3>Javascript</h3>                                                 
+                    </div>
+                    <div class="w25 wm100 skill">
+                        <img src="img/nextjs-logo.png">
+                        <h3>NextJS</h3>                                                 
+                    </div>                    
+                </div>                      
+            </div>
+        </div>
+
+        <!-- Section 'veille-technologique' avec icônes et titres -->
+        <div id="veille-technologique" class="section">
+            <div class="boxed text-center">
+                <h2>Découvrez ma veille technologique</h2>
+                <div class="flex" style="justify-content: center;">
+                    <div class="w25 wm100 veille veille-technologique">
+                        <a href="C:\Users\axelr\Desktop\Portfolio\veille technologique.html">
+                            <img src="img/veille-technologique-logo.png">
+                        </a>                                                 
+                    </div>                   
+                </div>                      
+            </div>
+        </div>
+
+        <!-- Section 'veille-technologique' avec icônes et titres -->
+        <div id="veille-technologique" class="section dark">
+            <div class="boxed text-center">
+                <h2>Découvrez ma veille technologique</h2>
+                <div class="flex" style="justify-content: center;">
+                    <div class="w25 wm100 veille veille-technologique">
+                        <a href="C:\Users\axelr\Desktop\Portfolio\veille technologique.html">
+                            <img src="img/veille-technologique-logo.png">
+                        </a>                                                 
+                    </div>                   
+                </div>                      
+            </div>
+        </div>
+        
+        
+        <!-- Section 'Réalisations' avec projets sous forme de cartes -->
+        <div id="realisations" class="section">
+            <div class="boxed text-center">
+                <h2>Mes réalisations</h2>
+                <div class="flex wrap gap20 space-between">
+                    <div class="w32 wm47 realisations">                        
+                        <a href="/">
+                            <img src="img/creation.png">
+                            <h3>Projet 1</h3>
+                        </a>                                                                         
+                    </div>
+                    <div class="w32 wm47 realisations">                        
+                        <a href="/">
+                            <img src="img/creation.png">
+                            <h3>Projet 2</h3>
+                        </a>                                                                         
+                    </div>
+                    <div class="w32 wm47 realisations">                        
+                        <a href="/">
+                            <img src="img/creation.png">
+                            <h3>Projet 3</h3>
+                        </a>                                                                         
+                    </div>
+                    <div class="w32 wm47 realisations">                        
+                        <a href="/">
+                            <img src="img/creation.png">
+                            <h3>Projet 4</h3>
+                        </a>                                                                         
+                    </div>
+                    <div class="w32 wm47 realisations">                        
+                        <a href="/">
+                            <img src="img/creation.png">
+                            <h3>Projet 5</h3>
+                        </a>                                                                         
+                    </div>
+                    <div class="w32 wm47 realisations">                        
+                        <a href="/">
+                            <img src="img/creation.png">
+                            <h3>Projet 6</h3>
+                        </a>                                                                         
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section de contact avec informations et icônes -->
+        <div id="contact" class="section dark">
+            <div class="boxed text-center">
+                <h2>Contactez-moi</h2>
+                <div class="flex toColumn space-between mgap20">
+                    <div class="w32 wm100 contact">
+                        <span class="material-symbols-outlined icon">mail</span>
+                        <span class="label">E-Mail</span>
+                        <span class="value">axelalmeidarosa@gmail.com</span>
+                    </div>
+                    <div class="w32 wm100 contact">
+                        <span class="material-symbols-outlined">call</span>
+                        <span class="label">Téléphone</span>
+                        <span class="value">07.86.89.58.90</span>
+                    </div>
+                    <div class="w32 wm100 contact">
+                        <span class="material-symbols-outlined">account_box</span>
+                        <span class="label">Github</span>
+                        <a href="https://github.com/Roxas004"><span class="value">https://github.com/Roxas004</span></a>                        
+                    </div>
+                </div>
+            </div>
+        </div>   
+    </body>
+
+    <!-- Inclusion du fichier JavaScript pour la logique de la page -->
+    <script src="js/app.js"></script>  
+</html>
