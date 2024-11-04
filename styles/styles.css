@@ -132,26 +132,40 @@ p{
 }
 
 /* Style de la boîte de compétences */
-.skill{
+.skill {
     background: #fff;
     border-radius: 15px;
     padding: 20px;
     box-sizing: border-box;
+    overflow: hidden; /* Empêche le contenu de déborder */
+    text-align: center; /* Centre le contenu horizontalement */
+    max-width: 250px; /* Limite la largeur de la boîte */
+    margin: auto; /* Centre la boîte */
 }
 
 /* Style des images dans la boîte de compétences */
-.skill img{
-    width: 100px;
-    height:100px;
-    aspect-ratio: 1/1;
+.skill img {
+    width: 100%; /* L'image occupe la largeur de la boîte */
+    height: auto; 
+    aspect-ratio: 1 / 1;
     object-fit: contain;
+    border-radius: 10px; /* Ajoute des coins arrondis si souhaité */
 }
 
 /* Style des titres dans la boîte de compétences */
-.skill h3{
+.skill h3 {
     color: #000;
     margin-top: 10px;
+    font-size: 1.2em; /* Augmente légèrement la taille du texte */
 }
+
+/* Effet au survol des skill (réduit le filtre et montre le titre) */
+.skill:hover {
+    filter: brightness(90%);
+    transform: scale(1.05); /* Légère augmentation de la taille au survol */
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
 
 /* Style de la boîte de synthèse */
 .synthèse{
@@ -171,8 +185,10 @@ p{
 }
 
 /* Effet au survol de la Tableau-de-synthèse (réduit le filtre et montre le titre) */
-.Tableau-de-synthèse:hover img{
+.Tableau-de-synthèse:hover {
     filter: brightness(80%);
+    transform: scale(1.05); /* Légère augmentation de la taille au survol */
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 /* Style des images dans la boîte de veille */
@@ -211,8 +227,10 @@ p{
 }
 
 /* Effet au survol de la veille-technologique (réduit le filtre et montre le titre) */
-.veille-technologique:hover img{
+.veille-technologique:hover {
     filter: brightness(80%);
+    transform: scale(1.05); /* Légère augmentation de la taille au survol */
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 /* Conteneur pour les réalisations */
@@ -254,8 +272,10 @@ p{
 }
 
 /* Effet au survol des réalisations (réduit le filtre et montre le titre) */
-.realisations:hover img{
+.realisations:hover{
     filter: brightness(80%);
+    transform: scale(1.05); /* Légère augmentation de la taille au survol */
+    transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .realisations:hover h3{
@@ -350,6 +370,73 @@ header{
 .header-menu-mobile{
     display: none;
 }
+
+.navigation-buttons {
+    text-align: center;
+    margin-top: 20px;
+    padding: 20px 0;
+    background-color: #f0f0f0; /* Couleur de fond de la zone des boutons */
+    border-top: 2px solid #ddd; /* Ligne de séparation subtile */
+}
+
+.navigation-buttons button {
+    padding: 12px 25px;
+    margin: 0 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(252, 252, 252);
+    background-color: #000305; /* Couleur de fond des boutons */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.navigation-buttons button:hover {
+    background-color: #4f4f4f; /* Couleur de survol */
+    transform: scale(1.05); /* Effet d'agrandissement au survol */
+}
+
+.navigation-buttons button:active {
+    background-color: #ffffff; /* Couleur lorsqu'on clique sur le bouton */
+    transform: scale(0.95); /* Effet de réduction au clic */
+}
+
+.competences-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.competence-card {
+    width: 250px; /* Taille fixe pour chaque carte */
+    background-color: #f9f9f9; /* Couleur de fond douce */
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.competence-card h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.competence-card p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.5;
+}
+
+.competence-card:hover {
+    transform: translateY(-5px); /* Légère élévation au survol */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* Accentuation de l'ombre */
+}
+
 
 /* Media Query pour l'adaptation mobile */
 @media(max-width:810px){

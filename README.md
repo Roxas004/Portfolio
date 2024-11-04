@@ -1,6 +1,1 @@
-Ajouter:
-
-la veille	
-tableau de synthèse
-
-Modifier les competantce
+Ouvrir le fichier Hub.html pour ouvrir le portfolio
