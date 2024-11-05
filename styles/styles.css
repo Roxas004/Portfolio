@@ -180,13 +180,13 @@ p{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(50%);
+    filter: brightness(90%);
     transition: .4s ease;
 }
 
 /* Effet au survol de la Tableau-de-synthèse (réduit le filtre et montre le titre) */
 .Tableau-de-synthèse:hover {
-    filter: brightness(80%);
+    filter: brightness(70%);
     transform: scale(1.05); /* Légère augmentation de la taille au survol */
     transition: transform 0.3s ease, filter 0.3s ease;
 }
@@ -222,13 +222,13 @@ p{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(50%);
+    filter: brightness(90%);
     transition: .4s ease;
 }
 
 /* Effet au survol de la veille-technologique (réduit le filtre et montre le titre) */
 .veille-technologique:hover {
-    filter: brightness(80%);
+    filter: brightness(70%);
     transform: scale(1.05); /* Légère augmentation de la taille au survol */
     transition: transform 0.3s ease, filter 0.3s ease;
 }
