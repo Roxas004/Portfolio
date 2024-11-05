@@ -131,6 +131,13 @@ p{
     flex-wrap: wrap;
 }
 
+.color-band {
+    height: 20px; /* Ajustez la hauteur selon vos besoins */
+    background-color: #000000; /* Remplacez par la couleur de votre choix */
+    width: 100%; /* Occuper toute la largeur */
+    margin: 0; /* Supprimez la marge */
+}
+
 /* Style de la boîte de compétences */
 .skill {
     background: #fff;
@@ -217,6 +224,10 @@ p{
     padding: 0; /* Supprime le padding autour de l'image */
 }
 
+.veille-txt{
+    font-size: 1.5em; /* Augmente légèrement la taille du texte */
+}
+
 /* Image de la veille-technologique avec un filtre sombre */
 .veille-technologique img{
     width: 100%;
@@ -228,7 +239,7 @@ p{
 
 /* Effet au survol de la veille-technologique (réduit le filtre et montre le titre) */
 .veille-technologique:hover {
-    filter: brightness(70%);
+    filter: brightness(80%);
     transform: scale(1.05); /* Légère augmentation de la taille au survol */
     transition: transform 0.3s ease, filter 0.3s ease;
 }
@@ -267,13 +278,13 @@ p{
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(50%);
+    filter: brightness(90%);
     transition: .4s ease;
 }
 
 /* Effet au survol des réalisations (réduit le filtre et montre le titre) */
 .realisations:hover{
-    filter: brightness(80%);
+    filter: brightness(70%);
     transform: scale(1.05); /* Légère augmentation de la taille au survol */
     transition: transform 0.3s ease, filter 0.3s ease;
 }
