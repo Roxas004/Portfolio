@@ -106,6 +106,18 @@ p{
     text-align: center;
 }
 
+/* Classe pour centrer le texte a gauche */
+.text-left{
+    text-align: left;
+}
+
+/* Classe pour centrer le texte à droite */
+.text-right{
+    text-align: right;
+}
+
+
+
 /* Classe pour fixer la largeur à 25% */
 .w25{
     width: 25%;
@@ -243,6 +255,19 @@ p{
 
 .veille-txt{
     font-size: 1.5em; /* Augmente légèrement la taille du texte */
+}
+
+.portfolio-txt{
+    font-size: 1.5em; /* Augmente légèrement la taille du texte */
+}
+
+
+#Portfolio h2 {
+    margin-bottom: 10px; 
+}
+
+.portfolio-txt p {
+    margin-top: 20px; 
 }
 
 /* Image de la veille-technologique avec un filtre sombre */
