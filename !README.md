@@ -1,1 +1,1 @@
-Ouvrir le fichier Hub.html pour ouvrir le portfolio
+Ouvrir le fichier index.html pour ouvrir le portfolio
