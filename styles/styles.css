@@ -291,6 +291,9 @@ p{
     height: auto;
     aspect-ratio: 1/1;
     position: relative;
+    flex: 1 1 calc(33.33% - 20px); /* 3 réalisations par ligne avec espace */
+    max-width: calc(33.33% - 20px);
+    box-sizing: border-box; /* Prend en compte le padding et les marges */
 }
 
 /* Titre central pour les réalisations, avec animation d'opacité */
