@@ -317,7 +317,7 @@ p{
 
 /* Image de la réalisation avec un filtre sombre */
 .realisations img{
-    width: 350px;
+    width: 85%;
     height: auto;
     object-fit: cover;
     filter: brightness(100%);
