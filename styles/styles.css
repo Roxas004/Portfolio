@@ -56,6 +56,15 @@ p{
     line-height: 1.5rem;
 }
 
+.Tableau{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.img{
+    width: auto;
+}
+
 /* Style des paragraphes dans le slider */
 .slider-content p{
     color: #fff;
