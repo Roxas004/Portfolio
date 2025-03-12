@@ -1,1 +1,0 @@
-Ouvrir le fichier index.html pour ouvrir le portfolio
