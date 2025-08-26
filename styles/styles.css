@@ -118,6 +118,7 @@ p{
 /* Classe pour centrer le texte a gauche */
 .text-left{
     text-align: left;
+    margin-top: 20px;
 }
 
 /* Classe pour centrer le texte à droite */
@@ -276,7 +277,9 @@ p{
 }
 
 .portfolio-txt p {
-    margin-top: 20px; 
+    margin-top: 30px;   /* au lieu de 20px */
+    margin-bottom: 15px;
+    line-height: 1.8rem; /* rend la lecture plus fluide */
 }
 
 /* Image de la veille-technologique avec un filtre sombre */
@@ -345,6 +348,49 @@ p{
 }
 
 .realisations:hover h3{
+    opacity: 1;
+}
+
+/* Titre central pour les Stage, avec animation d'opacité */
+.stage h3{
+    position: absolute;
+    top: 105%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size:2rem;
+    width:max-content;
+    opacity: 0;
+    transition: .4s ease;
+}
+
+/* Lien vers les stage */
+.stage a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: #000000;
+}
+
+
+/* Image de la stage avec un filtre sombre */
+.stage img{
+    width: 85%;
+    height: auto;
+    object-fit: cover;
+    filter: brightness(100%);
+    transition: .4s ease;
+    border-radius: 10px; /* Bord arrondi */
+}
+
+/* Effet au survol des réalisations (réduit le filtre et montre le titre) */
+.stage:hover{
+    filter: brightness(70%);
+    transform: scale(1.05); /* Légère augmentation de la taille au survol */
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.stage:hover h3{
     opacity: 1;
 }
 
@@ -507,6 +553,54 @@ header{
     width: 100%;
     height: auto;
 }
+
+.missions li {
+    list-style: none;
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+}
+.missions li span {
+    margin-right: 8px;
+    color: #0073e6;
+}
+.competence-card-stage {
+    width: 180px; /* plus compact que 250px */
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px; /* réduit l’espace intérieur */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.competence-card-stage h3 {
+    font-size: 1em; /* réduit un peu le titre */
+    color: #333;
+    margin-bottom: 6px;
+}
+
+.competence-card-stage p {
+    font-size: 0.9em; /* plus petit que 1em */
+    color: #666;
+    line-height: 1.4;
+}
+
+.competence-card-stage:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+
+/* Correction alignement icônes dans les missions */
+.missions li span.material-symbols-outlined {
+    font-size: 1.5em;   /* même taille que le texte */
+    line-height: 1;     /* évite que ça dépasse verticalement */
+    display: inline-flex;
+    align-items: center;
+}
+
 
 
 
