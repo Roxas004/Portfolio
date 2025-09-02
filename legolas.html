@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
     <head>
         <!-- Spécifie l'encodage des caractères en UTF-8 -->
@@ -11,11 +11,11 @@
         <!-- icon de la page -->
         <link rel="shortcut icon" type="png" href="img/portfolio-logo-64.png" />
         <!-- Balise de description pour le SEO -->
-        <meta type="description" content="Ceci est mon portfolio étudiant" />
+        <meta name="description" content="Ceci est mon portfolio étudiant" />
         <!-- Lien vers la police Material Symbols pour les icônes -->
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
         <!-- Lien vers la feuille de style CSS du portfolio -->
-        <link rel="stylesheet" href="styles/styles.css" types="text/css">
+        <link rel="stylesheet" href="styles/styles.css" type="text/css">
     </head>
 
     <body>
@@ -29,12 +29,12 @@
                     </button>
                     <!-- Logo avec lien vers l'accueil -->
                     <a href="index.html" class="header-logo">
-                        <img src="img/portfolio-logo.png">
+                        <img src="img/portfolio-logo.png" alt="Logo Portfolio">
                     </a>
                     <!-- Menu de navigation principal -->
                     <ul class="header-menu">
                         <li><a href="#accueil">Accueil</a></li>
-                        <li><a href="#Portfolio">Stage</a></li>
+                        <li><a href="#Stage">Stage</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>                    
                 </div>
@@ -43,15 +43,15 @@
 
         <!-- Section d'accueil avec image de fond et texte -->
         <div id="accueil" class="slider">
-            <img src="img/slider.jpg" class="slider-background">
+            <img src="img/slider.jpg" class="slider-background" alt="Image de fond" />
             <div class="slider-content">
                 <h1>Rosa Axel</h1>
-                <p>Etudiant en BTS SIO</p>
+                <p>Étudiant en BTS SIO</p>
             </div>
         </div>
 
         <!-- Section Portfolio avec texte -->
-        <div id="Portfolio" class="section">
+        <div id="Stage" class="section">
             <div class="boxed text-center">
                 <h2>Mon Stage en Entreprise</h2>
                 <div class="flex" style="justify-content: center">
@@ -62,7 +62,7 @@
                         </p>
 
                         <p class="text-left">
-                            Durant cette période de <strong>5 semaines</strong>, j’ai travaillé sur la conception d’une application web
+                            Durant cette période de <strong>cinq semaines</strong>, j’ai travaillé sur la conception d’une application web
                             permettant au CSE de l’entreprise de créer et gérer des événements.
                         </p>
 
@@ -71,9 +71,9 @@
                             <li><span class="material-symbols-outlined">code</span> Conception et mise en place du projet en Symfony / PHP </li>
                             <li><span class="material-symbols-outlined">storage</span> Conception et administration des bases de données avec PostgreSQL</li>
                             <li><span class="material-symbols-outlined">description</span> Rédaction de documentation technique</li>
-                        </ul>
+                        </ul><br>
 
-                        <h3 class="text-left">Compétences acquises</h3>
+                        <h3 class="text-left">Compétences acquises</h3><br>
                         <div class="competences-cards">
                             <div class="competence-card-stage">
                                 <h3>Développement web</h3>
@@ -96,7 +96,7 @@
         <div class="color-band"></div>
 
         <!-- Section Portfolio avec texte -->
-        <div id="Portfolio" class="section">
+        <div id="" class="section">
             <div class="boxed text-center">
                 <h2>Le commencement</h2>
                 <div class="flex" style="justify-content: center">
@@ -144,7 +144,7 @@
                     </div>
                     <div class="w32 wm100 contact">
                         <span class="material-symbols-outlined">account_box</span>
-                        <span class="label">Github</span>
+                        <span class="label">GitHub</span>
                         <a href="https://github.com/Roxas004"><span class="value">https://github.com/Roxas004</span></a>                        
                     </div>
                 </div>
@@ -155,6 +155,7 @@
             <button onclick="location.href='index.html'">Hub</button>
             <button onclick="location.href='Application-C.html'">Projet 2</button>
         </div>
+    </body>
         
     <!-- Inclusion du fichier JavaScript pour la logique de la page -->
     <script src="js/app.js"></script>  

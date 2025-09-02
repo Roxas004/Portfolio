@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 
     <head>
         <!-- Spécifie l'encodage des caractères en UTF-8 -->
@@ -11,11 +11,11 @@
         <!-- icon de la page -->
         <link rel="shortcut icon" type="png" href="img/portfolio-logo-64.png" />
         <!-- Balise de description pour le SEO -->
-        <meta type="description" content="Ceci est mon portfolio étudiant" />
+        <meta name="description" content="Ceci est mon portfolio étudiant" />
         <!-- Lien vers la police Material Symbols pour les icônes -->
         <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
         <!-- Lien vers la feuille de style CSS du portfolio -->
-        <link rel="stylesheet" href="styles/styles.css" types="text/css">
+        <link rel="stylesheet" href="styles/styles.css" type="text/css">
     </head>
 
     <body>
@@ -29,7 +29,7 @@
                     </button>
                     <!-- Logo avec lien vers l'accueil -->
                     <a href="index.html" class="header-logo">
-                        <img src="img/portfolio-logo.png">
+                        <img src="img/portfolio-logo.png" alt="Logo du portfolio">
                     </a>
                     <!-- Menu de navigation principal -->
                     <ul class="header-menu">
@@ -43,10 +43,10 @@
 
         <!-- Section d'accueil avec image de fond et texte -->
         <div id="accueil" class="slider">
-            <img src="img/slider.jpg" class="slider-background">
+            <img src="img/slider.jpg" class="slider-background" alt="Image de fond">
             <div class="slider-content">
                 <h1>Rosa Axel</h1>
-                <p>Etudiant en BTS SIO</p>
+                <p>Étudiant en BTS SIO</p>
             </div>
         </div>
 
@@ -58,30 +58,34 @@
                     <div class="competence-card">
                     <h3>Langages</h3>
                     <p>HTML/CSS, PHP, bases de JAVA, Python et C.</p>
-                </div>
-                <div class="competence-card">
-                    <h3>Bases de données</h3>
-                    <p>SGBD, MySQL et langage SQL.</p>
-                </div>
-                <div class="competence-card">
-                    <h3>Conception SI</h3>
-                    <p>Méthode Merise.</p>
-                </div>
-                <div class="competence-card">
-                    <h3>Systèmes d'Exploitation</h3>
-                    <p>Windows, Linux. Client/Serveur, Domaine AD, DHCP, DNS.</p>
-                </div>
-                <div class="competence-card">
-                    <h3>Réseaux</h3>
-                    <p>TCP-IP, DHCP, HTTP, Modèle OSI.</p>
-                </div>
-                <div class="competence-card">
-                    <h3>Cybersécurité</h3>
-                    <p>RGPD, CNIL, 12 règles de sécurité pour PME.</p>
+                    </div>
+                    <div class="competence-card">
+                        <h3>Framework</h3>
+                        <p> Laravel, Symfony.</p>
+                    </div>
+                    <div class="competence-card">
+                        <h3>Bases de données</h3>
+                        <p>SGBD, MySQL et langage SQL.</p>
+                    </div>
+                    <div class="competence-card">
+                        <h3>Conception SI</h3>
+                        <p>Méthode Merise.</p>
+                    </div>
+                    <div class="competence-card">
+                        <h3>Systèmes d'Exploitation</h3>
+                        <p>Windows, Linux. Domaine AD, DHCP, DNS.</p>
+                    </div>
+                    <div class="competence-card">
+                        <h3>Réseaux</h3>
+                        <p>TCP-IP, DHCP, HTTP, Modèle OSI.</p>
+                    </div>
+                    <div class="competence-card">
+                        <h3>Cybersécurité</h3>
+                        <p>RGPD, CNIL, 12 règles de sécurité pour PME.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
 
 
@@ -102,12 +106,18 @@
                     </div>
                     <div class="w32 wm100 contact">
                         <span class="material-symbols-outlined">account_box</span>
-                        <span class="label">Github</span>
+                        <span class="label">GitHub</span>
                         <a href="https://github.com/Roxas004"><span class="value">https://github.com/Roxas004</span></a>                        
                     </div>
                 </div>
             </div>
         </div>
+
+        <div class="navigation-buttons">
+            <button onclick="location.href='index.html'">Hub</button>
+            <button onclick="location.href='Tableau-de-synthèse.html'">Tableau de synthèse</button>
+        </div>
+    </body>
         
     <!-- Inclusion du fichier JavaScript pour la logique de la page -->
     <script src="js/app.js"></script>  
