@@ -601,6 +601,13 @@ header{
     align-items: center;
 }
 
+.image-code{
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+    cursor: zoom-in;
+}
+
 
 
 
