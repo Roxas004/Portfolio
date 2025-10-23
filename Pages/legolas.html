@@ -34,7 +34,14 @@
                     <!-- Menu de navigation principal -->
                     <ul class="header-menu">
                         <li><a href="#accueil">Accueil</a></li>
-                        <li><a href="#Stage">Stage</a></li>
+                        <li><a href="#Présentation">Présentation</a></li>
+                        <li><a href="#Documentation">Documentation</a></li>
+                        <li><a href="#Fiche">Ficher technique</a></li>
+                        <li><a href="#QA">Assurance Qualité</a></li>
+                        <li><a href="#Infra">Infra</a></li>
+                        <li><a href="#Makefile">Makefile</a></li>
+                        <li><a href="#DB">Base de Données</a></li>
+                        <li><a href="#index">Page d'accueil</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>                    
                 </div>
@@ -51,7 +58,7 @@
         </div>
 
         <!-- Section Portfolio avec texte -->
-        <div id="Stage" class="section">
+        <div id="Présentation" class="section">
             <div class="boxed text-center">
                 <h2>Mon Stage en Entreprise</h2>
                 <div class="flex" style="justify-content: center">
@@ -69,7 +76,7 @@
                         <h3 class="text-left">Mes missions</h3>
                         <ul class="text-left missions">
                             <li><span class="material-symbols-outlined">code</span> Conception et mise en place du projet en Symfony / PHP </li>
-                            <li><span class="material-symbols-outlined">Storage</span> Conception et administration des bases de données avec PostgreSQL</li>
+                            <li><span class="material-symbols-outlined">Storage</span> Conception et administration des bases de données avec PostgresSQL</li>
                             <li><span class="material-symbols-outlined">Description</span> Rédaction de documentation technique</li>
                         </ul><br>
 
@@ -96,7 +103,45 @@
         <div class="color-band"></div>
 
         <!-- Section Portfolio avec texte -->
-        <div id="" class="section">
+        <div id="Documentation" class="section">
+            <div class="boxed text-center">
+                <h2>Documentation</h2>
+                <div class="flex" style="justify-content: center">
+                    <div class="w60 wm100 portfolio-txt">
+                        <p class="text-left">
+                            Durant ce stage, j’ai également eu l’occasion et la responsabilité de me familiariser avec <strong>la rédaction de documentation technique</strong>,
+                            un aspect fondamental du développement logiciel. J’ai appris à <strong>documenter de manière claire, structurée et concise</strong> chaque ajout au projet
+                            (qualité, infrastructure, etc.), en respectant <strong>les standards internationaux</strong> du domaine, notamment l’usage de la <strong>langue anglaise</strong>,
+                            incontournable dans le monde du développement.
+                            Vous pouvez retrouver toute la documentation que j'ai rédigée durant mon stage sur mon <a href="https://github.com/Roxas004/Stage/tree/main/Save%20projet/Moi/docs" target="_blank">GitHub</a>.
+                        </p>
+                        <p class="text-left">
+                            Voici quelques exemples de documents que j'ai créés :
+                        </p>
+                        <p class="text-left">
+                            <a href="https://github.com/Roxas004/Stage/blob/main/Save%20projet/Moi/docs/ia-models/chatGPT.md" target="_blank">
+                                - IA GPT
+                            </a>
+                        </p>
+                        <p class="text-left">
+                            <a href="https://github.com/Roxas004/Stage/blob/main/Save%20projet/Moi/docs/dx-git.md" target="_blank">
+                                - Git
+                            </a>
+                        </p>
+                        <p class="text-left">
+                            <a href="https://github.com/Roxas004/Stage/blob/main/Save%20projet/Moi/docs/dx-gitlab.md" target="_blank">
+                                - GitLab
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="color-band"></div>
+
+        <!-- Section Portfolio avec texte -->
+        <div id="Fiche" class="section">
             <div class="boxed text-center">
                 <h2>Le commencement</h2>
                 <div class="flex" style="justify-content: center">
@@ -112,40 +157,206 @@
                             de <strong>planification</strong> d'un projet, en utilisant l'IA <strong>Cline</strong>,
                             qui m'a aidé à créer trois fichiers essentiels pour le projet :
 
-                        </p>
-                        <ul class="text-left missions">
-                            <li>Product Context:</li>
-                            <a href="../img/Stage/S1/product%20context.png" target="_blank">
-                                <img src="../img/Stage/S1/product%20context.png" alt="Product Context Diagram" class="image-code">
-                            </a>
-                            <p>
-                                explication du screen
-                            </p>
-                            <li>Project Progress:</li>
-                            <a href="../img/Stage/S1/product_progress.png" target="_blank">
-                                <img src="../img/Stage/S1/product_progress.png" alt="Product progress Diagram" class="image-code">
-                            </a>
-                            <p>
-                                explication du screen
-                            </p>
-                            <li>Technical Context:</li>
-                            <a href="../img/Stage/S1/technical_context.png" target="_blank">
-                                <img src="../img/Stage/S1/technical_context.png" alt="Technical Context Diagram" class="image-code">
-                            </a>
-                            <p>
-                                explication du screen
-                            </p>
+                        </p><br>
+
+                        <ul class="text-left">
+                            <li>
+                                <h3>Product Context:</h3>
+                                <a href="../img/Stage/S1/product%20context.png" target="_blank">
+                                    <img src="../img/Stage/S1/product%20context.png" alt="Product Context Diagram" class="image-code">
+                                </a>
+                                <p>
+                                    Le fichier <strong>Product Context</strong> – Présente la vision et les objectifs de l'application web nommée pour le développement Legolas,
+                                    développée avec <strong>Symfony</strong> pour la création et la gestion d’événements. Il définit les <strong>rôles utilisateurs</strong>
+                                    (administrateur, organisateur, participant), <strong>les principales fonctionnalités</strong>
+                                    (création d’événements, inscriptions, tableau de bord, filtres, notifications par e-mail, authentification),
+                                    ainsi que les indicateurs de performance et les défis techniques liés à la scalabilité et aux dépendances externes.
+                                    Ce document sert de base de référence pour guider le développement du projet et assurer sa cohérence fonctionnelle.
+                                </p><br>
+                            </li>
+
+                            <li>
+                                <h3>Project Progress:</h3>
+                                <a href="../img/Stage/S1/product_progress.png" target="_blank">
+                                    <img src="../img/Stage/S1/product_progress.png" alt="Product progress Diagram" class="image-code">
+                                </a>
+                                <p>
+                                    Le fichier <strong>Project Progress</strong> – Présente l’avancement du projet Legolas,
+                                    actuellement en phase de développement des fonctionnalités avec environ 15 % de progression.
+                                    Il récapitule <strong>les étapes déjà réalisées</strong> (structure du projet, configuration Docker, CI/CD GitLab, outils de qualité,
+                                    Makefile) et <strong>liste les prochaines priorités</strong> : finalisation du schéma de base de données, implémentation des CRUD,
+                                    gestion des rôles et authentification, création des templates et logique d’inscription aux événements.
+                                    Ce document permet de <strong>suivre l’évolution du projet</strong> et <strong>les jalons restants</strong> jusqu’à une version fonctionnelle.
+                                </p><br>
+                            </li>
+
+                            <li>
+                                <h3>Technical Context:</h3>
+                                <a href="../img/Stage/S1/technical_context.png" target="_blank">
+                                    <img src="../img/Stage/S1/technical_context.png" alt="Technical Context Diagram" class="image-code">
+                                </a>
+                                <p>
+                                    Le fichier <strong>Technical Context</strong> – Décrit l’environnement <strong>technique</strong> et <strong>l’architecture</strong> du projet Legolas.
+                                    Il précise les <strong>technologies</strong> utilisées (PHP 8.4, Symfony 7, Doctrine, Twig, PostgresSQL, Docker, GitLab CI/CD, etc.)
+                                    et détaille l’organisation du code selon le modèle MVC de Symfony.
+                                    Il met en avant l’usage de plusieurs design patterns (Repository, Dependency Injection, Front Controller)
+                                    ainsi que les <strong>bonnes pratiques</strong> appliquées en matière de <strong>sécurité, performance et qualité du code</strong>.
+                                    Ce document sert de <strong>référence technique</strong> pour assurer la cohérence, la maintenabilité et la fiabilité du projet.
+                                </p><br>
+                            </li>
                         </ul>
 
                         <p class="text-left">
-                            Ces documents permettent de définir clairement les <strong>objectifs</strong> et le <strong>contexte</strong> technique du projet,
-                            afin que, lorsqu’on utilise une <strong>IA</strong>, on puisse lui fournir ces fichiers pour qu’elle ait immédiatement tout le <strong>contexte</strong>.
+                            Ces documents ont pour <strong>objectif</strong> de définir avec précision les <strong>objectifs</strong> et le <strong>cadre technique</strong> du projet,
+                            afin de pouvoir fournir à une <strong>intelligence artificielle</strong> toutes les informations nécessaires pour qu’elle
+                            dispose immédiatement d’une compréhension complète du contexte.
                         </p>
                     </div>
                 </div>
             </div>
         </div>
 
+        <div class="color-band"></div>
+
+        <!-- Section Portfolio avec texte -->
+        <div id="QA" class="section">
+            <div class="boxed text-center">
+                <h2>Assurance Qualité</h2>
+                <div class="flex" style="justify-content: center">
+                    <div class="w60 wm100 portfolio-txt">
+                        <p class="text-left">
+                            Afin d’assurer la <strong>qualité</strong>, la <strong>cohérence</strong> et la <strong>maintenabilité</strong> du code tout au long du développement du projet,
+                            j’ai mis en place plusieurs outils <strong>d’assurance qualité (QA)</strong>.
+
+                            J’ai utilisé <a class="link-s" href="https://github.com/Roxas004/Stage/tree/main/Save%20projet/Moi/docs" target="_blank"><strong>PHP CS Fixer</strong></a>
+                            pour le formatage automatique du code et le respect des standards, garantissant une base de code homogène.
+
+                            L’outil <a class="link-s" href="https://github.com/Roxas004/Stage/tree/main/Save%20projet/Moi/docs" target="_blank"><strong>PHP Insights</strong></a> m’a permis d’analyser la qualité globale du projet,
+                            en évaluant la lisibilité, la complexité et les bonnes pratiques.
+
+                            Avec <a class="link-s" href="https://github.com/Roxas004/Stage/tree/main/Save%20projet/Moi/docs" target="_blank"><strong>PHPStan</strong></a>,
+                            j’ai effectué une analyse statique afin de détecter en amont les erreurs potentielles et d’améliorer la robustesse du code.
+
+                            J’ai également intégré <a class="link-s" href="https://github.com/Roxas004/Stage/tree/main/Save%20projet/Moi/docs" target="_blank"><strong>Rector</strong></a>,
+                            qui facilite la refactorisation automatique et la modernisation du code selon les dernières versions de PHP et Symfony.
+
+                            Enfin, <a class="link-s" href="https://github.com/Roxas004/Stage/tree/main/Save%20projet/Moi/docs" target="_blank"><strong>Renovate</strong></a> a été configuré pour automatiser la mise à jour des dépendances,
+                            assurant ainsi la sécurité et la stabilité du projet sur le long terme.
+
+                            L’ensemble de ces outils m’a permis de maintenir un <strong>haut niveau de qualité logicielle</strong> et d’optimiser <strong>la productivité du développement</strong>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="color-band"></div>
+
+        <!-- Section Portfolio avec texte -->
+        <div id="Infra" class="section">
+            <div class="boxed text-center">
+                <h2>Infra</h2>
+                <div class="flex" style="justify-content: center">
+                    <div class="w60 wm100 portfolio-txt">
+                        <ul class="text-left">
+                            <li>
+                                <a class="link-s" href="https://github.com/Roxas004/Stage/blob/main/Save%20projet/Moi/docs/infra-adr.md" target="_blank"><strong>Les architectures Decision Records (ADR)</strong></a>
+                                sont des documents servant à <strong>consigner les décisions techniques importantes</strong> prises au cours du développement d’un projet,
+                                ainsi que leur <strong>contexte</strong> et leurs <strong>conséquences</strong>. Leur but est de garder une <strong>trace claire du raisonnement</strong>
+                                ayant conduit à un choix donné (technologie, architecture, outil, etc.), afin de faciliter la compréhension et la continuité du projet dans le temps.
+                                J’ai mis en place ce système dans Legolas pour assurer une <strong>traçabilité des choix techniques</strong>,
+                                éviter les rediscussion inutiles et permettre à tout contributeur actuel ou futur de comprendre <strong>pourquoi</strong> une décision a été prise. Cette pratique favorise <strong>la transparence,
+                                la cohérence technique et une meilleure communication</strong> au sein de l’équipe de développement.
+                                Les membres de l’équipe peuvent ainsi se référer aux
+                                <a class="link-s" href="https://github.com/Roxas004/Stage/blob/main/Save%20projet/Moi/docs/adr/template.md" target="_blank"><strong>template</strong></a> fourni pour documenter de futures décisions importantes.
+                            </li><br>
+                            <li>
+                                <p>
+                                    <a class="link-s" href="https://github.com/Roxas004/Stage/blob/main/Save%20projet/Moi/docs/infra-ci.md" target="_blank"><strong>La Continuous Integration (CI) </strong></a>
+                                    est une pratique de développement visant à <strong>fusionner régulièrement les modifications de code</strong> dans un dépôt partagé et à valider automatiquement ces changements.
+                                    Dans le cadre du projet Legolas, j’ai mis en place une <strong>CI</strong> pour détecter rapidement les erreurs, améliorer la qualité du code grâce aux tests et analyses statiques,
+                                    et faciliter la collaboration entre les développeurs. Le pipeline CI inclut des étapes de <strong>build, tests unitaires, analyse statique</strong> (avec PHPStan et Rector) et <strong>déploiement automatique</strong>,
+                                    garantissant ainsi un processus de développement <strong>fiable, rapide et reproductible</strong>.
+                                </p><br>
+                                <h5>Exemple Pipeline qui rate :</h5>
+                                <a href="../img/Stage/S1/pipe_fail.png" target="_blank">
+                                    <img src="../img/Stage/S1/pipe_fail.png" alt="pipe fail" class="image">
+                                </a><br>
+                                <h5>Exemple Pipeline qui passe :</h5>
+                                <a href="../img/Stage/S1/pipe_pass.png" target="_blank">
+                                    <img src="../img/Stage/S1/pipe_pass.png" alt="pipe fail" class="image">
+                                </a>
+                            </li><br>
+                            <li>
+                                <p>
+                                    <a class="link-s" href="https://github.com/Roxas004/Stage/blob/main/Save%20projet/Moi/docs/infra-docker.md" target="_blank"><strong>Docker </strong></a>
+                                    est une <strong>plateforme de conteneurisation</strong> que j’ai utilisée dans le projet Legolas pour assurer <strong>la portabilité, l’isolation et la cohérence</strong> de l’environnement de développement,
+                                    de test et de production. Chaque application est exécutée dans un <strong>conteneur</strong> regroupant le code, les dépendances et la configuration nécessaire,
+                                    garantissant qu’elle fonctionne de manière identique sur tous les systèmes. J’ai utilisé <strong>Docker Compose</strong> pour orchestrer les services (web, base de données).
+                                    Cela a permis d’améliorer la <strong>productivité</strong>, de réduire les problèmes liés aux différences d’environnement et de faciliter le déploiement continu.
+                                </p><br>
+                                <h5>Mon Docker Compose:</h5>
+                                <a href="../img/Stage/S1/docker_compose.png" target="_blank">
+                                    <img src="../img/Stage/S1/docker_compose.png" alt="docker compose" class="image-code">
+                                </a>
+                            </li><br>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="color-band"></div>
+
+        <!-- Section Portfolio avec texte -->
+        <div id="Makefile" class="section">
+            <div class="boxed text-center">
+                <h2>Makefile</h2>
+                <div class="flex" style="justify-content: center">
+                    <div class="w60 wm100 portfolio-txt">
+                        <p class="text-left">
+                            <a class="link-s" href="https://github.com/Roxas004/Stage/blob/main/Save%20projet/Moi/Makefile" target="_blank"><strong>Le Makefile </strong></a>
+                            est un outil que j’ai intégré dans le projet Legolas pour automatiser les tâches répétitives du développement, telles que la compilation, l’analyse du code,
+                            les tests ou le nettoyage des fichiers temporaires. Chaque tâche est définie comme une cible (target) avec ses commandes associées, permettant de lancer plusieurs opérations avec une seule commande make.
+                            Grâce à ce système, j’ai pu standardiser et simplifier le workflow de l’équipe, par exemple pour exécuter des QA ou de Docker,
+                            tout en assurant que chaque développeur dispose d’une méthode cohérente et reproductible pour effectuer les tâches courantes du projet.
+                        </p><br>
+                        <h5 class="text-left">Mon Makefile dans l'invite de commande :</h5>
+                        <a href="../img/Stage/S1/makefile_cmd.png" target="_blank">
+                            <img src="../img/Stage/S1/makefile_cmd.png" alt="Makefile" class="image-code">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="color-band"></div>
+
+        <!-- Section Portfolio avec texte -->
+        <div id="DB" class="section">
+            <div class="boxed text-center">
+                <h2>Base de Donnée</h2>
+                <div class="flex" style="justify-content: center">
+                    <div class="w60 wm100 portfolio-txt">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="color-band"></div>
+
+        <!-- Section Portfolio avec texte -->
+        <div id="index" class="section">
+            <div class="boxed text-center">
+                    <h2>Page d'accueil</h2>
+                <div class="flex" style="justify-content: center">
+                    <div class="w60 wm100 portfolio-txt">
+
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Section de contact avec informations et icônes -->
         <div id="contact" class="section dark">

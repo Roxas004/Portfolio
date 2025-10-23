@@ -610,8 +610,10 @@ header{
     cursor: zoom-in;
 }
 
-
-
+.link-s{
+    /* Supprime le soulignement */
+    text-decoration: none;
+}
 
 /* Media Query pour l'adaptation mobile */
 @media(max-width:810px){
