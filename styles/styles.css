@@ -94,6 +94,54 @@ p{
     display: flex; 
 }
 
+/* Conteneur pour chaque catégorie de réalisations */
+.realisations-category {
+    margin-bottom: 60px;
+}
+
+/* Titre de catégorie */
+.category-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #000;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+/* Ligne de soulignement pour le titre */
+.category-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right, #000, #666);
+    border-radius: 2px;
+}
+
+/* Version sombre du titre pour les sections dark */
+.dark .category-title {
+    color: #fff;
+}
+
+.dark .category-title::after {
+    background: linear-gradient(to right, #fff, #999);
+}
+
+/* Responsive - ajustement mobile */
+@media(max-width:810px){
+    .category-title {
+        font-size: 1.5rem;
+        margin-bottom: 30px;
+    }
+
+    .realisations-category {
+        margin-bottom: 40px;
+    }
+}
+
 /* Style pour les sections sombres */
 .dark{
     background: #000;
@@ -156,6 +204,13 @@ p{
 .color-band {
     height: 35px; /* Ajustez la hauteur selon vos besoins */
     background-color: #000000; /* Remplacez par la couleur de votre choix */
+    width: 100%; /* Occuper toute la largeur */
+    margin: 0; /* Supprimez la marge */
+}
+
+.color-band-blanc {
+    height: 35px; /* Ajustez la hauteur selon vos besoins */
+    background-color: #ffffff; /* Remplacez par la couleur de votre choix */
     width: 100%; /* Occuper toute la largeur */
     margin: 0; /* Supprimez la marge */
 }
@@ -299,26 +354,29 @@ p{
 }
 
 /* Conteneur pour les réalisations */
-.realisations{
-    height: auto;
-    aspect-ratio: 1/1;
+.realisations {
+    /* height: auto;  <-- On garde ça */
+    /* aspect-ratio: 1/1; <-- SUPPRIMER cette ligne ou la mettre en commentaire, sinon la boîte force une taille carrée */
     position: relative;
-    flex: 1 1 calc(33.33% - 20px); /* 3 réalisations par ligne avec espace */
+    flex: 1 1 calc(33.33% - 20px);
     max-width: calc(33.33% - 20px);
-    box-sizing: border-box; /* Prend en compte le padding et les marges */
+    box-sizing: border-box;
+    padding-bottom: 20px; /* Ajoute un peu d'espace en bas */
 }
 
-/* Titre central pour les réalisations, avec animation d'opacité */
-.realisations h3{
-    position: absolute;
-    top: 90%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size:2rem;
-    width:max-content;
-    opacity: 0;
+/* Titre en dessous de l'image */
+.realisations h3 {
+    /* On enlève position: absolute, top, left et transform */
+    position: relative;
+    margin-top: 15px; /* Espace entre l'image et le texte */
+    text-align: center;
+    font-size: 1.5rem; /* Ajustez la taille si nécessaire */
+    color: #000; /* Texte en noir car il est sur fond blanc maintenant */
+    opacity: 0; /* Toujours caché au début */
     transition: .4s ease;
 }
+
+/* (Gardez le reste comme .realisations:hover h3 { opacity: 1; } tel quel) */
 
 /* Lien vers les réalisations */
 .realisations a{
@@ -333,8 +391,8 @@ p{
 /* Image de la réalisation avec un filtre sombre */
 .realisations img{
     width: 85%;
-    height: auto;
-    object-fit: cover;
+    height: 250px; /* Hauteur fixe pour uniformiser */
+    object-fit: contain; /* Contient l'image sans déformation */
     filter: brightness(100%);
     transition: .4s ease;
     border-radius: 10px; /* Bord arrondi */

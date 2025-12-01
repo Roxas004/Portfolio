@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projet M2L</title>
+    <link rel="shortcut icon" type="png" href="../img/Layout/portfolio-logo-64.png" />
+    <meta name="description" content="Projet de gestion des employés M2L" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles/styles.css" type="text/css">
+    <style>
+
+        /* Ajustement des paragraphes pour l'aligner avec les listes */
+        p {
+            line-height: 1.6 !important; /* Force un meilleur interligne */
+        }
+
+        /* Définition claire des tailles de titres pour la cohérence */
+        h3 {
+            font-size: 2.2rem; /* Plus petit que h2 (2.75rem) mais bien visible */
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        .dark h3 {
+            color: #fff;
+        }
+
+        h4 {
+            font-size: 1.8rem; /* Intermédiaire entre h3 et le texte */
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        /* --------------------------- */
+
+        .project-section {
+            margin: 40px 0;
+            padding: 30px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+        }
+
+        .dark .project-section {
+            background-color: #1a1a1a;
+        }
+
+        .project-image {
+            max-width: 100%;
+            height: auto;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .project-image:hover {
+            transform: scale(1.02);
+        }
+
+        .feature-list li {
+            font-size : 2.75rm
+        }
+
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
+            text-align: left;
+        }
+
+        .feature-list li {
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .feature-list li:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #000;
+            font-weight: bold;
+            font-size: 1.5rem; /* Flèche de la même taille que le texte */
+        }
+
+        .dark .feature-list li:before {
+            color: #fff;
+        }
+
+        .tech-badge {
+            display: inline-block;
+            padding: 8px 16px;
+            margin: 5px;
+            background-color: #000;
+            color: #fff;
+            border-radius: 20px;
+            font-size: 1rem; /* Badges un peu plus petits que le texte courant */
+        }
+
+        .github-link {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #24292e;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            margin: 10px 5px;
+            transition: background-color 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .github-link:hover {
+            background-color: #000;
+        }
+
+        .mcd-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+<header>
+    <div class="boxed">
+        <div class="flex aligncenter space-between">
+            <button onclick="openMenu()" class="header-menu-mobile">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            <a href="../index.html" class="header-logo">
+                <img src="../img/Layout/portfolio-logo.png" alt="Logo Portfolio">
+            </a>
+            <ul class="header-menu">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#presentation">Présentation</a></li>
+                <li><a href="#conception">Conception</a></li>
+                <li><a href="#realisation">Réalisation</a></li>
+                <li><a href="#technologies">Technologies</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<div id="accueil" class="slider">
+    <img src="../img/Layout/slider.jpg" class="slider-background" alt="Image de fond">
+    <div class="slider-content">
+        <h1>Rosa Axel</h1>
+        <p>Étudiant en BTS SIO</p>
+    </div>
+</div>
+
+<div id="presentation" class="section">
+    <div class="boxed text-center">
+        <h2>Projet M2L - Gestion des Employés des Ligues</h2>
+
+        <div class="flex" style="justify-content: center">
+            <div class="w60 wm100">
+                <div class="project-section">
+                    <h3>📋 Contexte du Projet</h3>
+                    <p class="text-left">
+                        La Maison des Ligues de Lorraine (M2L) souhaitait moderniser son système de gestion des employés.
+                        L'objectif était de transformer une application mono-utilisateur en ligne de commande en une solution
+                        multi-utilisateurs avec une base de données centralisée et différents niveaux d'habilitation.
+                    </p>
+                </div>
+
+                <div class="project-section">
+                    <h3>🎯 Objectifs du Projet</h3>
+                    <ul class="feature-list">
+                        <li>Transformer l'application mono-utilisateur en solution multi-utilisateurs</li>
+                        <li>Implémenter une base de données relationnelle</li>
+                        <li>Créer un système d'authentification avec trois niveaux d'accès</li>
+                        <li>Conserver l'architecture 3-tiers existante</li>
+                        <li>Permettre la gestion décentralisée par ligue</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h3>👥 Niveaux d'Habilitation</h3>
+                    <div class="text-left">
+                        <p><strong>1. Employé Simple :</strong></p>
+                        <p style="margin-left: 30px;">Accès en lecture seule à l'annuaire des employés</p>
+
+                        <p style="margin-top: 20px;"><strong>2. Administrateur de Ligue :</strong></p>
+                        <p style="margin-left: 30px;">Gestion complète des employés de sa propre ligue via application bureau</p>
+
+                        <p style="margin-top: 20px;"><strong>3. Super-Administrateur :</strong></p>
+                        <p style="margin-left: 30px;">Accès total à tous les employés et gestion des comptes administrateurs via ligne de commande</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="color-band"></div>
+
+<div id="conception" class="section dark">
+    <div class="boxed text-center">
+        <h2>Conception de la Base de Données</h2>
+
+        <div class="flex" style="justify-content: center">
+            <div class="w60 wm100">
+                <div class="project-section">
+                    <h3>📊 Modèle Conceptuel de Données (MCD)</h3>
+                    <p class="text-left">
+                        J'ai conçu un MCD pour structurer les données de l'application. Le modèle prend en compte
+                        les entités principales : Employés, Ligues, et Utilisateurs avec leurs rôles respectifs.
+                    </p>
+
+                    <div class="mcd-container">
+                        <p class="text-center" style="color: #666; font-style: italic; font-size: 1.2rem;">
+                            [Insérez ici une capture d'écran de votre MCD]
+                        </p>
+                    </div>
+
+                    <h4 style="text-align: left;">Entités Principales :</h4>
+                    <ul class="feature-list">
+                        <li><strong>LIGUE :</strong> id_ligue, nom_ligue, adresse</li>
+                        <li><strong>EMPLOYE :</strong> id_employe, nom, prénom, email, téléphone, id_ligue</li>
+                        <li><strong>UTILISATEUR :</strong> id_user, login, mot_de_passe, role, id_ligue</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="color-band"></div>
+
+<div id="realisation" class="section">
+    <div class="boxed text-center">
+        <h2>Réalisation et Développement</h2>
+
+        <div class="flex" style="justify-content: center">
+            <div class="w60 wm100">
+                <div class="project-section">
+                    <h3>🔧 Ressources Fournies</h3>
+                    <ul class="feature-list">
+                        <li>Code source Java de l'application initiale sur GitHub</li>
+                        <li>Architecture 3-tiers existante à respecter</li>
+                        <li>Bibliothèque de dialogue en ligne de commande</li>
+                        <li>Documentation technique de base</li>
+                    </ul>
+                </div>
+
+                <div class="project-section text-left">
+                    <h3 class="text-center">💻 Travail Réalisé</h3>
+
+                    <h4>1. Conception de la Base de Données</h4>
+                    <ul class="feature-list">
+                        <li>Création du MCD et du MLD</li>
+                        <li>Implémentation de la base de données MySQL/PostgreSQL</li>
+                        <li>Création des tables avec contraintes d'intégrité</li>
+                    </ul>
+
+                    <h4>2. Couche d'Accès aux Données (DAO)</h4>
+                    <ul class="feature-list">
+                        <li>Développement des classes DAO pour chaque entité</li>
+                        <li>Implémentation des méthodes CRUD</li>
+                        <li>Gestion des connexions à la base de données</li>
+                    </ul>
+
+                    <h4>3. Système d'Authentification</h4>
+                    <ul class="feature-list">
+                        <li>Création d'un système de login/mot de passe</li>
+                        <li>Hashage sécurisé des mots de passe</li>
+                        <li>Gestion des sessions utilisateur</li>
+                        <li>Contrôle d'accès selon les rôles</li>
+                    </ul>
+
+                    <h4>4. Interface Utilisateur</h4>
+                    <ul class="feature-list">
+                        <li>Amélioration de l'interface en ligne de commande</li>
+                        <li>Menus adaptés selon le niveau d'habilitation</li>
+                        <li>Messages d'erreur et de confirmation clairs</li>
+                    </ul>
+                </div>
+
+                <div class="project-section">
+                    <h3>📸 Captures d'Écran</h3>
+
+                    <div style="margin: 20px 0;">
+                        <h4>Menu Principal</h4>
+                        <p style="color: #666; font-style: italic; font-size: 1.2rem;">[Insérez une capture de votre menu principal]</p>
+                    </div>
+
+                    <div style="margin: 20px 0;">
+                        <h4>Gestion des Employés</h4>
+                        <p style="color: #666; font-style: italic; font-size: 1.2rem;">[Insérez une capture de la gestion des employés]</p>
+                    </div>
+
+                    <div style="margin: 20px 0;">
+                        <h4>Authentification</h4>
+                        <p style="color: #666; font-style: italic; font-size: 1.2rem;">[Insérez une capture de l'écran de connexion]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="color-band"></div>
+
+<div id="technologies" class="section dark">
+    <div class="boxed text-center">
+        <h2>Technologies Utilisées</h2>
+
+        <div class="flex" style="justify-content: center">
+            <div class="w60 wm100">
+                <div class="project-section">
+                    <div class="text-center">
+                        <span class="tech-badge">Java</span>
+                        <span class="tech-badge">JDBC</span>
+                        <span class="tech-badge">MySQL / PostgreSQL</span>
+                        <span class="tech-badge">Architecture 3-tiers</span>
+                        <span class="tech-badge">Eclipse IDE</span>
+                        <span class="tech-badge">Git / GitHub</span>
+                    </div>
+
+                    <div style="margin-top: 40px;">
+                        <h3>🏗️ Architecture 3-Tiers</h3>
+                        <ul class="feature-list">
+                            <li><strong>Couche Présentation :</strong> Interface en ligne de commande pour l'interaction utilisateur</li>
+                            <li><strong>Couche Métier :</strong> Logique applicative et règles de gestion</li>
+                            <li><strong>Couche Données :</strong> Accès à la base de données via DAO</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-section">
+                    <h3>📚 Ressources et Documentation</h3>
+                    <div class="text-center">
+                        <a href="#" class="github-link" target="_blank">
+                            <span class="material-symbols-outlined" style="vertical-align: middle;">code</span>
+                            Voir le Code Source
+                        </a>
+                        <a href="#" class="github-link" target="_blank">
+                            <span class="material-symbols-outlined" style="vertical-align: middle;">description</span>
+                            Documentation Technique
+                        </a>
+                    </div>
+                    <p class="text-center" style="margin-top: 20px; font-style: italic; color: #999; font-size: 1.2rem;">
+                        (Remplacez les liens ci-dessus par vos liens GitHub réels)
+                    </p>
+                </div>
+
+                <div class="project-section">
+                    <h3>🎓 Compétences Développées</h3>
+                    <ul class="feature-list">
+                        <li>Conception et modélisation de bases de données</li>
+                        <li>Programmation orientée objet en Java</li>
+                        <li>Implémentation du pattern DAO</li>
+                        <li>Gestion de la sécurité et des habilitations</li>
+                        <li>Architecture logicielle 3-tiers</li>
+                        <li>Travail sur code existant et refactoring</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="color-band"></div>
+
+<div id="contact" class="section dark">
+    <div class="boxed text-center">
+        <h2>Contactez-moi</h2>
+        <div class="flex toColumn space-between mgap20" style="justify-content: center; gap: 30px;">
+            <div class="w32 wm100 contact">
+                <span class="material-symbols-outlined icon">mail</span>
+                <span class="label">E-Mail</span>
+                <span class="value">axelalmeidarosa@gmail.com</span>
+            </div>
+            <div class="w32 wm100 contact">
+                <span class="material-symbols-outlined">call</span>
+                <span class="label">Téléphone</span>
+                <span class="value">07.86.89.58.90</span>
+            </div>
+            <div class="w32 wm100 contact">
+                <span class="material-symbols-outlined">account_box</span>
+                <span class="label">GitHub</span>
+                <a href="https://github.com/Roxas004" target="_blank"><span class="value">github.com/Roxas004</span></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="navigation-buttons">
+    <button onclick="location.href='../index.html'">Accueil</button>
+    <button onclick="location.href='Portfolio.html'">Projet 1</button>
+    <button onclick="location.href=''">Projet 3</button>
+</div>
+
+<script src="../js/app.js"></script>
+</body>
+</html>
