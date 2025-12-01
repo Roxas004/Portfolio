@@ -335,10 +335,40 @@
         <!-- Section Portfolio avec texte -->
         <div id="DB" class="section">
             <div class="boxed text-center">
-                <h2>Base de Donnée</h2>
+                <h2>Base de Données</h2>
                 <div class="flex" style="justify-content: center">
                     <div class="w60 wm100 portfolio-txt">
 
+                        <p class="text-left">
+                            Pour la persistance des données, j'ai choisi <strong>PostgreSQL</strong>,
+                            hébergé dans un conteneur Docker. Avant de coder, j'ai réalisé la <strong>conception</strong>
+                            de la base de données (MCD) pour définir clairement les relations entre les utilisateurs,
+                            les événements et les inscriptions.
+                        </p>
+
+                        <h3 class="text-left">Schéma Relationnel</h3>
+                        <a href="../img/Stage/S1/database_schema.png" target="_blank">
+                            <img src="../img/Stage/S1/database_schema.png" alt="Schéma de la base de données" class="image-code">
+                        </a>
+
+                        <br><br>
+
+                        <h3 class="text-left">Implémentation avec Doctrine (ORM)</h3>
+                        <p class="text-left">
+                            Plutôt que d'écrire du SQL brut, j'ai utilisé l'ORM <strong>Doctrine</strong> intégré à Symfony.
+                            Cela m'a permis de manipuler les données sous forme d'<strong>Entités PHP</strong>.
+                        </p>
+
+                        <ul class="text-left">
+                            <li>
+                                <strong>Entités & Repository :</strong> Chaque table est représentée par une classe PHP (ex: <code>Event.php</code>),
+                                ce qui sécurise les requêtes et facilite la maintenance.
+                            </li>
+                            <li>
+                                <strong>Migrations :</strong> J'ai utilisé le système de migrations pour versionner l'évolution
+                                de la base de données au fil du projet.
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -349,10 +379,34 @@
         <!-- Section Portfolio avec texte -->
         <div id="index" class="section">
             <div class="boxed text-center">
-                    <h2>Page d'accueil</h2>
+                <h2>Page d'accueil (Dashboard)</h2>
                 <div class="flex" style="justify-content: center">
                     <div class="w60 wm100 portfolio-txt">
+                        <p class="text-left">
+                            La page d'accueil de l'application agit comme un véritable <strong>Tableau de Bord</strong> pour les membres du CSE.
+                            L'objectif était de proposer une interface <strong>intuitive et épurée</strong>, permettant aux utilisateurs de voir en un coup d'œil les événements à venir.
+                        </p>
 
+                        <h3 class="text-left">Interface Utilisateur (UI)</h3>
+                        <a href="../img/Stage/S1/home_page_view.png" target="_blank">
+                            <img src="../img/Stage/S1/home_page_view.png" alt="Aperçu de la page d'accueil" class="image-code">
+                        </a>
+
+                        <h3 class="text-left">Aspects Techniques</h3>
+                        <ul class="text-left">
+                            <li>
+                                <strong>Moteur de Template Twig :</strong> J'ai utilisé Twig pour générer le HTML dynamiquement.
+                                Cela permet d'hériter d'un layout de base (<code>base.html.twig</code>) pour ne pas répéter le code de la barre de navigation et du pied de page.
+                            </li>
+                            <li>
+                                <strong>Composants Reutilisables :</strong> L'affichage des événements (les "cartes" visibles ci-dessus)
+                                a été géré via des <em>partials</em> Twig, ce qui permet de réutiliser ce même design sur la page de recherche ou de profil.
+                            </li>
+                            <li>
+                                <strong>Responsive Design :</strong> Grâce aux media queries CSS, l'affichage s'adapte parfaitement
+                                aux écrans d'ordinateurs comme aux smartphones, un critère essentiel pour l'accessibilité du CSE.
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
