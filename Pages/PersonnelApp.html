@@ -8,119 +8,6 @@
     <meta name="description" content="Projet de gestion des employés M2L" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <link rel="stylesheet" href="../styles/styles.css" type="text/css">
-    <style>
-
-        /* Ajustement des paragraphes pour l'aligner avec les listes */
-        p {
-            line-height: 1.6 !important; /* Force un meilleur interligne */
-        }
-
-        /* Définition claire des tailles de titres pour la cohérence */
-        h3 {
-            font-size: 2.2rem; /* Plus petit que h2 (2.75rem) mais bien visible */
-            margin-bottom: 20px;
-            color: #000;
-        }
-
-        .dark h3 {
-            color: #fff;
-        }
-
-        h4 {
-            font-size: 1.8rem; /* Intermédiaire entre h3 et le texte */
-            margin-top: 25px;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        /* --------------------------- */
-
-        .project-section {
-            margin: 40px 0;
-            padding: 30px;
-            background-color: #f9f9f9;
-            border-radius: 10px;
-        }
-
-        .dark .project-section {
-            background-color: #1a1a1a;
-        }
-
-        .project-image {
-            max-width: 100%;
-            height: auto;
-            margin: 20px 0;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .project-image:hover {
-            transform: scale(1.02);
-        }
-
-        .feature-list li {
-            font-size : 1%;
-        }
-
-        .feature-list {
-            list-style: none;
-            padding-left: 0;
-            text-align: left;
-        }
-
-        .feature-list li {
-            padding-left: 30px;
-            position: relative;
-        }
-
-        .feature-list li:before {
-            content: "→";
-            position: absolute;
-            left: 0;
-            color: #000;
-            font-weight: bold;
-            font-size: 1.5rem; /* Flèche de la même taille que le texte */
-        }
-
-        .dark .feature-list li:before {
-            color: #fff;
-        }
-
-        .tech-badge {
-            display: inline-block;
-            padding: 8px 16px;
-            margin: 5px;
-            background-color: #000;
-            color: #fff;
-            border-radius: 20px;
-            font-size: 1rem; /* Badges un peu plus petits que le texte courant */
-        }
-
-        .github-link {
-            display: inline-block;
-            padding: 12px 24px;
-            background-color: #24292e;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            margin: 10px 5px;
-            transition: background-color 0.3s;
-            font-size: 1.2rem;
-        }
-
-        .github-link:hover {
-            background-color: #000;
-        }
-
-        .mcd-container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-        }
-    </style>
 </head>
 
 <body>
@@ -214,15 +101,14 @@
 
                     <div class="mcd-container">
                         <p class="text-center" style="color: #666; font-style: italic; font-size: 1.2rem;">
-                            [Insérez ici une capture d'écran de votre MCD]
+                            <img src="../img/Projet/Projet_scolaire/P2/Nouveau%20MCD.jpg" alt="Modèle Conceptuel de Données M2L" style="max-width: 100%; height: auto;">
                         </p>
                     </div>
 
                     <h4 style="text-align: left;">Entités Principales :</h4>
                     <ul class="feature-list">
-                        <li><strong>LIGUE :</strong> id_ligue, nom_ligue, adresse</li>
-                        <li><strong>EMPLOYE :</strong> id_employe, nom, prénom, email, téléphone, id_ligue</li>
-                        <li><strong>UTILISATEUR :</strong> id_user, login, mot_de_passe, role, id_ligue</li>
+                        <li><strong>LIGUE :</strong> id_ligue, nom_ligue</li>
+                        <li><strong>PERSONNELS :</strong> id_personnel, nom_personnel, prénom_personnel, email_personnel, role_personnel, password_personnel, date_arrivée, date_depart</li>
                     </ul>
                 </div>
             </div>
@@ -241,10 +127,16 @@
                 <div class="project-section">
                     <h3>🔧 Ressources Fournies</h3>
                     <ul class="feature-list">
-                        <li>Code source Java de l'application initiale sur GitHub</li>
+                        <li>Code source Java de l'application initiale sur <a href="https://github.com/alexandreMesle/personnel/tree/master/Personnel" target="_blank">
+                            GitHub
+                        </a></li>
                         <li>Architecture 3-tiers existante à respecter</li>
-                        <li>Bibliothèque de dialogue en ligne de commande</li>
-                        <li>Documentation technique de base</li>
+                        <li><a href="https://github.com/alexandreMesle/CommandLine" target="_blank">
+                            Bibliothèque de dialogue
+                        </a>  en ligne de commande</li>
+                        <li><a href="https://enseignement.alexandre-mesle.com/PPE/personnel/javadoc/personnel/package-summary.html" target="_blank">
+                            Documentation technique
+                        </a> de base</li>
                     </ul>
                 </div>
 
@@ -254,26 +146,26 @@
                     <h4>1. Conception de la Base de Données</h4>
                     <ul class="feature-list">
                         <li>Création du MCD et du MLD</li>
-                        <li>Implémentation de la base de données MySQL/PostgreSQL</li>
-                        <li>Création des tables avec contraintes d'intégrité</li>
+                        <li>Implémentation de la base de données MySQL</li>
+<!--                        <li>Création des tables avec contraintes d'intégrité</li>-->
                     </ul>
 
-                    <h4>2. Couche d'Accès aux Données (DAO)</h4>
-                    <ul class="feature-list">
-                        <li>Développement des classes DAO pour chaque entité</li>
-                        <li>Implémentation des méthodes CRUD</li>
-                        <li>Gestion des connexions à la base de données</li>
-                    </ul>
+<!--                    <h4>2. Couche d'Accès aux Données (DAO)</h4>-->
+<!--                    <ul class="feature-list">-->
+<!--                        <li>Développement des classes DAO pour chaque entité</li>-->
+<!--                        <li>Implémentation des méthodes CRUD</li>-->
+<!--                        <li>Gestion des connexions à la base de données</li>-->
+<!--                    </ul>-->
 
-                    <h4>3. Système d'Authentification</h4>
-                    <ul class="feature-list">
-                        <li>Création d'un système de login/mot de passe</li>
-                        <li>Hashage sécurisé des mots de passe</li>
-                        <li>Gestion des sessions utilisateur</li>
-                        <li>Contrôle d'accès selon les rôles</li>
-                    </ul>
+<!--                    <h4>3. Système d'Authentification</h4>-->
+<!--                    <ul class="feature-list">-->
+<!--                        <li>Création d'un système de login/mot de passe</li>-->
+<!--                        <li>Hashage sécurisé des mots de passe</li>-->
+<!--                        <li>Gestion des sessions utilisateur</li>-->
+<!--                        <li>Contrôle d'accès selon les rôles</li>-->
+<!--                    </ul>-->
 
-                    <h4>4. Interface Utilisateur</h4>
+                    <h4>2. Interface Utilisateur</h4>
                     <ul class="feature-list">
                         <li>Amélioration de l'interface en ligne de commande</li>
                         <li>Menus adaptés selon le niveau d'habilitation</li>
@@ -294,10 +186,10 @@
                         <p style="color: #666; font-style: italic; font-size: 1.2rem;">[Insérez une capture de la gestion des employés]</p>
                     </div>
 
-                    <div style="margin: 20px 0;">
-                        <h4>Authentification</h4>
-                        <p style="color: #666; font-style: italic; font-size: 1.2rem;">[Insérez une capture de l'écran de connexion]</p>
-                    </div>
+<!--                    <div style="margin: 20px 0;">-->
+<!--                        <h4>Authentification</h4>-->
+<!--                        <p style="color: #666; font-style: italic; font-size: 1.2rem;">[Insérez une capture de l'écran de connexion]</p>-->
+<!--                    </div>-->
                 </div>
             </div>
         </div>
@@ -316,7 +208,7 @@
                     <div class="text-center">
                         <span class="tech-badge">Java</span>
                         <span class="tech-badge">JDBC</span>
-                        <span class="tech-badge">MySQL / PostgreSQL</span>
+                        <span class="tech-badge">MySQL</span>
                         <span class="tech-badge">Architecture 3-tiers</span>
                         <span class="tech-badge">Eclipse IDE</span>
                         <span class="tech-badge">Git / GitHub</span>
@@ -327,7 +219,7 @@
                         <ul class="feature-list">
                             <li><strong>Couche Présentation :</strong> Interface en ligne de commande pour l'interaction utilisateur</li>
                             <li><strong>Couche Métier :</strong> Logique applicative et règles de gestion</li>
-                            <li><strong>Couche Données :</strong> Accès à la base de données via DAO</li>
+<!--                            <li><strong>Couche Données :</strong> Accès à la base de données via DAO</li>-->
                         </ul>
                     </div>
                 </div>
@@ -335,7 +227,7 @@
                 <div class="project-section">
                     <h3>📚 Ressources et Documentation</h3>
                     <div class="text-center">
-                        <a href="#" class="github-link" target="_blank">
+                        <a href="https://github.com/ImOriane/personnel/tree/master/Personnel" class="github-link" target="_blank">
                             <span class="material-symbols-outlined" style="vertical-align: middle;">code</span>
                             Voir le Code Source
                         </a>
@@ -344,9 +236,6 @@
                             Documentation Technique
                         </a>
                     </div>
-                    <p class="text-center" style="margin-top: 20px; font-style: italic; color: #999; font-size: 1.2rem;">
-                        (Remplacez les liens ci-dessus par vos liens GitHub réels)
-                    </p>
                 </div>
 
                 <div class="project-section">
@@ -354,7 +243,7 @@
                     <ul class="feature-list">
                         <li>Conception et modélisation de bases de données</li>
                         <li>Programmation orientée objet en Java</li>
-                        <li>Implémentation du pattern DAO</li>
+<!--                        <li>Implémentation du pattern DAO</li>-->
                         <li>Gestion de la sécurité et des habilitations</li>
                         <li>Architecture logicielle 3-tiers</li>
                         <li>Travail sur code existant et refactoring</li>
@@ -374,12 +263,12 @@
             <div class="w32 wm100 contact">
                 <span class="material-symbols-outlined icon">mail</span>
                 <span class="label">E-Mail</span>
-                <span class="value">axelalmeidarosa@gmail.com</span>
+                <span class="value"></span>
             </div>
             <div class="w32 wm100 contact">
                 <span class="material-symbols-outlined">call</span>
                 <span class="label">Téléphone</span>
-                <span class="value">07.86.89.58.90</span>
+                <span class="value"></span>
             </div>
             <div class="w32 wm100 contact">
                 <span class="material-symbols-outlined">account_box</span>
