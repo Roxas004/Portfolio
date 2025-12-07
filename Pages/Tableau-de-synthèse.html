@@ -1,103 +1,634 @@
 <!DOCTYPE html>
 <html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tableau de synthèse</title>
+    <link rel="shortcut icon" type="png" href="../img/Layout/portfolio-logo-64.png" />
+    <meta name="description" content="Mon tableau de synthèse BTS SIO" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <head>
-        <!-- Spécifie l'encodage des caractères en UTF-8 -->
-        <meta charset="utf-8" />
-        <!-- Configure l'affichage pour une bonne adaptation sur les écrans mobiles -->
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <!-- Titre de la page -->
-        <title>Tableau de synthèse</title>
-        <!-- icon de la page -->
-        <link rel="shortcut icon" type="png" href="../img/Layout/portfolio-logo-64.png" />
-        <!-- Balise de description pour le SEO -->
-        <meta name="description" content="Ceci est mon portfolio étudiant" />
-        <!-- Lien vers la police Material Symbols pour les icônes -->
-        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-        <!-- Lien vers la feuille de style CSS du portfolio -->
-        <link rel="stylesheet" href="../styles/styles.css" type="text/css">
-    </head>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f5f5f5;
+        }
 
-    <body>
-        <!-- En-tête de la page avec le logo et le menu de navigation -->
-        <header>
-            <div class="boxed">
-                <div class="flex aligncenter space-between">
-                    <!-- Bouton du menu pour la version mobile -->
-                    <button onclick="openMenu()" class="header-menu-mobile">
-                        <span class="material-symbols-outlined">menu</span>
-                    </button>
-                    <!-- Logo avec lien vers l'accueil -->
-                    <a href="../index.html" class="header-logo">
-                        <img src="../img/Layout/portfolio-logo.png" alt="Logo du portfolio">
-                    </a>
-                    <!-- Menu de navigation principal -->
-                    <ul class="header-menu">
-                        <li><a href="#accueil">Accueil</a></li>
-                        <li><a href="#Tableau-de-synthèse">Tableau de synthèse</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>                    
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            z-index: 999;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .boxed {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .aligncenter {
+            align-items: center;
+        }
+
+        .space-between {
+            justify-content: space-between;
+        }
+
+        .header-logo img {
+            width: 90px;
+            height: auto;
+        }
+
+        .header-menu {
+            display: flex;
+            list-style: none;
+            gap: 10px;
+        }
+
+        .header-menu li a {
+            text-decoration: none;
+            color: #000;
+            padding: 10px 20px;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+        }
+
+        .header-menu li a:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .header-menu-mobile {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 2rem;
+        }
+
+        /* Hero Section */
+        .slider {
+            width: 100%;
+            min-height: 60vh;
+            background: #000;
+            position: relative;
+            margin-top: 70px;
+        }
+
+        .slider-background {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(30%);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .slider-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 2;
+        }
+
+        .slider-content h1 {
+            color: #fff;
+            font-size: 4rem;
+            margin-bottom: 10px;
+        }
+
+        .slider-content p {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 300;
+        }
+
+        /* Section */
+        .section {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #000;
+        }
+
+        .section-intro {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        /* Tableau Card */
+        .tableau-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .tableau-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            margin-bottom: 40px;
+        }
+
+        .tableau-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.15);
+        }
+
+        .tableau-image-container {
+            width: 100%;
+            background: #f9f9f9;
+            padding: 20px;
+            border-bottom: 3px solid #000;
+        }
+
+        .tableau-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            border-radius: 8px;
+        }
+
+        .tableau-image:hover {
+            transform: scale(1.02);
+        }
+
+        .tableau-info {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .tableau-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #000;
+        }
+
+        .tableau-info p {
+            font-size: 1.1rem;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            background: #000;
+            color: #fff;
+            transform: translateY(-3px);
+        }
+
+        .feature-item .material-symbols-outlined {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .feature-item h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        /* Download Button */
+        .download-section {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .download-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 40px;
+            background-color: #000;
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .download-button:hover {
+            background-color: #333;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .download-button .material-symbols-outlined {
+            font-size: 1.5rem;
+        }
+
+        /* Info Cards */
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 60px;
+        }
+
+        .info-card {
+            background: #f9f9f9;
+            border-radius: 12px;
+            padding: 30px;
+            border-left: 4px solid #000;
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            background: #fff;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transform: translateX(5px);
+        }
+
+        .info-card h4 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-card h4 .material-symbols-outlined {
+            font-size: 1.8rem;
+        }
+
+        .info-card p {
+            color: #666;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .info-card ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 15px;
+        }
+
+        .info-card ul li {
+            padding: 8px 0;
+            color: #666;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-card ul li:before {
+            content: "→";
+            font-weight: bold;
+            color: #000;
+        }
+
+        /* Contact Section */
+        .section.dark {
+            background: #000;
+            color: #fff;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .contact-item {
+            border: 2px dashed #fff;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            border-style: solid;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .contact-item .material-symbols-outlined {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .contact-item .label {
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+
+        .contact-item .value {
+            font-size: 1rem;
+            color: #ccc;
+        }
+
+        .contact-item a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Navigation Buttons */
+        .navigation-buttons {
+            text-align: center;
+            margin-top: 40px;
+            padding: 30px 0;
+            background-color: #f9f9f9;
+            border-top: 2px solid #ddd;
+        }
+
+        .navigation-buttons button {
+            padding: 15px 30px;
+            margin: 0 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+            background-color: #000;
+            border: 2px solid #000;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .navigation-buttons button:hover {
+            background-color: #fff;
+            color: #000;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Responsive */
+        @media(max-width: 810px) {
+            .header-menu {
+                display: none;
+            }
+
+            .header-menu-mobile {
+                display: block;
+            }
+
+            .slider-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .tableau-info {
+                padding: 25px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .info-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .navigation-buttons button {
+                display: block;
+                width: 90%;
+                margin: 10px auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<header>
+    <div class="boxed">
+        <div class="flex aligncenter space-between">
+            <button onclick="openMenu()" class="header-menu-mobile">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            <a href="../index.html" class="header-logo">
+                <img src="../img/Layout/portfolio-logo.png" alt="Logo du portfolio">
+            </a>
+            <ul class="header-menu">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="#Tableau-de-synthèse">Tableau de synthèse</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<div id="accueil" class="slider">
+    <img src="../img/Layout/slider.jpg" class="slider-background" alt="Image de fond">
+    <div class="slider-content">
+        <h1>Rosa Axel</h1>
+        <p>Étudiant en BTS SIO</p>
+    </div>
+</div>
+
+<div id="Tableau-de-synthèse" class="section">
+    <div class="boxed">
+        <h2>Mon Tableau de Synthèse</h2>
+        <p class="section-intro">
+            Ce tableau récapitule l'ensemble de mes compétences, projets et réalisations effectués
+            durant ma formation en BTS SIO option SLAM. Il permet d'avoir une vue d'ensemble claire
+            de mon parcours académique et professionnel.
+        </p>
+
+        <div class="tableau-container">
+            <div class="tableau-card">
+                <div class="tableau-image-container">
+                    <img src="../img/Tableau-synthese/Tableau-de-synthèse.jpg"
+                         alt="Tableau de synthèse"
+                         class="tableau-image"
+                         onclick="window.open(this.src, '_blank')">
                 </div>
-            </div>
-        </header>
+                <div class="tableau-info">
+                    <h3>Vue d'ensemble de ma formation</h3>
+                    <p>
+                        Ce document présente de manière structurée mes compétences techniques,
+                        mes projets réalisés, ainsi que mes stages et expériences professionnelles.
+                    </p>
 
-        <!-- Section d'accueil avec image de fond et texte -->
-        <div id="accueil" class="slider">
-            <img src="../img/Layout/slider.jpg" class="slider-background" alt="Image de fond">
-            <div class="slider-content">
-                <h1>Rosa Axel</h1>
-                <p>Étudiant en BTS SIO</p>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <span class="material-symbols-outlined">code</span>
+                            <h4>Compétences techniques</h4>
+                        </div>
+                        <div class="feature-item">
+                            <span class="material-symbols-outlined">folder</span>
+                            <h4>Projets réalisés</h4>
+                        </div>
+                        <div class="feature-item">
+                            <span class="material-symbols-outlined">work</span>
+                            <h4>Expériences pro</h4>
+                        </div>
+                    </div>
+
+                    <div class="download-section">
+                        <a href="../A%20garder/Tableau-de-synthèse.pdf"
+                           class="download-button"
+                           target="_blank"
+                          ><!-- download="Tableau-de-synthèse.pdf"-->
+                            <span class="material-symbols-outlined">download</span>
+                            Télécharger le tableau
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Section 'Réalisations' avec projets sous forme de cartes -->
-        <div id="Tableau-de-synthèse" class="section">
-            <div class="boxed text-center">
-                <h2>Mon Tableau de synthèse</h2>
-                <div class="flex" style="justify-content: center">
-                    <div >                        
-                        <img class="Tableau" src="../img/Tableau-synthese/Tableau-de-synthèse.jpg" alt="Tableau de synthèse">
-                    </div>                    
-                </div>
-                <div>
-                    <p>Vous pouvez retrouver ici le lien de mon Tableau de synthèse :</p><br><br>
-                    <!-- Lien de téléchargement du CV avec classe de bouton stylisé -->
-                    <a href="../A%20garder/Tableau-de-synthèse.pdf" class="download-button" download="Tableau-de-synthèse.pdf">Télécharger</a>
-                </div>
+        <div class="info-cards">
+            <div class="info-card">
+                <h4>
+                    <span class="material-symbols-outlined">info</span>
+                    Pourquoi ce tableau ?
+                </h4>
+                <p>
+                    Le tableau de synthèse est un document essentiel du BTS SIO qui permet de
+                    présenter de manière organisée l'ensemble de mes apprentissages et réalisations
+                    durant ma formation.
+                </p>
+            </div>
+
+            <div class="info-card">
+                <h4>
+                    <span class="material-symbols-outlined">checklist</span>
+                    Contenu du tableau
+                </h4>
+                <ul>
+                    <li>Compétences développées</li>
+                    <li>Projets scolaires et personnels</li>
+                    <li>Stages et expériences</li>
+                    <li>Technologies maîtrisées</li>
+                </ul>
+            </div>
+
+            <div class="info-card">
+                <h4>
+                    <span class="material-symbols-outlined">trending_up</span>
+                    Mon évolution
+                </h4>
+                <p>
+                    Ce document témoigne de ma progression tout au long de ma formation,
+                    montrant l'acquisition progressive de compétences techniques et
+                    professionnelles solides.
+                </p>
             </div>
         </div>
+    </div>
+</div>
 
-        <!-- Section de contact avec informations et icônes -->
-        <div id="contact" class="section dark">
-            <div class="boxed text-center">
-                <h2>Contactez-moi</h2>
-                <div class="flex toColumn space-between mgap20">
-                    <div class="w32 wm100 contact">
-                        <span class="material-symbols-outlined icon">mail</span>
-                        <span class="label">E-Mail</span>
-                        <span class="value"></span>
-                    </div>
-                    <div class="w32 wm100 contact">
-                        <span class="material-symbols-outlined">call</span>
-                        <span class="label">Téléphone</span>
-                        <span class="value"></span>
-                    </div>
-                    <div class="w32 wm100 contact">
-                        <span class="material-symbols-outlined">account_box</span>
-                        <span class="label">GitHub</span>
-                        <a href="https://github.com/Roxas004"><span class="value">https://github.com/Roxas004</span></a>                        
-                    </div>
-                </div>
+<div id="contact" class="section dark">
+    <div class="boxed">
+        <h2>Contactez-moi</h2>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <span class="material-symbols-outlined">mail</span>
+                <span class="label">E-Mail</span>
+                <span class="value">contact@example.com</span>
             </div>
-        </div> 
-        
-        <div class="navigation-buttons">
-            <button onclick="location.href='../index.html'">Accueil</button>
-            <button onclick="location.href='SLAM.html'">Compétence</button>
-            <button onclick="location.href='veille technologique.html'">Veille</button>
+            <div class="contact-item">
+                <span class="material-symbols-outlined">call</span>
+                <span class="label">Téléphone</span>
+                <span class="label">XX.XX.XX.XX.XX</span>
+            </div>
+            <div class="contact-item">
+                <span class="material-symbols-outlined">account_box</span>
+                <span class="label">GitHub</span>
+                <a href="https://github.com/Roxas004">
+                    <span class="value">github.com/Roxas004</span>
+                </a>
+            </div>
         </div>
-    </body>
+    </div>
+</div>
 
-    <!-- Inclusion du fichier JavaScript pour la logique de la page -->
-    <script src="../js/app.js"></script>
+<div class="navigation-buttons">
+    <button onclick="location.href='../index.html'">Accueil</button>
+    <button onclick="location.href='SLAM.html'">Compétences</button>
+    <button onclick="location.href='veille technologique.html'">Veille Technologique</button>
+</div>
+
+<script>
+    const openMenu = () => {
+        const menu = document.querySelector('.header-menu');
+        menu.classList.toggle("active");
+
+        if (menu.classList.contains("active")) {
+            document.querySelector("header .material-symbols-outlined").innerHTML = "close";
+        } else {
+            document.querySelector("header .material-symbols-outlined").innerHTML = "menu";
+        }
+    }
+
+    document.querySelectorAll('.header-menu a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            if (this.getAttribute('href').startsWith('#')) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                const offset = -80;
+                const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+                const offsetPosition = elementPosition + offset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+</body>
 </html>

@@ -1,238 +1,641 @@
 <!DOCTYPE html>
 <html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mon portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <head>
-        <!-- Spécifie l'encodage des caractères en UTF-8 -->
-        <meta charset="utf-8" />
-        <!-- Configure l'affichage pour une bonne adaptation sur les écrans mobiles -->
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <!-- Titre de la page -->
-        <title>Mon portfolio</title>
-        <!-- icon de la page -->
-        <link rel="shortcut icon" type="png" href="img/Layout/portfolio-logo-64.png" />
-        <!-- Balise de description pour le SEO -->
-        <meta name="description" content="Ceci est mon portfolio étudiant" />
-        <!-- Lien vers la police Material Symbols pour les icônes -->
-        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-        <!-- Lien vers la feuille de style CSS du portfolio -->
-        <link rel="stylesheet" href="styles/styles.css" type="text/css">
-    </head>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
 
+        /* Header styles */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: #fff;
+            z-index: 999;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
 
-    <body>
-        <!-- En-tête de la page avec le logo et le menu de navigation -->
-        <header>
-            <div class="boxed">
-                <div class="flex aligncenter space-between">
-                    <!-- Bouton du menu pour la version mobile -->
-                    <button onclick="openMenu()" class="header-menu-mobile">
-                        <span class="material-symbols-outlined">menu</span>
-                    </button>
-                    <!-- Logo avec lien vers l'accueil -->
-                    <a href="#accueil" class="header-logo">
-                        <img src="img/Layout/portfolio-logo.png" alt="">
-                    </a>
-                    <!-- Menu de navigation principal -->
-                    <ul class="header-menu">
-                        <li><a href="#accueil">Accueil</a></li>
-                        <li><a href="#a-propos">À propos</a></li>
-                        <li><a href="#CV">Curriculum Vitæ</a></li>
-                        <li><a href="#competences">Compétences</a></li>
-                        <li><a href="#Tableau-de-synthèse">Tableau de synthèse</a></li>
-                        <li><a href="#veille-technologique">Veille technologique</a></li>
-                        <li><a href="#realisations">Projets</a></li>
-                        <li><a href="#Stage">Stages</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>                    
-                </div>
-            </div>
-        </header>
+        .boxed {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
 
-        <!-- Section d'accueil avec image de fond et texte -->
-        <div id="accueil" class="slider">
-            <img src="img/Layout/slider.jpg" class="slider-background">
-            <div class="slider-content">
-                <h1>Rosa Axel</h1>
-                <p>Etudiant en BTS SIO</p>
+        .flex {
+            display: flex;
+        }
+
+        .aligncenter {
+            align-items: center;
+        }
+
+        .space-between {
+            justify-content: space-between;
+        }
+
+        .header-logo img {
+            width: 90px;
+            height: auto;
+        }
+
+        .header-menu {
+            display: flex;
+            list-style: none;
+            gap: 10px;
+        }
+
+        .header-menu li a {
+            text-decoration: none;
+            color: #000;
+            padding: 10px 20px;
+            transition: all 0.3s ease;
+            border-radius: 5px;
+        }
+
+        .header-menu li a:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .header-menu-mobile {
+            display: none;
+        }
+
+        /* Hero Section */
+        .slider {
+            width: 100%;
+            min-height: 80vh;
+            background: #000;
+            position: relative;
+            margin-top: 70px;
+        }
+
+        .slider-background {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(30%);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .slider-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 2;
+        }
+
+        .slider-content h1 {
+            color: #fff;
+            font-size: 5rem;
+            margin-bottom: 10px;
+        }
+
+        .slider-content p {
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 300;
+        }
+
+        /* Section styles */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section.dark {
+            background: #000;
+            color: #fff;
+        }
+
+        .section h2 {
+            font-size: 2.75rem;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+
+        /* Improved Cards Grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .info-card {
+            background: #fff;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .dark .info-card {
+            background: #1a1a1a;
+        }
+
+        .info-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-image img {
+            width: 80%;
+            height: 80%;
+            object-fit: contain;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #000;
+        }
+
+        .dark .card-title {
+            color: #fff;
+        }
+
+        .card-description {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .dark .card-description {
+            color: #ccc;
+        }
+
+        .card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            color: #000;
+            font-weight: 600;
+            text-decoration: none;
+            transition: gap 0.3s ease;
+        }
+
+        .dark .card-link {
+            color: #fff;
+        }
+
+        .card-link:hover {
+            gap: 10px;
+        }
+
+        .color-band {
+            height: 5px;
+            background: linear-gradient(to right, #000, #666);
+            width: 100%;
+        }
+
+        /* About section */
+        .about-content {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        /* CV Section */
+        .cv-section {
+            text-align: center;
+        }
+
+        .download-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: #000;
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .download-button:hover {
+            background-color: #333;
+            transform: scale(1.05);
+        }
+
+        /* Projects section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .project-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            background: #f9f9f9;
+        }
+
+        .project-info {
+            padding: 20px;
+        }
+
+        .project-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #000;
+        }
+
+        .project-info a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Contact section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .contact-item {
+            border: 2px dashed #fff;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            border-style: solid;
+            background: rgba(255,255,255,0.05);
+        }
+
+        .contact-item .material-symbols-outlined {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 15px;
+        }
+
+        .contact-item .label {
+            font-weight: 700;
+            text-transform: uppercase;
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+
+        .contact-item .value {
+            font-size: 1rem;
+            color: #ccc;
+        }
+
+        .contact-item a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media(max-width: 810px) {
+            .header-menu {
+                display: none;
+            }
+
+            .header-menu-mobile {
+                display: block;
+                background: none;
+                border: none;
+                font-size: 2rem;
+            }
+
+            .slider-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .slider-content p {
+                font-size: 1.3rem;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-text h2 {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<header>
+    <div class="boxed">
+        <div class="flex aligncenter space-between">
+            <button onclick="openMenu()" class="header-menu-mobile">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            <a href="#accueil" class="header-logo">
+                <img src="img/Layout/portfolio-logo.png" alt="Logo">
+            </a>
+            <ul class="header-menu">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#a-propos">À propos</a></li>
+                <li><a href="#CV">CV</a></li>
+                <li><a href="#competences">Compétences • Synthèse • Veille</a></li>
+                <li><a href="#realisations">Projets</a></li>
+                <li><a href="#Stage">Stages</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<div id="accueil" class="slider">
+    <img src="img/Layout/slider.jpg" class="slider-background" alt="Background">
+    <div class="slider-content">
+        <h1>Rosa Axel</h1>
+        <p>Étudiant en BTS SIO</p>
+    </div>
+</div>
+
+<div id="a-propos" class="section">
+    <div class="boxed">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>À propos de moi</h2>
+                <p>
+                    Étudiant en BTS Services Informatiques aux Organisations (SIO),
+                    je me passionne pour le domaine de l'informatique et des technologies.
+                    Mon parcours me permet de développer des compétences solides en programmation,
+                    gestion de bases de données et conception de systèmes d'information.
+                    Grâce aux projets qui naîtront durant mes études,
+                    je vais acquérir une compréhension approfondie des outils et langages utilisés dans le secteur,
+                    tout en développant des solutions adaptées aux besoins des utilisateurs.
+                </p>
             </div>
         </div>
+    </div>
+</div>
 
-        <!-- Section 'À propos' avec texte descriptif -->
-        <div id="a-propos" class="section">
-            <div class="boxed">
-                <div class="flex toColumn mCenter">
-                    <div class="w40 wm100">
-                        <h2>A propos de moi</h2>                        
+<div class="color-band"></div>
+
+<div id="CV" class="section cv-section">
+    <div class="boxed">
+        <h2>Mon Curriculum Vitæ</h2>
+        <p>Découvrez mon parcours et mes expériences professionnelles</p>
+        <a href="A%20garder/CV%20Etudiant%20BTS%20Axel.pdf" class="download-button" target="_blank" ><!--download="CV Etudiant BTS Axel.pdf"-->
+            Télécharger mon CV
+        </a>
+    </div>
+</div>
+
+<div id="competences" class="section dark">
+    <div class="boxed">
+        <h2>Compétences • Synthèse • Veille</h2>
+        <div class="cards-grid">
+            <a href="Pages/SLAM.html" style="text-decoration: none;">
+                <div class="info-card">
+                    <div class="card-image">
+                        <img src="img/Accueil/SLAM-logo.png" alt="Compétences SLAM">
                     </div>
-                    <div class="w60 wm100">
-                        <p> Étudiant en BTS Services Informatiques aux Organisations (SIO),
-                            je me passionne pour le domaine de l'informatique et des technologies.
-                            Mon parcours me permet de développer des compétences solides en programmation,
-                            gestion de bases de données et conception de systèmes d'information.
-                            Grâce aux projets qui naîtront durant mes études,
-                            je vais acquérir une compréhension approfondie des outils et langages utilisés dans le secteur,
-                            tout en développant des solutions adaptées aux besoins des utilisateurs.
-                            Mon objectif est d'élargir mon expertise technique et
-                            de m'intégrer dans un environnement professionnel où je pourrai continuer à apprendre et à contribuer activement.
+                    <div class="card-content">
+                        <h3 class="card-title">Compétences SLAM</h3>
+                        <p class="card-description">
+                            Découvrez mes compétences en développement : HTML/CSS, PHP, Java, Python, et bien plus encore.
                         </p>
+                        <span class="card-link">
+                                Voir mes compétences
+                                <span class="material-symbols-outlined">arrow_forward</span>
+                            </span>
                     </div>
                 </div>
+            </a>
+
+            <a href="Pages/Tableau-de-synthèse.html" style="text-decoration: none;">
+                <div class="info-card">
+                    <div class="card-image">
+                        <img src="img/Accueil/Tableau-de-synthèse-logo.png" alt="Tableau de synthèse">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Tableau de Synthèse</h3>
+                        <p class="card-description">
+                            Consultez mon tableau récapitulatif de mes compétences et réalisations tout au long de ma formation.
+                        </p>
+                        <span class="card-link">
+                                Consulter le tableau
+                                <span class="material-symbols-outlined">arrow_forward</span>
+                            </span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="Pages/veille%20technologique.html" style="text-decoration: none;">
+                <div class="info-card">
+                    <div class="card-image">
+                        <img src="img/Veille/IA.png" alt="Veille technologique">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Veille Technologique</h3>
+                        <p class="card-description">
+                            Explorez ma veille sur l'Intelligence Artificielle au service du développement logiciel.
+                        </p>
+                        <span class="card-link">
+                                Découvrir ma veille
+                                <span class="material-symbols-outlined">arrow_forward</span>
+                            </span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div id="realisations" class="section">
+    <div class="boxed">
+        <h2>Mes Réalisations</h2>
+
+        <h3 style="font-size: 2rem; margin: 40px 0 30px; text-align: left;">Projets de Cours</h3>
+        <div class="projects-grid">
+            <div class="project-card">
+                <a href="Pages/Portfolio.html">
+                    <img src="img/Layout/portfolio-logo.png" alt="Portfolio">
+                    <div class="project-info">
+                        <h3>Portfolio</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="project-card">
+                <a href="Pages/PersonnelApp.html">
+                    <img src="img/Projet/Projet_scolaire/P2/Java.png" alt="Application Personnel">
+                    <div class="project-info">
+                        <h3>Application Personnel</h3>
+                    </div>
+                </a>
+            </div>
+            <div class="project-card">
+                <a href="">
+                    <img src="/" alt="Parking" style="background: #ddd;">
+                    <div class="project-info">
+                        <h3>Parking (à venir)</h3>
+                    </div>
+                </a>
             </div>
         </div>
+    </div>
+</div>
 
-        <div class="color-band"></div>
+<div class="color-band"></div>
 
-        <!-- Section 'À propos' avec lien de téléchargement de CV -->
-        <div id="CV" class="section">
-            <div class="boxed">
-                <div class="flex toColumn mCenter">
-                    <div class="w40 wm100">
-                        <h2>Mon Curriculum Vitæ</h2>                        
+<div id="Stage" class="section">
+    <div class="boxed">
+        <h2>Mes Stages</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <a href="Pages/legolas.html">
+                    <img src="img/Accueil/legolas.png" alt="Stage 1">
+                    <div class="project-info">
+                        <h3>Stage n°1 - Ekino</h3>
                     </div>
-                    <div>
-                        <p>Vous pouvez retrouver ici le lien de mon Curriculum Vitæ :</p><br><br>
-
-                        <!-- Lien de téléchargement du CV avec classe de bouton stylisé -->
-                        <a href="A%20garder/CV%20Etudiant%20BTS%20Axel.pdf" class="download-button" download="CV Etudiant BTS Axel.pdf">Télécharger mon CV</a>
+                </a>
+            </div>
+            <div class="project-card">
+                <a href="">
+                    <img src="/" alt="Stage 2" style="background: #ddd;">
+                    <div class="project-info">
+                        <h3>Stage n°2 (à venir)</h3>
                     </div>
-                </div>
+                </a>
             </div>
         </div>
+    </div>
+</div>
 
-        <!-- Section 'Compétences' avec icônes et titres -->
-        <div id="competences" class="section dark">
-            <div class="boxed text-center">
-                <h2>Découvrez mes compétences</h2>
-                <div class="flex toColumn gap20" style="justify-content: center">
-                    <div class="w25 wm100 skill">
-                        <a href="Pages/SLAM.html">
-                            <img src="img/Accueil/SLAM-logo.png">
-                            
-                        </a>                                                 
-                    </div>                  
-                </div>                      
+<div id="contact" class="section dark">
+    <div class="boxed">
+        <h2>Contactez-moi</h2>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <span class="material-symbols-outlined">mail</span>
+                <span class="label">E-Mail</span>
+                <span class="value">contact@example.com</span>
+            </div>
+            <div class="contact-item">
+                <span class="material-symbols-outlined">call</span>
+                <span class="label">Téléphone</span>
+                <span class="value">XX.XX.XX.XX.XX</span>
+            </div>
+            <div class="contact-item">
+                <span class="material-symbols-outlined">account_box</span>
+                <span class="label">GitHub</span>
+                <a href="https://github.com/Roxas004">
+                    <span class="value">github.com/Roxas004</span>
+                </a>
             </div>
         </div>
+    </div>
+</div>
 
-       <!-- Section 'Tableau-de-synthèse' avec icônes et titres -->
-       <div id="Tableau-de-synthèse" class="section">
-            <div class="boxed text-center">
-                <h2>Découvrez mon Tableau de synthèse</h2>
-                <div class="flex" style="justify-content: center">
-                    <div class="w25 wm100 synthèse Tableau-de-synthèse">
-                        <a href="Pages/Tableau-de-synthèse.html">
-                            <img src="img/Accueil/Tableau-de-synthèse-logo.png">
-                        </a>                                                 
-                    </div>                   
-                </div>
-            </div>
-       </div>
+<script>
+    const openMenu = () => {
+        const menu = document.querySelector('.header-menu');
+        menu.classList.toggle("active");
 
-        <!-- Section 'Veille-technologique' avec icônes et titres -->
-        <div id="veille-technologique" class="section dark">
-            <div class="boxed text-center">
-                <h2>Découvrez ma veille technologique</h2>
-                <div class="flex" style="justify-content: center">
-                    <div class="w25 wm100 veille veille-technologique">
-                        <a href="Pages/veille%20technologique.html">
-                            <img src="img/Veille/IA.png">
-                        </a>                                                 
-                    </div>                   
-                </div>                      
-            </div>
-        </div>
+        if (menu.classList.contains("active")) {
+            document.querySelector("header .material-symbols-outlined").innerHTML = "close";
+        } else {
+            document.querySelector("header .material-symbols-outlined").innerHTML = "menu";
+        }
+    }
 
+    document.querySelectorAll('.header-menu a, .header-logo').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            if (this.getAttribute('href').startsWith('#')) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                const offset = -80;
+                const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+                const offsetPosition = elementPosition + offset;
 
-        <!-- Section 'Réalisations' avec projets segmentés -->
-        <div id="realisations" class="section">
-            <div class="boxed text-center">
-                <h2>Mes réalisations</h2>
-
-                <!-- Projets de Cours -->
-                <div class="realisations-category">
-                    <h3 class="category-title">Projets de Cours</h3>
-                    <div class="flex wrap gap20 space-between">
-                        <div class="w32 wm47 realisations">
-                            <a href="Pages/Portfolio.html">
-                                <img src="img/Layout/portfolio-logo.png" alt="Portfolio">
-                                <h3>Portfolio</h3>
-                            </a>
-                        </div>
-                        <div class="w32 wm47 realisations">
-                            <a href="Pages/PersonnelApp.html">
-                                <img class="img" src="img/Projet/Projet_scolaire/P2/Java.png" alt="Application java">
-                                <h3>Personnel</h3>
-                            </a>
-                        </div>
-                        <div class="w32 wm47 realisations">
-                            <a href="">
-                                <img src="/" alt="Parking">
-                                <h3>Parking</h3>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="color-band" style="margin: 50px 0;"></div>
-
-                <!-- Projets Professionnels -->
-                <div class="realisations-category">
-                    <h3 class="category-title">Projets personnels</h3>
-                    <div class="flex wrap gap20 space-between">
-                        <!-- Ajoutez d'autres projets personnels ici -->
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="color-band"></div>
-
-        <!-- Section 'Tableau-de-synthèse' avec icônes et titres -->
-        <div id="Stage" class="section">
-            <div class="boxed text-center">
-                <h2>Découvrez mes Stages </h2>
-                <div class="flex wrap gap20 space-between">
-                    <div class="w32 wm47 stage">
-                        <a href="Pages/legolas.html">
-                            <img src="img/Accueil/legolas.png">
-                            <h3>Stage n°1</h3>
-                        </a>
-                    </div>
-                    <div class="w32 wm47 stage">
-                        <a href="">
-                            <img class="img" src="/">
-                            <h3>Stage n°2</h3>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Section de contact avec informations et icônes -->
-        <div id="contact" class="section dark">
-            <div class="boxed text-center">
-                <h2>Contactez-moi</h2>
-                <div class="flex toColumn space-between mgap20">
-                    <div class="w32 wm100 contact">
-                        <span class="material-symbols-outlined icon">mail</span>
-                        <span class="label">E-Mail</span>
-                        <span class="value"></span>
-                    </div>
-                    <div class="w32 wm100 contact">
-                        <span class="material-symbols-outlined">call</span>
-                        <span class="label">Téléphone</span>
-                        <span class="value"></span>
-                    </div>
-                    <div class="w32 wm100 contact">
-                        <span class="material-symbols-outlined">account_box</span>
-                        <span class="label">Github</span>
-                        <a href="https://github.com/Roxas004"><span class="value">https://github.com/Roxas004</span></a>                        
-                    </div>
-                </div>
-            </div>
-        </div>   
-    </body>
-
-    <!-- Inclusion du fichier JavaScript pour la logique de la page -->
-    <script src="js/app.js"></script>  
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+</body>
 </html>
