@@ -1,208 +1,426 @@
 <!DOCTYPE html>
 <html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Veille Technologique - IA & Développement</title>
+    <link rel="shortcut icon" type="png" href="../img/Layout/portfolio-logo-64.png" />
+    <meta name="description" content="Ma veille technologique sur l'Intelligence Artificielle au service du développement" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/veille.css" type="text/css">
+</head>
 
-    <head>
-        <!-- Spécifie l'encodage des caractères en UTF-8 -->
-        <meta charset="utf-8" />
-        <!-- Configure l'affichage pour une bonne adaptation sur les écrans mobiles -->
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <!-- Titre de la page -->
-        <title>Veille technologique</title>
-        <!-- icon de la page -->
-        <link rel="shortcut icon" type="png" href="../img/Layout/portfolio-logo-64.png" />
-        <!-- Balise de description pour le SEO -->
-        <meta name="description" content="Ceci est mon portfolio étudiant" />
-        <!-- Lien vers la police Material Symbols pour les icônes -->
-        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-        <!-- Lien vers la feuille de style CSS du portfolio -->
-        <link rel="stylesheet" href="../styles/styles.css" type="text/css">
-    </head>
+<body>
+<header>
+    <div class="boxed">
+        <div class="flex aligncenter space-between">
+            <button onclick="openMenu()" class="header-menu-mobile">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            <a href="../index.html" class="header-logo">
+                <img src="../img/Layout/portfolio-logo.png" alt="Logo du portfolio">
+            </a>
+            <ul class="header-menu">
+                <li><a href="../index.html">Accueil</a></li>
+                <li><a href="#definition">Définition</a></li>
+                <li><a href="#outils">Mes Outils</a></li>
+                <li><a href="#processus">Processus</a></li>
+                <li><a href="#resultats">Résultats</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
 
-    <body>
-        <!-- En-tête de la page avec le logo et le menu de navigation -->
-        <header>
-            <div class="boxed">
-                <div class="flex aligncenter space-between">
-                    <!-- Bouton du menu pour la version mobile -->
-                    <button onclick="openMenu()" class="header-menu-mobile">
-                        <span class="material-symbols-outlined">menu</span>
-                    </button>
-                    <!-- Logo avec lien vers l'accueil -->
-                    <a href="../index.html" class="header-logo">
-                        <img src="../img/Layout/portfolio-logo.png" alt="Logo du portfolio">
-                    </a>
-                    <!-- Menu de navigation principal -->
-                    <ul class="header-menu">
-                        <li><a href="#accueil">Accueil</a></li>
-                        <li><a href="#veille-technologique">Veille technologique</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>                    
+<div class="slider">
+    <div class="slider-content">
+        <h1>Veille Technologique</h1>
+        <p>Intelligence Artificielle au Service du Développement</p>
+        <p class="subtitle">Une veille active et structurée pour rester à la pointe de l'innovation</p>
+    </div>
+</div>
+
+<!-- Définition -->
+<div id="definition" class="section">
+    <div class="boxed">
+        <h2>Qu'est-ce qu'une Veille Technologique ?</h2>
+        <p class="section-intro">
+            Selon <strong>Steven C. Wheelwright</strong>, professeur émérite de l'université de Harvard :
+            <em>"La veille technologique est constituée par l'ensemble des techniques visant à organiser
+                de façon systématique la collecte, l'analyse, la diffusion et l'exploitation des informations
+                techniques utiles à la sauvegarde et à la croissance des entreprises"</em>.
+        </p>
+        <p class="section-intro">
+            La veille technologique permet d'<strong>anticiper les changements</strong>, de détecter
+            les <strong>innovations émergentes</strong> et de maintenir un <strong>avantage compétitif</strong>
+            en étant informé des dernières évolutions techniques et scientifiques.
+        </p>
+    </div>
+</div>
+
+<!-- Ma Thématique -->
+<div class="section dark">
+    <div class="boxed">
+        <h2>Ma Thématique de Veille</h2>
+        <p class="section-intro">
+            J'ai choisi de me concentrer sur <strong>l'Intelligence Artificielle au Service du Développement Logiciel</strong>.
+        </p>
+        <p class="section-intro">
+            L'IA transforme profondément la façon dont nous concevons, développons, testons et maintenons
+            les applications. De l'assistance au code avec GitHub Copilot aux outils de debugging intelligents,
+            en passant par l'automatisation des tests, l'IA révolutionne chaque étape du cycle de développement.
+        </p>
+
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <h4>🚀 Productivité accrue</h4>
+                <p>L'IA accélère le développement en suggérant du code, en détectant les bugs et en automatisant les tâches répétitives.</p>
+            </div>
+            <div class="benefit-card">
+                <h4>🎯 Qualité améliorée</h4>
+                <p>Détection précoce des erreurs, suggestions de refactoring et analyse de code pour un code plus robuste.</p>
+            </div>
+            <div class="benefit-card">
+                <h4>💡 Innovation continue</h4>
+                <p>Découverte de nouvelles approches, patterns et technologies grâce aux outils IA émergents.</p>
+            </div>
+            <div class="benefit-card">
+                <h4>📚 Apprentissage facilité</h4>
+                <p>Explications contextuelles, documentation intelligente et aide à la résolution de problèmes complexes.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Outils de Veille -->
+<div id="outils" class="section">
+    <div class="boxed">
+        <h2>Mes Outils de Veille</h2>
+        <p class="section-intro">
+            Pour rester informé des dernières évolutions en IA et développement, j'utilise un
+            <strong>écosystème d'outils complémentaires</strong> qui me permettent de capter,
+            organiser et analyser l'information de manière efficace.
+        </p>
+
+        <div class="tools-grid">
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-icon">
+                        <span class="material-symbols-outlined">rss_feed</span>
+                    </div>
+                    <h3 class="tool-name">Feedly</h3>
+                </div>
+                <p class="tool-description">
+                    Agrégateur de flux RSS qui centralise tous mes contenus favoris en un seul endroit.
+                </p>
+                <ul class="tool-features">
+                    <li>Suivi de blogs techniques et sites spécialisés</li>
+                    <li>Organisation par catégories et tags</li>
+                    <li>Lecture centralisée et optimisée</li>
+                    <li>Suggestions de contenu pertinent</li>
+                </ul>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-icon">
+                        <span class="material-symbols-outlined">notifications_active</span>
+                    </div>
+                    <h3 class="tool-name">Google Alerts</h3>
+                </div>
+                <p class="tool-description">
+                    Notifications automatiques par email sur les mots-clés et sujets qui m'intéressent.
+                </p>
+                <ul class="tool-features">
+                    <li>Alertes personnalisées sur "IA développement"</li>
+                    <li>Suivi de termes techniques spécifiques</li>
+                    <li>Fréquence réglable (quotidienne, hebdomadaire)</li>
+                    <li>Veille sur l'actualité en temps réel</li>
+                </ul>
+            </div>
+
+            <div class="tool-card">
+                <div class="tool-header">
+                    <div class="tool-icon">
+                        <span class="material-symbols-outlined">forum</span>
+                    </div>
+                    <h3 class="tool-name">Serveurs Discord</h3>
+                </div>
+                <p class="tool-description">
+                    Communautés actives de développeurs et passionnés d'IA pour échanger et apprendre.
+                </p>
+                <ul class="tool-features">
+                    <li>Échanges avec des professionnels du secteur</li>
+                    <li>Partage de ressources et bonnes pratiques</li>
+                    <li>Annonces de nouvelles technologies</li>
+                    <li>Entraide et résolution de problèmes</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sources de Veille -->
+<div id="processus" class="section dark">
+    <div class="boxed">
+        <h2>Types de Sources Utilisées</h2>
+        <p class="section-intro">
+            Pour garantir une veille de qualité, je m'appuie sur différents types de sources
+            complémentaires qui me permettent d'avoir une vision complète et diversifiée.
+        </p>
+
+        <div class="benefits-grid">
+            <div class="benefit-card">
+                <h4>📰 Sites d'Actualités Tech</h4>
+                <p>
+                    Developpez.com, Le Monde Informatique, TechCrunch...
+                    Pour suivre l'actualité générale du secteur et les grandes tendances.
+                </p>
+            </div>
+            <div class="benefit-card">
+                <h4>📝 Blogs d'Experts</h4>
+                <p>
+                    Blogs personnels de développeurs reconnus, Medium, Dev.to...
+                    Pour des retours d'expérience concrets et tutoriels approfondis.
+                </p>
+            </div>
+            <div class="benefit-card">
+                <h4>🏢 Sites Officiels</h4>
+                <p>
+                    Documentation officielle, blogs d'entreprises tech (OpenAI, GitHub, Microsoft)...
+                    Pour les annonces de première main et guides techniques.
+                </p>
+            </div>
+            <div class="benefit-card">
+                <h4>💬 Communautés</h4>
+                <p>
+                    Serveurs Discord, Reddit, Stack Overflow...
+                    Pour échanger, poser des questions et découvrir les problématiques actuelles.
+                </p>
+            </div>
+            <div class="benefit-card">
+                <h4>🎓 Ressources Académiques</h4>
+                <p>
+                    Papers de recherche, cours en ligne, conférences...
+                    Pour comprendre les fondements théoriques et innovations émergentes.
+                </p>
+            </div>
+            <div class="benefit-card">
+                <h4>🎥 Contenus Vidéo</h4>
+                <p>
+                    YouTube (chaînes tech), tutoriels, conférences enregistrées...
+                    Pour des démonstrations visuelles et présentations d'outils.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Résultats Concrets -->
+<div id="resultats" class="section">
+    <div class="boxed">
+        <h2>Exemples de Résultats de ma Veille</h2>
+        <p class="section-intro">
+            Voici quelques exemples concrets d'informations et de découvertes issues de ma veille technologique.
+        </p>
+
+        <!-- Section Captures d'écran -->
+        <div style="margin: 50px 0;">
+            <h3 style="text-align: center; font-size: 2rem; margin-bottom: 30px;">
+                📬 Exemples de Google Alerts
+            </h3>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 30px; font-size: 1.1rem; color: #666;">
+                Google Alerts m'envoie quotidiennement des articles sur mes mots-clés. Voici un aperçu du flux
+                d'informations que je reçois et que je dois ensuite trier pour ne garder que les plus pertinents.
+            </p>
+
+            <div style="background: #f9f9f9; padding: 40px; border-radius: 15px; text-align: center;">
+                <img src="../img/Veille/Capture d'écran alerte n°1.png"
+                     alt="Exemple d'alertes Google"
+                     style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); cursor: pointer;"
+                     onclick="window.open(this.src, '_blank')">
+                <p style="margin-top: 20px; font-style: italic; color: #666;">
+                    Cliquez sur l'image pour l'agrandir
+                </p>
+            </div>
+        </div>
+
+        <!-- Section Organisation -->
+        <div style="margin: 50px 0;">
+            <h3 style="text-align: center; font-size: 2rem; margin-bottom: 30px;">
+                📌 Mon Organisation avec Pinboard
+            </h3>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 30px; font-size: 1.1rem; color: #666;">
+                Tous les articles que je juge pertinents sont sauvegardés dans mon Pinboard sur Opera GX,
+                ce qui me permet de les retrouver facilement et de les consulter ultérieurement.
+            </p>
+
+            <div style="background: #f9f9f9; padding: 40px; border-radius: 15px; text-align: center;">
+                <img src="../img/Veille/Pindboards.png"
+                     alt="Mon Pinboard de veille"
+                     style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); cursor: pointer;"
+                     onclick="window.open(this.src, '_blank')">
+                <p style="margin-top: 20px; font-style: italic; color: #666;">
+                    Cliquez sur l'image pour l'agrandir
+                </p>
+            </div>
+        </div>
+
+        <!-- Statistiques -->
+        <div style="margin: 50px 0;">
+            <h3 style="text-align: center; font-size: 2rem; margin-bottom: 40px;">
+                📊 Quelques Chiffres
+            </h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">~20</div>
+                    <div class="stat-label">Sources suivies</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">~50</div>
+                    <div class="stat-label">Articles/semaine</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Serveurs Discord</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">Daily</div>
+                    <div class="stat-label">Fréquence de veille</div>
                 </div>
             </div>
-        </header>
+        </div>
+    </div>
+</div>
 
-        <!-- Section d'accueil avec image de fond et texte -->
-        <div id="accueil" class="slider">
-            <img src="../img/Layout/slider.jpg" class="slider-background" alt="Image de fond">
-            <div class="slider-content">
-                <h1>Rosa Axel</h1>
-                <p>Etudiant en BTS SIO</p>
+<!-- Analyse -->
+<div class="section dark">
+    <div class="boxed">
+        <h2>Analyse de ma Veille</h2>
+        <p class="section-intro">
+            Retour d'expérience sur les forces et les axes d'amélioration de mon système de veille.
+        </p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 40px;">
+            <div>
+                <h4 style="font-size: 1.5rem; color: #667eea; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+                    <span class="material-symbols-outlined">thumb_up</span>
+                    Points Forts
+                </h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 12px 0; padding-left: 30px; position: relative; font-size: 1.1rem; color: #fff;">
+                        <span style="position: absolute; left: 0; color: #667eea; font-weight: bold;">✓</span>
+                        Flux d'informations de qualité et pertinentes
+                    </li>
+                    <li style="padding: 12px 0; padding-left: 30px; position: relative; font-size: 1.1rem; color: #fff;">
+                        <span style="position: absolute; left: 0; color: #667eea; font-weight: bold;">✓</span>
+                        Sources diversifiées et complémentaires
+                    </li>
+                    <li style="padding: 12px 0; padding-left: 30px; position: relative; font-size: 1.1rem; color: #fff;">
+                        <span style="position: absolute; left: 0; color: #667eea; font-weight: bold;">✓</span>
+                        Accès rapide et centralisé à l'information
+                    </li>
+                    <li style="padding: 12px 0; padding-left: 30px; position: relative; font-size: 1.1rem; color: #fff;">
+                        <span style="position: absolute; left: 0; color: #667eea; font-weight: bold;">✓</span>
+                        Échanges enrichissants sur Discord
+                    </li>
+                    <li style="padding: 12px 0; padding-left: 30px; position: relative; font-size: 1.1rem; color: #fff;">
+                        <span style="position: absolute; left: 0; color: #667eea; font-weight: bold;">✓</span>
+                        Organisation efficace avec Pinboard
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 style="font-size: 1.5rem; color: #f39c12; margin-bottom: 20px; display: flex; align-items: center; gap: 10px;">
+                    <span class="material-symbols-outlined">priority_high</span>
+                    Points d'Amélioration
+                </h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 12px 0; padding-left: 30px; position: relative; font-size: 1.1rem; color: #fff;">
+                        <span style="position: absolute; left: 0; color: #f39c12; font-weight: bold;">!</span>
+                        Volume important nécessitant un tri régulier
+                    </li>
+                    <li style="padding: 12px 0; padding-left: 30px; position: relative; font-size: 1.1rem; color: #fff;">
+                        <span style="position: absolute; left: 0; color: #f39c12; font-weight: bold;">!</span>
+                        Doublons entre différentes sources
+                    </li>
+                    <li style="padding: 12px 0; padding-left: 30px; position: relative; font-size: 1.1rem; color: #fff;">
+                        <span style="position: absolute; left: 0; color: #f39c12; font-weight: bold;">!</span>
+                        Temps de lecture parfois limité
+                    </li>
+                    <li style="padding: 12px 0; padding-left: 30px; position: relative; font-size: 1.1rem; color: #fff;">
+                        <span style="position: absolute; left: 0; color: #f39c12; font-weight: bold;">!</span>
+                        Besoin d'affiner les mots-clés Google Alerts
+                    </li>
+                </ul>
             </div>
         </div>
+    </div>
+</div>
 
-        <!-- Section 'Veille technologique' avec texte descriptif -->
-        <div id="veille-technologique" class="section">
-            <div class="boxed text-center">
-                <h2>Qu'est-ce qu'une veille technologique ?</h2>
-                <div class="flex" style="justify-content: center">
-                    <div class="w60 wm100 veille-txt">
-                        <p>
-                            Selon <em>Steven C. Wheelwright</em> (ancien professeur émérite de l’université de Harvard) :<br>
-                            "La veille technologique est constituée par l’ensemble des techniques visant à organiser de façon systématique la collecte, l’analyse,
-                            la diffusion et l’exploitation des informations techniques utiles à la sauvegarde et à la croissance des entreprises”.<br><br>
-                            La veille technologique se doit de prévenir et alerter tout responsable d’un changement,
-                            d’une nouveauté ou d’une innovation qu’elle soit technique ou scientifique.
-                            Dès lors qu’elle peut modifier le paysage ou faire perdre / gagner un avantage économique,
-                            la veille devient critique et doit intervenir le plus tôt possible.
-                        </p>                              
-                    </div>
-                </div>
+<!-- Contact -->
+<div id="contact" class="section dark">
+    <div class="boxed">
+        <h2>Contactez-moi</h2>
+        <div class="contact-grid">
+            <div class="contact-item">
+                <span class="material-symbols-outlined">mail</span>
+                <span class="label">E-Mail</span>
+                <span class="value">contact@example.com</span>
+            </div>
+            <div class="contact-item">
+                <span class="material-symbols-outlined">call</span>
+                <span class="label">Téléphone</span>
+                <span class="value">XX.XX.XX.XX.XX</span>
+            </div>
+            <div class="contact-item">
+                <span class="material-symbols-outlined">account_box</span>
+                <span class="label">GitHub</span>
+                <a href="https://github.com/Roxas004">
+                    <span class="value">github.com/Roxas004</span>
+                </a>
             </div>
         </div>
+    </div>
+</div>
 
-        <div id="" class="section dark">
-            <div class="boxed text-center">
-                <h2>Les Types de source utilisés</h2>
-                <div class="flex" style="justify-content: center;">
-                    <div class="w60 wm100 veille-txt" style="text-align: left;">
-                        <p>Les types de sources les plus utilisés sont :</p><br>
-                        <ul style="padding-left: 80px;">
-                            <li>Les sites d’actualités (par exemple pour l’informatique : Le Monde informatique ou Developpez.com, …)</li>
-                            <li>Les bases de dépôts de brevets gratuites.</li>
-                            <li>Les communiqués de presse des fournisseurs et des éditeurs</li>
-                            <li>Les sites spécialisés</li>
-                            <li>Les blogs d’expert</li>
-                            <li>etc.</li>
-                        </ul>
-                    </div>
-                </div>                                
-            </div>
-        </div>
+<div class="navigation-buttons">
+    <button onclick="location.href='../index.html'">Accueil</button>
+    <button onclick="location.href='SLAM.html'">Compétences</button>
+    <button onclick="location.href='Tableau-de-synthèse.html'">Tableau de Synthèse</button>
+</div>
 
-        <div id="" class="section">
-            <div class="boxed text-center">
-                <h2>Ma Veille Technologique</h2>
-                <div class="flex " style="justify-content: center;">
-                    <div class="w60 wm100 veille-txt" style="text-align: left;">
-                        <p>
-                            Pour ma Veille Technologique, j'ai choisi "L’Intelligence Artificielle au Service du Développement."
-                        </p>
-                        <p style="margin-top: 40px;">
-                            <strong>Présentation :</strong><br><br>
-                            L'intégration de l'intelligence artificielle (IA) dans le développement logiciel transforme profondément la manière dont les applications sont conçues,
-                            développées, testées et maintenues. Ce thème explore comment l'IA peut améliorer et automatiser diverses étapes du cycle de vie du développement logiciel,
-                            rendant les processus plus efficaces, réduisant les erreurs humaines et facilitant l'innovation.
-                        </p>
-                        <p style="margin-top: 40px;">
-                            <strong>Méthodes et outils utilisés :</strong><br><br>
-                            Pour me permettre de rester à jour sur ma Veille Technologique, j'ai mis en place des outils et des méthodes pour cela.
-                        </p>
-                        <p style="margin-top: 40px;">
-                            La première méthode que j'ai mise en place est l'utilisation d'un Pindboard sur le navigateur que j'utilise.
-                            En effet, sur OperaGX je peux utiliser cette fonctionnalité qui me permet de stocker tous les sites, blogs et/ou articles que je trouverai.<br><br>
-                            <img src="../img/Veille/Pindboards.png" alt="" class="small-image" >
-                        </p>
-                        <p style="margin-top: 40px;">
-                            J’ai ensuite rajouté un autre système de veille, le « Google Alerts »,
-                            c’est une alerte Google qui est un email envoyé par Google listant toutes les pages web qui ont mentionné le mot ou l’expression sur laquelle
-                            vous avez placé une alerte.<br><br>
-                            <img src="../img/Veille/Google-alert.png" alt="" class="small-image"><br><br>
-                            Grace a Google alerts je vais pouvoir remplir mon Pindboard,c'est deux outils de veille ce complet a merveille.<br><br>
-                            Je mettrai plus tard en place un flux RSS grâce à Feedly et je centraliserai les informations avec ce dernier aussi.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+<script>
+    const openMenu = () => {
+        const menu = document.querySelector('.header-menu');
+        menu.classList.toggle("active");
 
-        <div class="color-band"></div>
+        if (menu.classList.contains("active")) {
+            document.querySelector("header .material-symbols-outlined").innerHTML = "close";
+        } else {
+            document.querySelector("header .material-symbols-outlined").innerHTML = "menu";
+        }
+    }
 
-        <div id="" class="section">
-            <div class="boxed text-center">
-                <h2>Les Résultats Obtenue</h2>
-                <div class="flex" style="justify-content: center;">
-                    <div class="w60 wm100 veille-txt" style="text-align: left;">
-                        <ul style="padding-left: 80px;">
-                            Vous pouvez voir sur l'image ci-dessous une partie des articles que Google Alerts m'envoie. Bien que ici, comme le tag est "IA",
-                            je vais devoir faire un tri manuel.
-                            Une fois ce tri fait, je mettrai dans mon Pindboard.<br><br>
-                            <img src="../img/Veille/Capture%20d’écran%20alerte%20n°1.png" alt="" class="small-image"><br><br>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+    document.querySelectorAll('.header-menu a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            if (this.getAttribute('href').startsWith('#')) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                const offset = -80;
+                const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+                const offsetPosition = elementPosition + offset;
 
-        <div id="" class="section dark">
-            <div class="boxed text-center">
-                <h2>Les Points Fort Veille Technologique</h2>
-                <div class="flex" style="justify-content: center;">
-                    <div class="w60 wm100 veille-txt" style="text-align: left;">
-                        <ul style="padding-left: 80px;">
-                            <li>Les informations sont quasiment tous utiles et de qualités</li>
-                            <li>Le flux d’information est très élevé</li>
-                            <li>Facile d’utilisation et rapide d’accès</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="" class="section">
-            <div class="boxed text-center">
-                <h2>Les Points Faible Veille Technologique</h2>
-                <div class="flex" style="justify-content: center;">
-                    <div class="w60 wm100 veille-txt" style="text-align: left;">
-                        <ul style="padding-left: 80px;">
-                            <li>Trop d’informations, difficiles de tout lire et surtout trié (surtout avec Google Alerts)</li>
-                            <li>Beaucoup d’informations se ressemblent et/ou sont identiques</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Section de contact avec informations et icônes -->
-        <div id="contact" class="section dark">
-            <div class="boxed text-center">
-                <h2>Contactez-moi</h2>
-                <div class="flex toColumn space-between mgap20">
-                    <div class="w32 wm100 contact">
-                        <span class="material-symbols-outlined icon">mail</span>
-                        <span class="label">E-Mail</span>
-                        <span class="value"></span>
-                    </div>
-                    <div class="w32 wm100 contact">
-                        <span class="material-symbols-outlined">call</span>
-                        <span class="label">Téléphone</span>
-                        <span class="value"></span>
-                    </div>
-                    <div class="w32 wm100 contact">
-                        <span class="material-symbols-outlined">account_box</span>
-                        <span class="label">Github</span>
-                        <a href="https://github.com/Roxas004"><span class="value">https://github.com/Roxas004</span></a>                        
-                    </div>
-                </div>
-            </div>
-        </div> 
-        
-        <div class="navigation-buttons">
-            <button onclick="location.href='../index.html'">Accueil</button>
-            <button onclick="location.href='SLAM.html'">Compétences</button>
-            <button onclick="location.href='Tableau-de-synthèse.html'">Tableau de synthèse</button>
-        </div>
-    </body>
-        
-    <!-- Inclusion du fichier JavaScript pour la logique de la page -->
-    <script src="../js/app.js"></script>
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+</body>
 </html>
