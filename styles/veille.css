@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -287,20 +286,341 @@ header {
     color: #ccc;
 }
 
+/* Routine Steps */
+.routine-step {
+    margin: 60px 0;
+    padding: 40px;
+    background: #f9f9f9;
+    border-radius: 20px;
+    position: relative;
+}
+
+.step-number-badge {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    position: absolute;
+    top: -25px;
+    left: 40px;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.routine-title {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #000;
+    padding-top: 10px;
+}
+
+.routine-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Screenshot Container */
+.screenshot-container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    margin: 30px 0;
+}
+
+.screenshot-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.screenshot-img:hover {
+    transform: scale(1.02);
+}
+
+.screenshot-caption {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #888;
+    text-align: center;
+}
+
+/* Insight Box */
+.insight-box {
+    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+    border-left: 4px solid #667eea;
+    padding: 20px 25px;
+    border-radius: 10px;
+    margin-top: 25px;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #333;
+}
+
+/* Benefits Highlight */
+.benefits-highlight {
+    margin: 25px 0;
+}
+
+.benefit-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px 0;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.benefit-icon {
+    color: #667eea;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+/* Discord Servers List */
+.discord-servers {
+    margin: 30px 0;
+    padding: 25px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+}
+
+.servers-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #333;
+    font-weight: 600;
+}
+
+.server-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.server-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+    border-radius: 10px;
+    border-left: 3px solid #667eea;
+    transition: all 0.3s ease;
+}
+
+.server-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 3px 10px rgba(102, 126, 234, 0.2);
+}
+
+.server-icon {
+    font-size: 1.5rem;
+}
+
+.server-name {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Discord Benefits */
+.discord-benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.discord-point {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.discord-point .material-symbols-outlined {
+    font-size: 3rem;
+    color: #667eea;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.discord-point h4 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.discord-point p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Analysis Section */
+.analysis-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.analysis-column {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.analysis-title {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.analysis-title.positive {
+    color: #667eea;
+}
+
+.analysis-title.improvement {
+    color: #f39c12;
+}
+
+.analysis-list {
+    list-style: none;
+    padding: 0;
+}
+
+.analysis-list li {
+    padding: 12px 0;
+    padding-left: 30px;
+    position: relative;
+    font-size: 1.1rem;
+}
+
+.positive-item {
+    color: #333;
+}
+
+.improvement-item {
+    color: #333;
+}
+
+.item-marker {
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.positive-item .item-marker {
+    color: #667eea;
+}
+
+.improvement-item .item-marker {
+    color: #f39c12;
+}
+
+.discord-point {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.discord-point .material-symbols-outlined {
+    font-size: 3rem;
+    color: #667eea;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.discord-point h4 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.discord-point p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Personal Takeaway */
+.personal-takeaway {
+    margin-top: 80px;
+    padding: 50px;
+    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+    border-radius: 20px;
+}
+
+.personal-takeaway h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #000;
+}
+
+.takeaway-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.takeaway-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.takeaway-card h4 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: #667eea;
+}
+
+.takeaway-card p {
+    color: #666;
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
 /* Stats Section */
 .stats-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 30px;
     margin-top: 50px;
 }
 
 .stat-card {
     text-align: center;
-    padding: 30px;
+    padding: 35px 25px;
     background: rgba(255,255,255,0.05);
     border-radius: 15px;
     border: 2px solid rgba(255,255,255,0.1);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: #667eea;
 }
 
 .stat-number {
@@ -311,8 +631,16 @@ header {
 }
 
 .stat-label {
-    font-size: 1.1rem;
-    color: #ccc;
+    font-size: 1.2rem;
+    color: #fff;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.stat-detail {
+    font-size: 0.95rem;
+    color: #bbb;
+    font-style: italic;
 }
 
 /* Benefits Section */
@@ -449,5 +777,30 @@ header {
         display: block;
         width: 90%;
         margin: 10px auto;
+    }
+
+    .routine-step {
+        padding: 30px 20px;
+    }
+
+    .step-number-badge {
+        left: 20px;
+    }
+
+    .personal-takeaway {
+        padding: 30px 20px;
+    }
+
+    .takeaway-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .server-list {
+        grid-template-columns: 1fr;
+    }
+
+    .analysis-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
     }
 }
