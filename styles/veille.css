@@ -75,37 +75,41 @@ header {
 /* Hero Section */
 .slider {
     width: 100%;
-    min-height: 70vh;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 60vh;
+    background: #000;
     position: relative;
     margin-top: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+}
+
+.slider-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(30%);
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .slider-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
     z-index: 2;
-    color: #fff;
-    padding: 40px;
 }
 
 .slider-content h1 {
+    color: #fff;
     font-size: 4rem;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: 10px;
 }
 
 .slider-content p {
-    font-size: 1.8rem;
+    color: #fff;
+    font-size: 1.5rem;
     font-weight: 300;
-    margin-bottom: 15px;
-}
-
-.slider-content .subtitle {
-    font-size: 1.3rem;
-    opacity: 0.9;
 }
 
 /* Sections */
