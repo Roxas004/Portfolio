@@ -745,6 +745,100 @@ header {
     box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 
+/* Discord Servers List */
+.discord-servers {
+    margin: 30px 0;
+    padding: 35px;
+    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+    border-radius: 20px;
+    border: 2px solid rgba(102, 126, 234, 0.2);
+}
+
+.servers-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    color: #333;
+    font-weight: 700;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.servers-subtitle::before {
+    content: "💬";
+    font-size: 1.8rem;
+}
+
+.server-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.server-link {
+    text-decoration: none;
+}
+
+.server-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px 25px;
+    background: #fff;
+    border-radius: 15px;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.server-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.server-item:hover::before {
+    transform: scaleY(1);
+}
+
+.server-item:hover {
+    transform: translateY(-5px);
+    border-color: #667eea;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.server-icon {
+    font-size: 2rem;
+    min-width: 40px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.server-item:hover .server-icon {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.server-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.server-item:hover .server-name {
+    color: #667eea;
+}
+
 /* Responsive */
 @media(max-width: 810px) {
     .header-menu {
