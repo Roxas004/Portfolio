@@ -484,40 +484,34 @@
                     <div class="source-box">
                         <div class="source-header">
                             <div class="source-info">
-                                <h4>OpenAI News</h4>
-                                <a href="https://openai.com/blog" target="_blank" class="source-link">openai.com/blog</a>
-                            </div>
-                            <span class="source-icon">🤖</span>
-                        </div>
-                        <div class="articles-list">
-                            <p class="feed-note">📌 Visitez directement leur blog pour les dernières actualités</p>
-                        </div>
-                    </div>
-
-                    <div class="source-box">
-                        <div class="source-header">
-                            <div class="source-info">
-                                <h4>Google AI Blog</h4>
-                                <a href="https://ai.googleblog.com" target="_blank" class="source-link">ai.googleblog.com</a>
+                                <h4>TechCrunch AI</h4>
+                                <a href="https://techcrunch.com/category/artificial-intelligence/" target="_blank" class="source-link">techcrunch.com/ai</a>
                             </div>
                             <span class="source-icon">🔬</span>
                         </div>
-                        <div class="articles-list">
-                            <p class="feed-note">📌 Consultez leur blog pour les recherches récentes</p>
-                        </div>
+                        <div class="articles-list" id="feed-techcrunch-ai"></div>
                     </div>
 
                     <div class="source-box">
                         <div class="source-header">
                             <div class="source-info">
-                                <h4>Anthropic</h4>
-                                <a href="https://www.anthropic.com" target="_blank" class="source-link">anthropic.com</a>
+                                <h4>MIT Technology Review</h4>
+                                <a href="https://www.technologyreview.com" target="_blank" class="source-link">technologyreview.com</a>
                             </div>
-                            <span class="source-icon">⚡</span>
+                            <span class="source-icon">🎓</span>
                         </div>
-                        <div class="articles-list">
-                            <p class="feed-note">📌 Découvrez leurs dernières annonces sur leur site</p>
+                        <div class="articles-list" id="feed-mit"></div>
+                    </div>
+
+                    <div class="source-box">
+                        <div class="source-header">
+                            <div class="source-info">
+                                <h4>VentureBeat AI</h4>
+                                <a href="https://venturebeat.com/category/ai/" target="_blank" class="source-link">venturebeat.com/ai</a>
+                            </div>
+                            <span class="source-icon">💼</span>
                         </div>
+                        <div class="articles-list" id="feed-venturebeat"></div>
                     </div>
                 </div>
             </div>
@@ -557,11 +551,11 @@
                 `;
                 }).join('');
             } else {
-                container.innerHTML = '<p class="feed-error">⚠️ Impossible de charger ce flux pour le moment</p>';
+                container.innerHTML = '<p class="feed-note">📌 Visitez directement leur site pour les dernières actualités</p>';
             }
         } catch (error) {
             console.error(`Erreur lors du chargement du flux ${url}:`, error);
-            container.innerHTML = '<p class="feed-error">⚠️ Erreur de chargement du flux</p>';
+            container.innerHTML = '<p class="feed-note">📌 Consultez leur blog pour les articles récents</p>';
         }
     }
 
@@ -593,11 +587,16 @@
         const loadingState = document.getElementById('loading-state');
         const feedsContainer = document.getElementById('feeds-container');
 
-        // Charger les flux
+        // Charger les flux en parallèle
         await Promise.all([
+            // Flux développeurs
             loadRSSFeed('https://github.blog/feed/', 'feed-github'),
             loadRSSFeed('https://www.infoq.com/feed/', 'feed-infoq'),
-            loadRSSFeed('https://stackoverflow.blog/feed/', 'feed-stackoverflow')
+            loadRSSFeed('https://stackoverflow.blog/feed/', 'feed-stackoverflow'),
+            // Flux IA - avec URLs RSS testées
+            loadRSSFeed('https://techcrunch.com/category/artificial-intelligence/feed/', 'feed-techcrunch-ai'),
+            loadRSSFeed('https://www.technologyreview.com/feed/', 'feed-mit'),
+            loadRSSFeed('https://venturebeat.com/category/ai/feed/', 'feed-venturebeat')
         ]);
 
         // Cacher le loader et afficher les feeds
@@ -628,72 +627,6 @@
         });
     });
 </script>
-
-<!-- Analyse -->
-<div class="section">
-    <div class="boxed">
-        <h2>Analyse de ma Veille</h2>
-        <p class="section-intro">
-            Retour d'expérience sur les forces et les axes d'amélioration de mon système de veille.
-        </p>
-
-        <div class="analysis-grid">
-            <div class="analysis-column">
-                <h4 class="analysis-title positive">
-                    <span class="material-symbols-outlined">thumb_up</span>
-                    Points Forts
-                </h4>
-                <ul class="analysis-list">
-                    <li class="positive-item">
-                        <span class="item-marker">✓</span>
-                        Flux d'informations de qualité et pertinentes
-                    </li>
-                    <li class="positive-item">
-                        <span class="item-marker">✓</span>
-                        Sources diversifiées et complémentaires
-                    </li>
-                    <li class="positive-item">
-                        <span class="item-marker">✓</span>
-                        Accès rapide et centralisé à l'information
-                    </li>
-                    <li class="positive-item">
-                        <span class="item-marker">✓</span>
-                        Échanges enrichissants sur Discord
-                    </li>
-                    <li class="positive-item">
-                        <span class="item-marker">✓</span>
-                        Organisation efficace avec Pinboard
-                    </li>
-                </ul>
-            </div>
-
-            <div class="analysis-column">
-                <h4 class="analysis-title improvement">
-                    <span class="material-symbols-outlined">priority_high</span>
-                    Points d'Amélioration
-                </h4>
-                <ul class="analysis-list">
-                    <li class="improvement-item">
-                        <span class="item-marker">!</span>
-                        Volume important nécessitant un tri régulier
-                    </li>
-                    <li class="improvement-item">
-                        <span class="item-marker">!</span>
-                        Doublons entre différentes sources
-                    </li>
-                    <li class="improvement-item">
-                        <span class="item-marker">!</span>
-                        Temps de lecture parfois limité
-                    </li>
-                    <li class="improvement-item">
-                        <span class="item-marker">!</span>
-                        Besoin d'affiner les mots-clés Google Alerts
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- Statistiques en chiffres -->
 <div class="section dark">
