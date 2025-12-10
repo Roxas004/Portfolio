@@ -543,6 +543,299 @@ header {
     }
 }
 
+/* AJOUTEZ CE CODE À LA FIN DE VOTRE FICHIER veille.css */
+
+/* ===== SECTION COMPTES X (TWITTER) ===== */
+
+.x-accounts-section {
+    margin: 30px 0;
+    padding: 35px;
+    background: linear-gradient(135deg, #1da1f215 0%, #14171a15 100%);
+    border-radius: 20px;
+    border: 2px solid rgba(29, 161, 242, 0.2);
+}
+
+.x-accounts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.x-account-link {
+    text-decoration: none;
+}
+
+.x-account-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.x-account-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(180deg, #1da1f2 0%, #14171a 100%);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.x-account-card:hover::before {
+    transform: scaleY(1);
+}
+
+.x-account-card:hover {
+    transform: translateY(-5px);
+    border-color: #1da1f2;
+    box-shadow: 0 8px 20px rgba(29, 161, 242, 0.3);
+}
+
+.x-account-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.x-icon {
+    font-size: 2.5rem;
+    color: #1da1f2;
+    min-width: 45px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.x-account-card:hover .x-icon {
+    transform: scale(1.15) rotate(-5deg);
+}
+
+.x-account-info h5 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #14171a;
+    margin-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.x-account-card:hover .x-account-info h5 {
+    color: #1da1f2;
+}
+
+.x-account-desc {
+    font-size: 0.95rem;
+    color: #657786;
+    margin: 0;
+}
+
+/* Benchmark Examples Section */
+.benchmark-examples-section {
+    margin: 40px 0;
+    padding: 35px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+}
+
+.benchmark-title {
+    font-size: 1.6rem;
+    color: #333;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.benchmark-intro {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.benchmark-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.benchmark-item {
+    position: relative;
+}
+
+/* X Benefits */
+.x-benefits {
+    margin-top: 30px;
+    padding: 25px;
+    background: linear-gradient(135deg, #1da1f208 0%, #14171a08 100%);
+    border-radius: 15px;
+    border-left: 4px solid #1da1f2;
+}
+
+.x-benefits-title {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+
+/* ===== PLATEFORMES DE BENCHMARKS ===== */
+
+.benchmark-sites-section {
+    margin: 40px 0;
+    padding: 35px;
+    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+    border-radius: 20px;
+    border: 2px solid rgba(102, 126, 234, 0.2);
+}
+
+.benchmark-sites-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.benchmark-site-link {
+    text-decoration: none;
+    display: block;
+}
+
+.benchmark-site-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    border: 2px solid transparent;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.benchmark-site-card:hover {
+    transform: translateY(-8px);
+    border-color: #667eea;
+    box-shadow: 0 10px 30px rgba(102, 126, 234, 0.25);
+}
+
+.site-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.site-emoji {
+    font-size: 2.5rem;
+    min-width: 50px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.benchmark-site-card:hover .site-emoji {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.site-info h5 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.benchmark-site-card:hover .site-info h5 {
+    color: #667eea;
+}
+
+.site-url {
+    font-size: 0.9rem;
+    color: #667eea;
+    font-family: 'Courier New', monospace;
+    margin: 0;
+}
+
+.site-description {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.7;
+    flex-grow: 1;
+}
+
+.site-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.feature-tag {
+    background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+    color: #667eea;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(102, 126, 234, 0.3);
+    transition: all 0.3s ease;
+}
+
+.benchmark-site-card:hover .feature-tag {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    border-color: transparent;
+}
+
+/* Responsive */
+@media(max-width: 810px) {
+    .benchmark-sites-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .benchmark-sites-section {
+        padding: 25px 20px;
+    }
+
+    .site-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .site-emoji {
+        margin-bottom: 10px;
+    }
+}
+
+/* Responsive pour la section X */
+@media(max-width: 810px) {
+    .x-accounts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .benchmark-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .x-accounts-section {
+        padding: 25px 20px;
+    }
+
+    .benchmark-examples-section {
+        padding: 25px 20px;
+    }
+}
+
 /* Process Section */
 .process-steps {
     display: grid;
