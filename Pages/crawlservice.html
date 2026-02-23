@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stage n°2 — CrawlService</title>
+    <link rel="shortcut icon" type="png" href="../img/Layout/portfolio-logo-64.png" />
+    <meta name="description" content="Stage n°2 — CrawlService, outil de crawl SEO développé chez Ekino" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles/styles.css" type="text/css">
+    <link rel="stylesheet" href="../styles/crawlService.css" type="text/css">
+
+</head>
+
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header>
+    <div class="boxed">
+        <div class="flex aligncenter space-between">
+            <button onclick="openMenu()" class="header-menu-mobile">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            <a href="../index.html" class="header-logo">
+                <img src="../img/Layout/portfolio-logo.png" alt="Logo Portfolio">
+            </a>
+            <ul class="header-menu">
+                <li><a href="#context">Contexte</a></li>
+                <li><a href="#architecture">Architecture</a></li>
+                <li><a href="#features">Fonctionnalités</a></li>
+                <li><a href="#stack">Stack</a></li>
+                <li><a href="#skills">Compétences</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<div class="hero">
+    <div class="hero-inner">
+        <div>
+            <div class="hero-badge">STAGE N°2 — EKINO</div>
+            <h1>Crawl<span class="highlight">Service</span></h1>
+            <p class="hero-desc">
+                Un outil de crawl SEO développé chez Ekino — analyse automatiquement chaque URL d'un site,
+                extrait les métriques SEO et les restitue dans un dashboard interactif.
+            </p>
+            <div class="hero-meta">
+                <div class="hero-meta-item">
+                    <span class="hero-meta-label">Entreprise</span>
+                    <span class="hero-meta-value">Ekino</span>
+                </div>
+                <div class="hero-meta-item">
+                    <span class="hero-meta-label">Stack</span>
+                    <span class="hero-meta-value">Laravel · PHP 8.4</span>
+                </div>
+                <div class="hero-meta-item">
+                    <span class="hero-meta-label">Rôle</span>
+                    <span class="hero-meta-value">Développeur Full-Stack</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="terminal">
+                <div class="terminal-bar">
+                    <div class="dot dot-r"></div>
+                    <div class="dot dot-y"></div>
+                    <div class="dot dot-g"></div>
+                    <span class="terminal-title">crawlservice — bash</span>
+                </div>
+                <div class="terminal-body">
+                    <div class="t-line"><span class="t-prompt">$</span><span class="t-cmd"> php artisan crawl:start https://ekino.com</span></div>
+                    <div class="t-line t-comment"># Démarrage du crawl asynchrone...</div>
+                    <div style="height:6px"></div>
+                    <div class="t-line"><span class="t-ok">✓</span><span> Sitemap détecté — 142 URLs trouvées</span></div>
+                    <div class="t-line"><span class="t-ok">✓</span><span> Jobs dispatched → Queue Worker</span></div>
+                    <div style="height:6px"></div>
+                    <div class="t-line t-comment"># Analyse SEO en cours...</div>
+                    <div style="height:4px"></div>
+                    <div class="t-indent">
+                        <div class="t-line"><span class="t-key">title</span><span>: </span><span class="t-ok">OK</span><span class="t-comment"> (52 chars)</span></div>
+                        <div class="t-line"><span class="t-key">meta_desc</span><span>: </span><span class="t-warn">WARNING</span><span class="t-comment"> (96 chars &lt; 120)</span></div>
+                        <div class="t-line"><span class="t-key">h1_count</span><span>: </span><span class="t-err">ERROR</span><span class="t-comment"> (0 found)</span></div>
+                        <div class="t-line"><span class="t-key">canonical</span><span>: </span><span class="t-ok">OK</span></div>
+                        <div class="t-line"><span class="t-key">robots</span><span>: </span><span class="t-ok">index, follow</span></div>
+                        <div class="t-line"><span class="t-key">response_time</span><span>: </span><span class="t-val">287ms</span></div>
+                        <div class="t-line"><span class="t-key">status_code</span><span>: </span><span class="t-ok">200</span></div>
+                    </div>
+                    <div style="height:6px"></div>
+                    <div class="t-line"><span class="t-prompt">$</span><span class="t-cmd"> _<span class="cursor"></span></span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ===================== CONTEXTE ===================== -->
+<section id="context">
+    <div class="container">
+        <div class="context-grid reveal">
+            <div class="context-text">
+                <p class="section-eyebrow">01 — Contexte</p>
+                <h2 class="section-title">Le projet</h2>
+                <p>
+                    Pour mon deuxième stage au sein d'<strong>Ekino</strong>, j'ai travaillé en binôme avec
+                    <strong>FOY Oriane</strong> sur la conception et le développement d'un outil de <strong>crawl SEO</strong>
+                    à usage interne.
+                </p>
+                <p>
+                    L'objectif était de permettre aux équipes d'analyser automatiquement n'importe quel site web :
+                    l'outil parcourt chaque URL, extrait les données SEO de chaque page et identifie les problèmes
+                    (balises manquantes, longueurs incorrectes, erreurs HTTP…) dans un <strong>dashboard centralisé</strong>.
+                </p>
+                <p>
+                    Le projet a été construit avec <strong>Laravel</strong>, en exploitant le système de <strong>Jobs asynchrones</strong>
+                    pour paralléliser le crawl et la <strong>sitemap XML</strong> pour la découverte des URLs.
+                </p>
+
+                <ul class="missions-list">
+                    <li>
+                        <div class="mission-icon"><span class="material-symbols-outlined" style="font-size:16px">travel_explore</span></div>
+                        <span>Développement du moteur de crawl HTTP asynchrone (Jobs Laravel + Queue)</span>
+                    </li>
+                    <li>
+                        <div class="mission-icon"><span class="material-symbols-outlined" style="font-size:16px">analytics</span></div>
+                        <span>Extraction et analyse des métriques SEO (title, H1, meta, canonical, robots, schemas…)</span>
+                    </li>
+                    <li>
+                        <div class="mission-icon"><span class="material-symbols-outlined" style="font-size:16px">dashboard</span></div>
+                        <span>Conception du dashboard avec graphiques de synthèse (Chart.js) et vue détaillée par URL</span>
+                    </li>
+                    <li>
+                        <div class="mission-icon"><span class="material-symbols-outlined" style="font-size:16px">account_tree</span></div>
+                        <span>Parsing de la sitemap XML pour la découverte automatique des URLs</span>
+                    </li>
+                    <li>
+                        <div class="mission-icon"><span class="material-symbols-outlined" style="font-size:16px">storage</span></div>
+                        <span>Modélisation et administration de la base de données MySQL</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <div class="info-card">
+                    <div class="info-row">
+                        <span class="info-label">Entreprise</span>
+                        <span class="info-value">Ekino — Transformation digitale</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Projet</span>
+                        <span class="info-value">CrawlService — Outil SEO interne</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Équipe</span>
+                        <span class="info-value">FOY Oriane · ROSA Axel</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Technologies</span>
+                        <div class="skills-chips">
+                            <span class="chip">Laravel</span>
+                            <span class="chip">PHP 8.4</span>
+                            <span class="chip">MySQL</span>
+                            <span class="chip">Tailwind CSS</span>
+                            <span class="chip">Chart.js</span>
+                            <span class="chip">Blade</span>
+                            <span class="chip">Queue / Jobs</span>
+                            <span class="chip">Symfony DomCrawler</span>
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Repo GitHub</span>
+                        <a href="https://github.com/ImOriane/personnel/tree/master/Personnel" target="_blank" class="info-value" style="color: var(--accent); text-decoration: none;">github.com/ImOriane &nearr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===================== ARCHITECTURE ===================== -->
+<section id="architecture">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-eyebrow">02 — Architecture</p>
+            <h2 class="section-title">Comment ça fonctionne</h2>
+            <p class="section-desc">
+                L'application suit un pipeline en plusieurs étapes, du lancement du crawl
+                jusqu'à la restitution des résultats dans le dashboard.
+            </p>
+        </div>
+
+        <div class="arch-grid reveal">
+            <div class="arch-card">
+                <div class="arch-num">01</div>
+                <h3>Découverte des URLs</h3>
+                <p>
+                    L'utilisateur soumet un domaine. L'application récupère et parse la <strong>sitemap XML</strong>
+                    du site pour lister toutes les URLs à analyser. Si aucune sitemap n'est disponible,
+                    le crawler démarre depuis l'URL racine et explore les liens.
+                </p>
+                <div class="arch-tags">
+                    <span class="arch-tag">SitemapParser</span>
+                    <span class="arch-tag">XPath</span>
+                    <span class="arch-tag">HttpCrawlerClient</span>
+                </div>
+            </div>
+
+            <div class="arch-card">
+                <div class="arch-num">02</div>
+                <h3>Crawl Asynchrone</h3>
+                <p>
+                    Chaque URL est envoyée dans une <strong>Queue Laravel</strong> sous forme de Job (<code>CrawlUrlJob</code>).
+                    Un <code>UrlCrawlGuard</code> évite de recrawler récemment des URLs déjà visitées.
+                    Les requêtes HTTP sont faites avec un User-Agent personnalisé Ekino.
+                </p>
+                <div class="arch-tags">
+                    <span class="arch-tag">Jobs / Queue</span>
+                    <span class="arch-tag">CrawlUrlJob</span>
+                    <span class="arch-tag">UrlCrawlGuard</span>
+                </div>
+            </div>
+
+            <div class="arch-card">
+                <div class="arch-num">03</div>
+                <h3>Extraction SEO</h3>
+                <p>
+                    Pour chaque page crawlée, le <code>SeoExtractor</code> utilise <strong>Symfony DomCrawler</strong>
+                    pour parser le HTML et extraire title, meta description, H1, H2–H4, canonical,
+                    robots, meta keywords et les schemas JSON-LD.
+                </p>
+                <div class="arch-tags">
+                    <span class="arch-tag">SeoExtractor</span>
+                    <span class="arch-tag">DomCrawler</span>
+                    <span class="arch-tag">JSON-LD</span>
+                </div>
+            </div>
+
+            <div class="arch-card">
+                <div class="arch-num">04</div>
+                <h3>Analyse & Scoring</h3>
+                <p>
+                    Le <code>SeoAnalyzer</code> évalue les données extraites selon des règles métier :
+                    longueur du title (30–60 chars), meta description (120–160 chars), présence d'un H1 unique…
+                    Chaque problème est classifié en <strong>warning</strong> ou <strong>error</strong>.
+                </p>
+                <div class="arch-tags">
+                    <span class="arch-tag">SeoAnalyzer</span>
+                    <span class="arch-tag">Severity Rules</span>
+                    <span class="arch-tag">TagAssigner</span>
+                </div>
+            </div>
+
+            <div class="arch-card">
+                <div class="arch-num">05</div>
+                <h3>Persistance</h3>
+                <p>
+                    Les résultats HTTP (status code, temps de réponse, taille, cache, redirection, pays)
+                    et SEO sont sauvegardés en base MySQL via les services <code>UrlPersistenceService</code>
+                    et <code>SeoPersistenceService</code>.
+                </p>
+                <div class="arch-tags">
+                    <span class="arch-tag">MySQL</span>
+                    <span class="arch-tag">Eloquent</span>
+                    <span class="arch-tag">Migrations</span>
+                </div>
+            </div>
+
+            <div class="arch-card">
+                <div class="arch-num">06</div>
+                <h3>Dashboard</h3>
+                <p>
+                    Un dashboard Blade affiche les résultats en temps réel : graphiques de répartition des erreurs,
+                    liste des URLs avec leur statut, et une vue détaillée par URL avec toutes les métriques SEO
+                    et HTTP collectées.
+                </p>
+                <div class="arch-tags">
+                    <span class="arch-tag">Blade</span>
+                    <span class="arch-tag">Chart.js</span>
+                    <span class="arch-tag">Tailwind CSS</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===================== FONCTIONNALITÉS ===================== -->
+<section id="features">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-eyebrow">03 — Fonctionnalités</p>
+            <h2 class="section-title">Ce que fait l'application</h2>
+            <p class="section-desc">Un outil complet pour auditer le SEO de n'importe quel site web.</p>
+        </div>
+
+        <div class="features-layout reveal">
+            <div class="feature-block">
+                <div class="feature-header">
+                    <div class="feature-icon-wrap">
+                        <span class="material-symbols-outlined" style="font-size:20px">search</span>
+                    </div>
+                    <h3>Métriques SEO analysées</h3>
+                </div>
+                <ul class="feature-list">
+                    <li>Title tag — présence et longueur (30–60 chars)</li>
+                    <li>Meta description — présence et longueur (120–160 chars)</li>
+                    <li>Balise H1 — présence et unicité</li>
+                    <li>Comptage H2, H3, H4</li>
+                    <li>URL canonical</li>
+                    <li>Meta robots (index/noindex…)</li>
+                    <li>Schemas JSON-LD (structured data)</li>
+                    <li>Meta keywords</li>
+                </ul>
+            </div>
+
+            <div class="feature-block">
+                <div class="feature-header">
+                    <div class="feature-icon-wrap">
+                        <span class="material-symbols-outlined" style="font-size:20px">http</span>
+                    </div>
+                    <h3>Métriques HTTP</h3>
+                </div>
+                <ul class="feature-list">
+                    <li>Code de statut HTTP (200, 301, 404, 500…)</li>
+                    <li>Temps de réponse (ms)</li>
+                    <li>Taille de la réponse (octets)</li>
+                    <li>Type de contenu (Content-Type)</li>
+                    <li>Détection des redirections et destination</li>
+                    <li>Détection du cache (X-Cache, CF-Cache-Status)</li>
+                    <li>Pays détecté via la structure de l'URL</li>
+                    <li>Source (crawl direct ou sitemap)</li>
+                </ul>
+            </div>
+
+            <div class="feature-block full">
+                <div class="feature-header">
+                    <div class="feature-icon-wrap">
+                        <span class="material-symbols-outlined" style="font-size:20px">table_chart</span>
+                    </div>
+                    <h3>Exemple de rapport — Vue URL</h3>
+                </div>
+                <table class="metrics-table">
+                    <thead>
+                    <tr>
+                        <th>URL</th>
+                        <th>Statut HTTP</th>
+                        <th>SEO Status</th>
+                        <th>Problème détecté</th>
+                        <th>Temps (ms)</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td style="color:var(--muted)">/fr-fr/home</td>
+                        <td><span class="badge badge-ok">200</span></td>
+                        <td><span class="badge badge-ok">OK</span></td>
+                        <td style="color:var(--muted)">—</td>
+                        <td>214</td>
+                    </tr>
+                    <tr>
+                        <td style="color:var(--muted)">/fr-fr/about</td>
+                        <td><span class="badge badge-ok">200</span></td>
+                        <td><span class="badge badge-warn">WARNING</span></td>
+                        <td style="color:var(--warn)">Meta desc. 96 chars (min 120)</td>
+                        <td>287</td>
+                    </tr>
+                    <tr>
+                        <td style="color:var(--muted)">/en/services</td>
+                        <td><span class="badge badge-ok">200</span></td>
+                        <td><span class="badge badge-err">ERROR</span></td>
+                        <td style="color:var(--error)">H1 tag manquant</td>
+                        <td>341</td>
+                    </tr>
+                    <tr>
+                        <td style="color:var(--muted)">/fr-fr/old-page</td>
+                        <td><span class="badge badge-warn">301</span></td>
+                        <td><span class="badge badge-warn">WARNING</span></td>
+                        <td style="color:var(--warn)">Redirection → /fr-fr/new-page</td>
+                        <td>198</td>
+                    </tr>
+                    <tr>
+                        <td style="color:var(--muted)">/fr-fr/404-test</td>
+                        <td><span class="badge badge-err">404</span></td>
+                        <td><span class="badge badge-err">ERROR</span></td>
+                        <td style="color:var(--error)">Page introuvable</td>
+                        <td>112</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===================== STACK ===================== -->
+<section id="stack">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-eyebrow">04 — Stack Technique</p>
+            <h2 class="section-title">Technologies utilisées</h2>
+            <p class="section-desc">Un stack moderne centré sur PHP/Laravel avec Tailwind pour le front.</p>
+        </div>
+
+        <div class="stack-grid reveal">
+            <div class="stack-card">
+                <div class="stack-icon">🐘</div>
+                <div class="stack-name">PHP 8.4</div>
+                <div class="stack-role">Backend · Typage strict</div>
+            </div>
+            <div class="stack-card">
+                <div class="stack-icon">🎸</div>
+                <div class="stack-name">Laravel</div>
+                <div class="stack-role">Framework MVC · Blade · Eloquent</div>
+            </div>
+            <div class="stack-card">
+                <div class="stack-icon">🗄️</div>
+                <div class="stack-name">MySQL</div>
+                <div class="stack-role">Base de données relationnelle</div>
+            </div>
+            <div class="stack-card">
+                <div class="stack-icon">🎨</div>
+                <div class="stack-name">Tailwind CSS</div>
+                <div class="stack-role">UI · Dark mode · Responsive</div>
+            </div>
+            <div class="stack-card">
+                <div class="stack-icon">📊</div>
+                <div class="stack-name">Chart.js</div>
+                <div class="stack-role">Graphiques du dashboard</div>
+            </div>
+            <div class="stack-card">
+                <div class="stack-icon">⚙️</div>
+                <div class="stack-name">Laravel Queue</div>
+                <div class="stack-role">Jobs asynchrones · Workers</div>
+            </div>
+            <div class="stack-card">
+                <div class="stack-icon">🔍</div>
+                <div class="stack-name">Symfony DomCrawler</div>
+                <div class="stack-role">Parsing HTML · XPath</div>
+            </div>
+            <div class="stack-card">
+                <div class="stack-icon">🐙</div>
+                <div class="stack-name">Git / GitHub</div>
+                <div class="stack-role">Versioning · Collaboration</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===================== COMPÉTENCES ===================== -->
+<section id="skills">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-eyebrow">05 — Compétences acquises</p>
+            <h2 class="section-title">Ce que j'ai appris</h2>
+            <p class="section-desc">Un stage qui m'a permis de monter en compétence sur de nombreux aspects du développement web professionnel.</p>
+        </div>
+
+        <div class="skills-row reveal">
+            <div class="skill-item">
+                <div class="skill-dot"></div>
+                <span class="skill-text">Développement d'un moteur de crawl HTTP asynchrone avec Laravel Queue</span>
+            </div>
+            <div class="skill-item">
+                <div class="skill-dot"></div>
+                <span class="skill-text">Parsing HTML avancé avec Symfony DomCrawler et XPath</span>
+            </div>
+            <div class="skill-item">
+                <div class="skill-dot"></div>
+                <span class="skill-text">Conception et modélisation d'une base de données relationnelle MySQL</span>
+            </div>
+            <div class="skill-item">
+                <div class="skill-dot"></div>
+                <span class="skill-text">Architecture en services découplés (Extractor, Analyzer, Persistence…)</span>
+            </div>
+            <div class="skill-item">
+                <div class="skill-dot"></div>
+                <span class="skill-text">Travail en binôme et gestion de projet avec Git / GitHub</span>
+            </div>
+            <div class="skill-item">
+                <div class="skill-dot"></div>
+                <span class="skill-text">Compréhension approfondie des enjeux SEO techniques</span>
+            </div>
+            <div class="skill-item">
+                <div class="skill-dot"></div>
+                <span class="skill-text">Développement d'interfaces avec Tailwind CSS et Blade en dark mode</span>
+            </div>
+            <div class="skill-item">
+                <div class="skill-dot"></div>
+                <span class="skill-text">Intégration de Chart.js pour la visualisation de données SEO</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===================== CONTACT ===================== -->
+<section id="contact">
+    <div class="container">
+        <div class="reveal" style="text-align:center; margin-bottom:2.5rem;">
+            <p class="section-eyebrow" style="justify-content:center; display:flex;">Contact</p>
+            <h2 class="section-title">Me contacter</h2>
+        </div>
+        <div class="contact-grid reveal">
+            <div class="contact-card">
+                <span class="material-symbols-outlined">mail</span>
+                <span class="contact-label">E-Mail</span>
+                <a href="/cdn-cgi/l/email-protection#1a7b627f767b76777f737e7b6875697b5a7d777b737634797577" class="contact-value"><span class="__cf_email__" data-cfemail="5e3f263b323f32333b373a3f2c312d3f1e39333f3732703d3133">[email&#160;protected]</span></a>
+            </div>
+            <div class="contact-card">
+                <span class="material-symbols-outlined">call</span>
+                <span class="contact-label">Téléphone</span>
+                <span class="contact-value">*********</span>
+            </div>
+            <div class="contact-card">
+                <span class="material-symbols-outlined">account_box</span>
+                <span class="contact-label">GitHub</span>
+                <a href="https://github.com/Roxas004" target="_blank" class="contact-value">github.com/Roxas004</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== NAV BUTTONS ===================== -->
+<div class="nav-buttons">
+    <a href="../index.html" class="nav-btn nav-btn-outline">← Accueil</a>
+    <a href="legolas.html" class="nav-btn nav-btn-fill">Stage n°1 — Ekino</a>
+</div>
+
+<!-- ===================== JS ===================== -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="../js/app.js"></script>
+<script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('visible');
+                observer.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

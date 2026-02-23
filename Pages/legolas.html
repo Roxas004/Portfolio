@@ -1,485 +1,1159 @@
 <!DOCTYPE html>
 <html lang="fr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Stage n°1 — Legolas · Ekino</title>
+    <link rel="shortcut icon" type="png" href="../img/Layout/portfolio-logo-64.png" />
+    <meta name="description" content="Stage n°1 — Legolas, application web de gestion d'événements CSE développée chez Ekino" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles/styles.css" type="text/css">
+    <style>
 
-    <head>
-        <!-- Spécifie l'encodage des caractères en UTF-8 -->
-        <meta charset="utf-8" />
-        <!-- Configure l'affichage pour une bonne adaptation sur les écrans mobiles -->
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <!-- Titre de la page -->
-        <title>Stage n°1</title>
-        <!-- icon de la page -->
-        <link rel="shortcut icon" type="png" href="../img/Layout/portfolio-logo-64.png" />
-        <!-- Balise de description pour le SEO -->
-        <meta name="description" content="Ceci est mon portfolio étudiant" />
-        <!-- Lien vers la police Material Symbols pour les icônes -->
-        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-        <!-- Lien vers la feuille de style CSS du portfolio -->
-        <link rel="stylesheet" href="../styles/styles.css" type="text/css">
-    </head>
+        /* ===================== VARIABLES ===================== */
+        :root {
+            --bg:      #08090c;
+            --bg2:     #0d0f14;
+            --surface: #13161e;
+            --surface2:#1a1e28;
+            --border:  #232838;
+            --accent:  #3b82f6;
+            --accent2: #2563eb;
+            --accent3: #93c5fd;
+            --text:    #e2e8f0;
+            --muted:   #64748b;
+            --syne:    'Space Mono', monospace;
+            --inter:   'Inter', sans-serif;
+        }
 
-    <body>
-        <!-- En-tête de la page avec le logo et le menu de navigation -->
-        <header>
-            <div class="boxed">
-                <div class="flex aligncenter space-between">
-                    <!-- Bouton du menu pour la version mobile -->
-                    <button onclick="openMenu()" class="header-menu-mobile">
-                        <span class="material-symbols-outlined">menu</span>
-                    </button>
-                    <!-- Logo avec lien vers l'accueil -->
-                    <a href="../index.html" class="header-logo">
-                        <img src="../img/Layout/portfolio-logo.png" alt="Logo Portfolio">
+        html { scroll-behavior: smooth; }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--inter);
+            overflow-x: hidden;
+        }
+
+        /* Noise overlay */
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 9998;
+            opacity: 0.35;
+        }
+
+        /* ===================== HERO SLIDER ===================== */
+        .l-hero {
+            position: relative;
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+            padding: 5rem 0;
+            margin-top: 70px;
+            overflow: hidden;
+            background: var(--bg);
+        }
+
+        /* Grid background like CrawlService */
+        .l-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                    linear-gradient(rgba(59,130,246,0.04) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(59,130,246,0.04) 1px, transparent 1px);
+            background-size: 48px 48px;
+            mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black 40%, transparent 100%);
+        }
+
+        /* Blue glow blob */
+        .l-hero::after {
+            content: '';
+            position: absolute;
+            width: 700px;
+            height: 700px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(59,130,246,0.10) 0%, transparent 70%);
+            top: -200px;
+            left: -100px;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .l-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            width: 100%;
+        }
+
+        .l-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(59,130,246,0.1);
+            border: 1px solid rgba(59,130,246,0.3);
+            color: var(--accent3);
+            font-family: var(--inter);
+            font-size: 0.72rem;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding: 5px 14px;
+            border-radius: 100px;
+            margin-bottom: 1.5rem;
+            animation: fadeUp 0.5s ease both;
+        }
+
+        .l-badge-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%,100% { opacity:1; transform:scale(1); }
+            50% { opacity:0.3; transform:scale(0.6); }
+        }
+
+        .l-hero h1 {
+            font-family: var(--syne);
+            font-size: clamp(3rem, 8vw, 6.5rem);
+            font-weight: 800;
+            line-height: 1;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+            animation: fadeUp 0.5s 0.1s ease both;
+        }
+
+        .l-hero h1 em {
+            font-style: normal;
+            color: var(--accent);
+        }
+
+        .l-hero-sub {
+            font-size: 1.1rem;
+            color: var(--muted);
+            max-width: 560px;
+            line-height: 1.7;
+            margin-bottom: 2.5rem;
+            animation: fadeUp 0.5s 0.2s ease both;
+        }
+
+        .l-hero-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            animation: fadeUp 0.5s 0.3s ease both;
+        }
+
+        .l-pill {
+            font-size: 0.78rem;
+            font-weight: 500;
+            padding: 6px 14px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid var(--border);
+            color: var(--text);
+            border-radius: 6px;
+        }
+
+        @keyframes fadeUp {
+            from { opacity:0; transform:translateY(18px); }
+            to   { opacity:1; transform:translateY(0); }
+        }
+
+        /* ===================== LAYOUT ===================== */
+        .l-section {
+            padding: 5rem 2rem;
+        }
+
+        .l-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .l-section.alt { background: var(--bg2); }
+
+        .l-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border), transparent);
+        }
+
+        /* ===================== SECTION HEADER ===================== */
+        .l-section-tag {
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 0.6rem;
+        }
+
+        .l-section-title {
+            font-family: var(--syne);
+            font-size: clamp(1.8rem, 3vw, 2.6rem);
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .l-section-desc {
+            color: var(--muted);
+            font-size: 1rem;
+            line-height: 1.75;
+            max-width: 620px;
+            margin-bottom: 3rem;
+        }
+
+        /* ===================== PRÉSENTATION ===================== */
+        .l-pres-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .l-pres-text p {
+            color: var(--muted);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
+        }
+
+        .l-pres-text strong { color: var(--text); }
+
+        .l-missions {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .l-missions li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 0.95rem;
+            color: var(--muted);
+        }
+
+        .l-missions li:last-child { border-bottom: none; }
+
+        .l-mission-icon {
+            width: 30px;
+            height: 30px;
+            background: rgba(59,130,246,0.08);
+            border: 1px solid rgba(59,130,246,0.2);
+            border-radius: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: var(--accent);
+            font-size: 14px;
+        }
+
+        .l-info-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.75rem;
+        }
+
+        .l-info-row {
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 1rem;
+        }
+
+        .l-info-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+
+        .l-info-label {
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 4px;
+        }
+
+        .l-info-value {
+            font-size: 0.95rem;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .l-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 4px;
+        }
+
+        .l-chip {
+            font-size: 0.68rem;
+            padding: 3px 9px;
+            background: rgba(59,130,246,0.08);
+            border: 1px solid rgba(59,130,246,0.2);
+            color: var(--accent3);
+            border-radius: 4px;
+        }
+
+        .l-skills-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 1.5rem;
+        }
+
+        .l-skill-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 10px 16px;
+            font-size: 0.85rem;
+            color: var(--text);
+            transition: border-color 0.2s;
+        }
+
+        .l-skill-card:hover { border-color: rgba(59,130,246,0.35); }
+
+        /* ===================== CARDS GENERIQUES ===================== */
+        .l-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+        }
+
+        .l-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: border-color 0.25s, transform 0.25s;
+        }
+
+        .l-card:hover {
+            border-color: rgba(59,130,246,0.3);
+            transform: translateY(-3px);
+        }
+
+        .l-card h3 {
+            font-family: var(--syne);
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--accent3);
+            margin-bottom: 0.75rem;
+        }
+
+        .l-card p, .l-card li {
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.75;
+        }
+
+        .l-card ul { list-style: none; }
+
+        .l-card ul li {
+            padding: 5px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
+            display: flex;
+            gap: 8px;
+        }
+
+        .l-card ul li::before {
+            content: '›';
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .l-card ul li:last-child { border-bottom: none; }
+
+        /* ===================== DEUX COLONNES TEXTE ===================== */
+        .l-two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+
+        .l-text-block p {
+            color: var(--muted);
+            font-size: 0.97rem;
+            line-height: 1.85;
+            margin-bottom: 1.2rem;
+        }
+
+        .l-text-block strong { color: var(--text); }
+
+        .l-text-block a {
+            color: var(--accent3);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(147,197,253,0.3);
+            transition: border-color 0.2s;
+        }
+
+        .l-text-block a:hover { border-color: var(--accent3); }
+
+        .l-text-block ul {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .l-text-block ul li {
+            color: var(--muted);
+            font-size: 0.95rem;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            gap: 10px;
+            line-height: 1.6;
+        }
+
+        .l-text-block ul li:last-child { border-bottom: none; }
+
+        .l-text-block ul li::before {
+            content: '→';
+            color: var(--accent);
+            flex-shrink: 0;
+            font-size: 0.85rem;
+            margin-top: 2px;
+        }
+
+        /* ===================== CODE / IMAGE BLOCK ===================== */
+        .l-img-wrap {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .l-img-wrap img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .l-img-caption {
+            padding: 10px 16px;
+            font-size: 0.75rem;
+            color: var(--muted);
+            border-top: 1px solid var(--border);
+            font-family: 'Inter', monospace;
+        }
+
+        /* Gantt image pleine largeur */
+        .l-img-full {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 2rem;
+        }
+
+        .l-img-full img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ===================== CONTEXT STEPS (commencement) ===================== */
+        .l-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .l-step {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 1.5rem;
+            align-items: start;
+        }
+
+        .l-step-num {
+            font-family: var(--syne);
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: rgba(59,130,246,0.45);
+            line-height: 1;
+            width: 60px;
+            text-align: center;
+        }
+
+        .l-step .l-img-wrap {
+            max-width: 900px;
+        }
+
+        /* Override styles.css qui force les h en noir */
+        .l-section h1, .l-section h2, .l-section h3,
+        .l-section h4, .l-section h5, .l-section h6,
+        .l-hero h1 {
+            color: var(--text) !important;
+        }
+
+        .l-section-title { color: var(--text) !important; }
+        .l-card h3 { color: var(--accent3) !important; }
+        .l-step h3 { color: var(--accent3) !important; }
+        font-family: var(--syne);
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--accent3);
+        margin-bottom: 0.5rem;
+        }
+
+        .l-step p {
+            color: var(--muted);
+            font-size: 0.92rem !important;
+            line-height: 1.75;
+        }
+
+        /* Override global p font-size from styles.css */
+        .l-section p,
+        .l-section li,
+        .l-text-block p,
+        .l-text-block li,
+        .l-card p,
+        .l-card li,
+        .l-pres-text p,
+        .l-section-desc,
+        .l-info-label,
+        .l-info-value,
+        .l-contact-label,
+        .l-contact-value,
+        .l-img-caption {
+            font-size: inherit !important;
+            line-height: inherit !important;
+        }
+
+        .l-section { font-size: 1rem; line-height: 1.7; }
+
+        /* ===================== ACTIVITY LIST ===================== */
+        .l-activity-list {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .l-activity-list li {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 12px 20px;
+            color: var(--text);
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: border-color 0.2s;
+        }
+
+        .l-activity-list li:hover { border-color: rgba(59,130,246,0.35); }
+
+        .l-activity-list li::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        /* ===================== CONTACT ===================== */
+        .l-contact-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        .l-contact-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            text-align: center;
+            transition: border-color 0.2s;
+        }
+
+        .l-contact-card:hover { border-color: rgba(59,130,246,0.3); }
+        .l-contact-card .material-symbols-outlined { color: var(--accent); font-size: 26px; }
+
+        .l-contact-label {
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .l-contact-value {
+            font-size: 0.9rem;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        a.l-contact-value:hover { color: var(--accent3); }
+
+        /* ===================== NAV BUTTONS ===================== */
+        .l-nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            padding: 3rem 2rem;
+            background: var(--bg);
+            border-top: 1px solid var(--border);
+        }
+
+        .l-btn {
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 11px 26px;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: none;
+        }
+
+        .l-btn-outline {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--muted);
+        }
+
+        .l-btn-outline:hover { border-color: var(--accent); color: var(--accent3); }
+
+        .l-btn-fill {
+            background: var(--accent);
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .l-btn-fill:hover { background: var(--accent2); }
+
+        /* ===================== SCROLL REVEAL ===================== */
+        .reveal {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal.hidden {
+            opacity: 0;
+            transform: translateY(24px);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===================== RESPONSIVE ===================== */
+        @media (max-width: 900px) {
+            .l-pres-grid, .l-two-col { grid-template-columns: 1fr; }
+            .l-contact-grid { grid-template-columns: 1fr; }
+            .l-step { grid-template-columns: 1fr; }
+            .l-step-num { display: none; }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- ============ HEADER STANDARD PORTFOLIO ============ -->
+<header>
+    <div class="boxed">
+        <div class="flex aligncenter space-between">
+            <button onclick="openMenu()" class="header-menu-mobile">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            <a href="../index.html" class="header-logo">
+                <img src="../img/Layout/portfolio-logo.png" alt="Logo Portfolio">
+            </a>
+            <ul class="header-menu">
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#Présentation">Présentation</a></li>
+                <li><a href="#Documentation">Documentation</a></li>
+                <li><a href="#Fiche">Fiche technique</a></li>
+                <li><a href="#QA">Assurance Qualité</a></li>
+                <li><a href="#Infra">Infra</a></li>
+                <li><a href="#Makefile">Makefile</a></li>
+                <li><a href="#DB">Base de Données</a></li>
+                <li><a href="#index">Page d'accueil</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<div id="accueil" class="l-hero">
+    <div class="l-hero-content">
+        <div class="l-badge">
+            <span class="l-badge-dot"></span>
+            STAGE N°1 — EKINO
+        </div>
+        <h1>Projet <em>Legolas</em></h1>
+        <p class="l-hero-sub">
+            Application web de gestion d'événements développée de A à Z pour le CSE d'Ekino —
+            de la conception à la mise en production, en Symfony / PHP.
+        </p>
+        <div class="l-hero-pills">
+            <span class="l-pill">Symfony</span>
+            <span class="l-pill">PHP 8.4</span>
+            <span class="l-pill">PostgreSQL</span>
+            <span class="l-pill">Docker</span>
+            <span class="l-pill">GitLab CI/CD</span>
+            <span class="l-pill">Twig</span>
+        </div>
+    </div>
+</div>
+
+<div class="l-divider"></div>
+
+<!-- ============ PRÉSENTATION ============ -->
+<div id="Présentation" class="l-section">
+    <div class="l-container reveal">
+        <p class="l-section-tag">01 — Présentation</p>
+        <h2 class="l-section-title">Mon Stage en Entreprise</h2>
+
+        <div class="l-pres-grid">
+            <div class="l-pres-text">
+                <p>
+                    J'ai réalisé mon stage de BTS SIO au sein d'<strong>Ekino</strong>, une société spécialisée dans
+                    la transformation digitale.
+                </p>
+                <p>
+                    Durant cette période de <strong>cinq semaines</strong>, j'ai travaillé sur la conception d'une application web
+                    permettant au CSE de l'entreprise de créer et gérer des événements.
+                </p>
+
+                <ul class="l-missions">
+                    <li>
+                        <div class="l-mission-icon"><span class="material-symbols-outlined" style="font-size:14px">code</span></div>
+                        Conception et mise en place du projet en Symfony / PHP
+                    </li>
+                    <li>
+                        <div class="l-mission-icon"><span class="material-symbols-outlined" style="font-size:14px">storage</span></div>
+                        Conception et administration des bases de données avec PostgreSQL
+                    </li>
+                    <li>
+                        <div class="l-mission-icon"><span class="material-symbols-outlined" style="font-size:14px">description</span></div>
+                        Rédaction de documentation technique
+                    </li>
+                </ul>
+
+                <div class="l-skills-cards">
+                    <div class="l-skill-card">Développement web</div>
+                    <div class="l-skill-card">Gestion de bases de données</div>
+                    <div class="l-skill-card">Travail en équipe</div>
+                    <div class="l-skill-card">Gestion du temps</div>
+                </div>
+            </div>
+
+            <div class="l-info-card">
+                <div class="l-info-row">
+                    <div class="l-info-label">Entreprise</div>
+                    <div class="l-info-value">Ekino — Transformation digitale</div>
+                </div>
+                <div class="l-info-row">
+                    <div class="l-info-label">Durée</div>
+                    <div class="l-info-value">5 semaines</div>
+                </div>
+                <div class="l-info-row">
+                    <div class="l-info-label">Projet</div>
+                    <div class="l-info-value">Legolas — Gestion d'événements CSE</div>
+                </div>
+                <div class="l-info-row">
+                    <div class="l-info-label">Stack</div>
+                    <div class="l-chips">
+                        <span class="l-chip">Symfony 7</span>
+                        <span class="l-chip">PHP 8.4</span>
+                        <span class="l-chip">PostgreSQL</span>
+                        <span class="l-chip">Docker</span>
+                        <span class="l-chip">Twig</span>
+                        <span class="l-chip">Doctrine</span>
+                        <span class="l-chip">GitLab CI/CD</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="l-divider"></div>
+
+<!-- ============ DIAGRAMME DE GANTT ============ -->
+<div id="diagrame" class="l-section alt">
+    <div class="l-container reveal">
+        <p class="l-section-tag">02 — Planning</p>
+        <h2 class="l-section-title">Diagramme de Gantt</h2>
+        <div class="l-img-full">
+            <a href="../img/Stage/S1/Diagrame.png" target="_blank">
+                <img src="../img/Stage/S1/Diagrame.png" alt="Diagramme de Gantt">
+            </a>
+            <div class="l-img-caption">Cliquer pour agrandir</div>
+        </div>
+    </div>
+</div>
+
+<div class="l-divider"></div>
+
+<!-- ============ DOCUMENTATION ============ -->
+<div id="Documentation" class="l-section">
+    <div class="l-container reveal">
+        <p class="l-section-tag">03 — Documentation</p>
+        <h2 class="l-section-title">Documentation Technique</h2>
+
+        <div class="l-two-col">
+            <div class="l-text-block">
+                <p>
+                    Durant ce stage, j'ai eu l'occasion de me familiariser avec <strong>la rédaction de documentation technique</strong>,
+                    un aspect fondamental du développement logiciel.
+                </p>
+                <p>
+                    J'ai appris à <strong>documenter de manière claire, structurée et concise</strong> chaque ajout au projet
+                    (qualité, infrastructure, etc.), en respectant <strong>les standards internationaux</strong> du domaine, notamment l'usage de la <strong>langue anglaise</strong>.
+                </p>
+                <p>
+                    Vous pouvez retrouver toute la documentation que j'ai rédigée sur mon
+                    <a href="https://github.com/Roxas004/StageDocs/tree/main/Stage%20n%C2%B01" target="_blank">GitHub</a>.
+                </p>
+            </div>
+            <div class="l-text-block">
+                <p style="color:var(--text); font-weight:600; margin-bottom:0.5rem;">Exemples de documents rédigés :</p>
+                <ul>
+                    <li><a href="http://github.com/Roxas004/StageDocs/blob/main/Stage%20n%C2%B01/ia-models/chatGPT.md" target="_blank">Documentation IA GPT</a></li>
+                    <li><a href="https://github.com/Roxas004/StageDocs/blob/main/Stage%20n%C2%B01/dx-git.md" target="_blank">Documentation Git</a></li>
+                    <li><a href="https://github.com/Roxas004/StageDocs/blob/main/Stage%20n%C2%B01/dx-gitlab.md" target="_blank">Documentation GitLab</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="l-divider"></div>
+
+<!-- ============ FICHE TECHNIQUE / COMMENCEMENT ============ -->
+<div id="Fiche" class="l-section alt">
+    <div class="l-container reveal">
+        <p class="l-section-tag">04 — Fiche Technique</p>
+        <h2 class="l-section-title">Le Commencement</h2>
+        <p class="l-section-desc">
+            Avant de coder, j'ai travaillé sur la conception et la planification du projet avec l'IA
+            <a href="https://github.com/Roxas004/StageDocs/blob/main/Stage%20n%C2%B01/ia-cline.md" target="_blank" style="color:var(--accent3);text-decoration:none">Cline</a>,
+            qui m'a aidé à créer trois fichiers essentiels.
+        </p>
+
+        <div class="l-steps">
+            <div class="l-step">
+                <div class="l-step-num">01</div>
+                <div>
+                    <h3>Product Context</h3>
+                    <p>
+                        Présente la vision et les objectifs de l'application Legolas. Il définit les <strong style="color:var(--text)">rôles utilisateurs</strong>
+                        (administrateur, organisateur, participant), les <strong style="color:var(--text)">principales fonctionnalités</strong>
+                        (création d'événements, inscriptions, tableau de bord, authentification),
+                        ainsi que les indicateurs de performance et les défis techniques.
+                    </p>
+                    <div class="l-img-wrap" style="margin-top:1rem">
+                        <a href="../img/Stage/S1/product%20context.png" target="_blank">
+                            <img src="../img/Stage/S1/product%20context.png" alt="Product Context">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="l-step">
+                <div class="l-step-num">02</div>
+                <div>
+                    <h3>Project Progress</h3>
+                    <p>
+                        Présente l'avancement du projet — étapes déjà réalisées et prochaines priorités. Permet de
+                        <strong style="color:var(--text)">suivre l'évolution</strong> et les jalons restants jusqu'à une version fonctionnelle.
+                    </p>
+                    <div class="l-img-wrap" style="margin-top:1rem">
+                        <a href="../img/Stage/S1/product_progress.png" target="_blank">
+                            <img src="../img/Stage/S1/product_progress.png" alt="Project Progress">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="l-step">
+                <div class="l-step-num">03</div>
+                <div>
+                    <h3>Technical Context</h3>
+                    <p>
+                        Décrit l'environnement technique et l'architecture du projet — technologies utilisées,
+                        design patterns (Repository, DI, Front Controller), bonnes pratiques de sécurité et de qualité.
+                    </p>
+                    <div class="l-img-wrap" style="margin-top:1rem">
+                        <a href="../img/Stage/S1/technical_context.png" target="_blank">
+                            <img src="../img/Stage/S1/technical_context.png" alt="Technical Context">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="l-divider"></div>
+
+<!-- ============ ASSURANCE QUALITÉ ============ -->
+<div id="QA" class="l-section">
+    <div class="l-container reveal">
+        <p class="l-section-tag">05 — Assurance Qualité</p>
+        <h2 class="l-section-title">QA & Outils de Qualité</h2>
+        <p class="l-section-desc">
+            Afin d'assurer la qualité, la cohérence et la maintenabilité du code, j'ai mis en place plusieurs outils QA.
+        </p>
+
+        <div class="l-cards">
+            <div class="l-card">
+                <h3>PHP CS Fixer</h3>
+                <p>Formatage automatique du code et respect des standards, garantissant une base de code homogène.</p>
+            </div>
+            <div class="l-card">
+                <h3>PHP Insights</h3>
+                <p>Analyse de la qualité globale du projet — lisibilité, complexité et bonnes pratiques.</p>
+            </div>
+            <div class="l-card">
+                <h3>PHPStan</h3>
+                <p>Analyse statique pour détecter en amont les erreurs potentielles et améliorer la robustesse du code.</p>
+            </div>
+            <div class="l-card">
+                <h3>Rector</h3>
+                <p>Refactorisation automatique et modernisation du code selon les dernières versions de PHP et Symfony.</p>
+            </div>
+            <div class="l-card">
+                <h3>Renovate</h3>
+                <p>Automatisation de la mise à jour des dépendances, assurant la sécurité et la stabilité du projet.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="l-divider"></div>
+
+<!-- ============ INFRA ============ -->
+<div id="Infra" class="l-section alt">
+    <div class="l-container reveal">
+        <p class="l-section-tag">06 — Infrastructure</p>
+        <h2 class="l-section-title">Infrastructure & DevOps</h2>
+
+        <div class="l-two-col">
+            <div class="l-text-block">
+                <p>
+                    <a href="https://github.com/Roxas004/StageDocs/blob/main/Stage%20n%C2%B01/infra-adr.md" target="_blank"><strong>Les ADR (Architecture Decision Records)</strong></a>
+                    sont des documents servant à <strong>consigner les décisions techniques importantes</strong> prises au cours du développement,
+                    ainsi que leur contexte et leurs conséquences. Cette pratique favorise <strong>la transparence et la cohérence technique</strong>.
+                </p>
+                <p>
+                    <a href="https://github.com/Roxas004/StageDocs/blob/main/Stage%20n%C2%B01/infra-ci.md" target="_blank"><strong>La CI (Continuous Integration)</strong></a>
+                    a été mise en place pour détecter rapidement les erreurs. Le pipeline inclut des étapes de <strong>build, tests unitaires, analyse statique</strong>
+                    (PHPStan, Rector) et <strong>déploiement automatique</strong>.
+                </p>
+                <p>
+                    <a href="https://github.com/Roxas004/StageDocs/blob/main/Stage%20n%C2%B01/infra-docker.md" target="_blank"><strong>Docker</strong></a>
+                    a été utilisé pour assurer la portabilité, l'isolation et la cohérence de l'environnement de développement, test et production.
+                </p>
+            </div>
+
+            <div style="display:flex; flex-direction:column; gap:1.25rem;">
+                <div class="l-img-wrap">
+                    <a href="../img/Stage/S1/pipe_fail.png" target="_blank">
+                        <img src="../img/Stage/S1/pipe_fail.png" alt="Pipeline qui rate">
                     </a>
-                    <!-- Menu de navigation principal -->
-                    <ul class="header-menu">
-                        <li><a href="#accueil">Accueil</a></li>
-                        <li><a href="#Présentation">Présentation</a></li>
-                        <li><a href="#Documentation">Documentation</a></li>
-                        <li><a href="#Fiche">Ficher technique</a></li>
-                        <li><a href="#QA">Assurance Qualité</a></li>
-                        <li><a href="#Infra">Infra</a></li>
-                        <li><a href="#Makefile">Makefile</a></li>
-                        <li><a href="#DB">Base de Données</a></li>
-                        <li><a href="#index">Page d'accueil</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>                    
+                    <div class="l-img-caption">Pipeline CI — Échec</div>
                 </div>
-            </div>
-        </header>
-
-        <!-- Section d'accueil avec image de fond et texte -->
-        <div id="accueil" class="slider">
-            <img src="../img/Layout/slider.jpg" class="slider-background" alt="Image de fond" />
-            <div class="slider-content">
-                <h1>Rosa Axel</h1>
-                <p>Étudiant en BTS SIO</p>
-            </div>
-        </div>
-
-        <!-- Section Portfolio avec texte -->
-        <div id="Présentation" class="section">
-            <div class="boxed text-center">
-                <h2>Mon Stage en Entreprise</h2>
-                <div class="flex" style="justify-content: center">
-                    <div class="w60 wm100 portfolio-txt">
-                        <p class="text-left">
-                            J’ai réalisé mon stage de BTS SIO au sein de <strong>Ekino</strong>, une société spécialisée dans
-                            la transformation digitale.
-                        </p>
-
-                        <p class="text-left">
-                            Durant cette période de <strong>cinq semaines</strong>, j’ai travaillé sur la conception d’une application web
-                            permettant au CSE de l’entreprise de créer et gérer des événements.
-                        </p>
-
-                        <h3 class="text-left">Mes missions</h3>
-                        <ul class="text-left missions">
-                            <li><span class="material-symbols-outlined">code</span> Conception et mise en place du projet en Symfony / PHP </li>
-                            <li><span class="material-symbols-outlined">Storage</span> Conception et administration des bases de données avec PostgresSQL</li>
-                            <li><span class="material-symbols-outlined">Description</span> Rédaction de documentation technique</li>
-                        </ul><br>
-
-                        <h3 class="text-left">Compétences acquises</h3><br>
-                        <div class="competences-cards">
-                            <div class="competence-card-stage">
-                                <h3>Développement web</h3>
-                            </div>
-                            <div class="competence-card-stage">
-                                <h3>Gestion de bases de données</h3>
-                            </div>
-                            <div class="competence-card-stage">
-                                <h3>Travail en équipe</h3>
-                            </div>
-                            <div class="competence-card-stage">
-                                <h3>Gestion du temps</h3>
-                            </div>
-                        </div>
-                    </div>
+                <div class="l-img-wrap">
+                    <a href="../img/Stage/S1/pipe_pass.png" target="_blank">
+                        <img src="../img/Stage/S1/pipe_pass.png" alt="Pipeline qui passe">
+                    </a>
+                    <div class="l-img-caption">Pipeline CI — Succès</div>
                 </div>
             </div>
         </div>
+    </div>
+</div>
 
-        <div class="color-band"></div>
+<div class="l-divider"></div>
 
-        <!-- Section Portfolio avec texte -->
-        <div id="diagrame" class="section">
-            <div class="boxed text-center">
-                <h2>Diagramme de Gantt</h2>
-                <div class="flex" style="justify-content: center">
-                    <div class="w60 wm100 portfolio-txt">
-                        <a href="../img/Stage/S1/Diagrame.png" target="_blank">
-                            <img src="../img/Stage/S1/Diagrame.png" alt="Makefile" class="image-code">
-                        </a>
-                    </div>
-                </div>
+<!-- ============ MAKEFILE ============ -->
+<div id="Makefile" class="l-section">
+    <div class="l-container reveal">
+        <p class="l-section-tag">07 — Makefile</p>
+        <h2 class="l-section-title">Makefile</h2>
+
+        <div class="l-two-col">
+            <div class="l-text-block">
+                <p>
+                    Un <strong>Makefile</strong> est un fichier de configuration utilisé pour <strong>automatiser des tâches répétitives</strong>
+                    dans un projet logiciel. Chaque tâche est définie comme une cible avec ses commandes associées,
+                    permettant de lancer plusieurs opérations avec une seule commande <code style="color:var(--accent3); background:var(--surface); padding:2px 6px; border-radius:4px; font-size:0.85em">make</code>.
+                </p>
+                <p>
+                    Grâce à ce système, j'ai pu <strong>standardiser et simplifier le workflow</strong> de l'équipe, par exemple pour exécuter
+                    des QA ou des commandes Docker, tout en assurant une méthode cohérente et reproductible.
+                </p>
+            </div>
+            <div class="l-img-wrap">
+                <a href="../img/Stage/S1/makefile_cmd.png" target="_blank">
+                    <img src="../img/Stage/S1/makefile_cmd.png" alt="Makefile dans l'invite de commande">
+                </a>
+                <div class="l-img-caption">Makefile dans l'invite de commande</div>
             </div>
         </div>
+    </div>
+</div>
 
-        <div class="color-band"></div>
+<div class="l-divider"></div>
 
-        <!-- Section Portfolio avec texte -->
-        <div id="Documentation" class="section">
-            <div class="boxed text-center">
-                <h2>Documentation</h2>
-                <div class="flex" style="justify-content: center">
-                    <div class="w60 wm100 portfolio-txt">
-                        <p class="text-left">
-                            Durant ce stage, j’ai également eu l’occasion et la responsabilité de me familiariser avec <strong>la rédaction de documentation technique</strong>,
-                            un aspect fondamental du développement logiciel. J’ai appris à <strong>documenter de manière claire, structurée et concise</strong> chaque ajout au projet
-                            (qualité, infrastructure, etc.), en respectant <strong>les standards internationaux</strong> du domaine, notamment l’usage de la <strong>langue anglaise</strong>,
-                            incontournable dans le monde du développement.
-                            Vous pouvez retrouver toute la documentation que j'ai rédigée durant mon stage sur mon <a href="https://github.com/Roxas004/StageDocs/tree/main/Stage%20n%C2%B01" target="_blank">GitHub</a>.
-                        </p>
-                        <p class="text-left">
-                            Voici quelques exemples de documents que j'ai créés :
-                        </p>
-                        <p class="text-left">
-                            <a href="http://github.com/Roxas004/StageDocs/blob/main/Stage%20n%C2%B01/ia-models/chatGPT.md" target="_blank">
-                                - IA GPT
-                            </a>
-                        </p>
-                        <p class="text-left">
-                            <a href="https://github.com/Roxas004/StageDocs/blob/main/Stage%20n%C2%B01/dx-git.md" target="_blank">
-                                - Git
-                            </a>
-                        </p>
-                        <p class="text-left">
-                            <a href="https://github.com/Roxas004/StageDocs/blob/main/Stage%20n%C2%B01/dx-gitlab.md" target="_blank">
-                                - GitLab
-                            </a>
-                        </p>
-                    </div>
-                </div>
+<!-- ============ BASE DE DONNÉES ============ -->
+<div id="DB" class="l-section alt">
+    <div class="l-container reveal">
+        <p class="l-section-tag">08 — Base de Données</p>
+        <h2 class="l-section-title">Base de Données</h2>
+
+        <div class="l-two-col">
+            <div class="l-text-block">
+                <p>
+                    Pour la persistance des données, j'ai choisi <strong>PostgreSQL</strong>, hébergé dans un conteneur Docker.
+                    Avant de coder, j'ai réalisé la <strong>conception de la base de données (MCD)</strong> pour définir clairement
+                    les relations entre les utilisateurs, les événements et les inscriptions.
+                </p>
+                <p>
+                    Plutôt que d'écrire du SQL brut, j'ai utilisé l'ORM <strong>Doctrine</strong> intégré à Symfony,
+                    ce qui m'a permis de manipuler les données sous forme d'<strong>Entités PHP</strong>.
+                </p>
+                <ul>
+                    <li><strong>Entités & Repository</strong> : chaque table est une classe PHP (ex: <code style="color:var(--accent3)">Event.php</code>), ce qui sécurise les requêtes.</li>
+                    <li><strong>Migrations</strong> : système de migrations pour versionner l'évolution de la base de données.</li>
+                </ul>
+            </div>
+            <div class="l-img-wrap">
+                <a href="../img/Stage/S1/database_schema.png" target="_blank">
+                    <img src="../img/Stage/S1/database_schema.png" alt="Schéma de la base de données">
+                </a>
+                <div class="l-img-caption">Schéma relationnel</div>
             </div>
         </div>
+    </div>
+</div>
 
-        <div class="color-band"></div>
+<div class="l-divider"></div>
 
-        <!-- Section Portfolio avec texte -->
-        <div id="Fiche" class="section">
-            <div class="boxed text-center">
-                <h2>Le commencement</h2>
-                <div class="flex" style="justify-content: center">
-                    <div class="w60 wm100 portfolio-txt">
-                        <p class="text-left">
-                            Ce stage avait pour but de me faire réaliser un projet de <strong>A à Z</strong>,
-                            de la <strong>conception</strong> à la <strong>mise en production</strong>,
-                            en m’appuyant sur les nouvelles technologies, notamment l’<strong>IA</strong>.
-                        </p>
+<!-- ============ PAGE D'ACCUEIL (DASHBOARD) ============ -->
+<div id="index" class="l-section">
+    <div class="l-container reveal">
+        <p class="l-section-tag">09 — Interface</p>
+        <h2 class="l-section-title">Page d'accueil (Dashboard)</h2>
 
-                        <p class="text-left">
-                            Avant même de commencer à coder, j'ai dû apprendre à réaliser tout le travail de <strong>conception</strong> et
-                            de <strong>planification</strong> d'un projet, en utilisant l'IA
-                            <a href="https://github.com/Roxas004/StageDocs/blob/main/Stage%20n%C2%B01/ia-cline.md"> <strong>Cline</strong>,</a>
-                            qui m'a aidé à créer trois fichiers essentiels pour le projet :
-
-                        </p><br>
-
-                        <ul class="text-left">
-                            <li>
-                                <h3>Product Context:</h3>
-                                <a href="../img/Stage/S1/product%20context.png" target="_blank">
-                                    <img src="../img/Stage/S1/product%20context.png" alt="Product Context Diagram" class="image-code">
-                                </a>
-                                <p>
-                                    Le fichier <strong>Product Context</strong> – Présente la vision et les objectifs de l'application web nommée pour le développement Legolas,
-                                    développée avec <strong>Symfony</strong> pour la création et la gestion d’événements. Il définit les <strong>rôles utilisateurs</strong>
-                                    (administrateur, organisateur, participant), <strong>les principales fonctionnalités</strong>
-                                    (création d’événements, inscriptions, tableau de bord, filtres, notifications par e-mail, authentification),
-                                    ainsi que les indicateurs de performance et les défis techniques liés à la scalabilité et aux dépendances externes.
-                                    Ce document sert de base de référence pour guider le développement du projet et assurer sa cohérence fonctionnelle.
-                                </p><br>
-                            </li>
-
-                            <li>
-                                <h3>Project Progress:</h3>
-                                <a href="../img/Stage/S1/product_progress.png" target="_blank">
-                                    <img src="../img/Stage/S1/product_progress.png" alt="Product progress Diagram" class="image-code">
-                                </a>
-                                <p>
-                                    Le fichier <strong>Project Progress</strong> – Présente l’avancement du projet Legolas,
-                                    actuellement en phase de développement des fonctionnalités avec environ 15 % de progression.
-                                    Il récapitule <strong>les étapes déjà réalisées</strong> (structure du projet, configuration Docker, CI/CD GitLab, outils de qualité,
-                                    Makefile) et <strong>liste les prochaines priorités</strong> : finalisation du schéma de base de données, implémentation des CRUD,
-                                    gestion des rôles et authentification, création des templates et logique d’inscription aux événements.
-                                    Ce document permet de <strong>suivre l’évolution du projet</strong> et <strong>les jalons restants</strong> jusqu’à une version fonctionnelle.
-                                </p><br>
-                            </li>
-
-                            <li>
-                                <h3>Technical Context:</h3>
-                                <a href="../img/Stage/S1/technical_context.png" target="_blank">
-                                    <img src="../img/Stage/S1/technical_context.png" alt="Technical Context Diagram" class="image-code">
-                                </a>
-                                <p>
-                                    Le fichier <strong>Technical Context</strong> – Décrit l’environnement <strong>technique</strong> et <strong>l’architecture</strong> du projet Legolas.
-                                    Il précise les <strong>technologies</strong> utilisées (PHP 8.4, Symfony 7, Doctrine, Twig, PostgresSQL, Docker, GitLab CI/CD, etc.)
-                                    et détaille l’organisation du code selon le modèle MVC de Symfony.
-                                    Il met en avant l’usage de plusieurs design patterns (Repository, Dependency Injection, Front Controller)
-                                    ainsi que les <strong>bonnes pratiques</strong> appliquées en matière de <strong>sécurité, performance et qualité du code</strong>.
-                                    Ce document sert de <strong>référence technique</strong> pour assurer la cohérence, la maintenabilité et la fiabilité du projet.
-                                </p><br>
-                            </li>
-                        </ul>
-
-                        <p class="text-left">
-                            Ces documents ont pour <strong>objectif</strong> de définir avec précision les <strong>objectifs</strong> et le <strong>cadre technique</strong> du projet,
-                            afin de pouvoir fournir à une <strong>intelligence artificielle</strong> toutes les informations nécessaires pour qu’elle
-                            dispose immédiatement d’une compréhension complète du contexte.
-                        </p>
-                    </div>
-                </div>
+        <div class="l-two-col">
+            <div class="l-text-block">
+                <p>
+                    La page d'accueil de l'application agit comme un véritable <strong>tableau de bord</strong> pour les membres du CSE.
+                    L'objectif était de proposer une interface <strong>intuitive et épurée</strong>, permettant aux utilisateurs de voir en un coup d'œil les événements à venir.
+                </p>
+                <ul>
+                    <li><strong>Moteur de Template Twig</strong> : génération du HTML dynamiquement, héritage d'un layout de base.</li>
+                    <li><strong>Composants Réutilisables</strong> : affichage des événements via des <em>partials</em> Twig.</li>
+                    <li><strong>Responsive Design</strong> : adaptation mobile via media queries CSS.</li>
+                </ul>
+            </div>
+            <div class="l-img-wrap">
+                <a href="../img/Stage/S1/home_page_view.png" target="_blank">
+                    <img src="../img/Stage/S1/home_page_view.png" alt="Aperçu de la page d'accueil">
+                </a>
+                <div class="l-img-caption">Interface utilisateur — Dashboard</div>
             </div>
         </div>
+    </div>
+</div>
 
-        <div class="color-band"></div>
+<div class="l-divider"></div>
 
-        <!-- Section Portfolio avec texte -->
-        <div id="QA" class="section">
-            <div class="boxed text-center">
-                <h2>Assurance Qualité</h2>
-                <div class="flex" style="justify-content: center">
-                    <div class="w60 wm100 portfolio-txt">
-                        <p class="text-left">
-                            Afin d’assurer la <strong>qualité</strong>, la <strong>cohérence</strong> et la <strong>maintenabilité</strong> du code tout au long du développement du projet,
-                            j’ai mis en place plusieurs outils <strong>d’assurance qualité (QA)</strong>.
+<!-- ============ ACTIVITÉS ============ -->
+<div class="l-section alt">
+    <div class="l-container reveal">
+        <p class="l-section-tag">10 — Activités</p>
+        <h2 class="l-section-title">Activités & Projets annexes</h2>
+        <ul class="l-activity-list">
+            <li>Réunions du vendredi</li>
+            <li>Présentation IA</li>
+        </ul>
+    </div>
+</div>
 
-                            J’ai utilisé <a class="link-s" href="https://github.com/Roxas004/StageDocs/blob/main/Stage%20n%C2%B01/qa-phpcsfixer.md" target="_blank"><strong>PHP CS Fixer</strong></a>
-                            pour le formatage automatique du code et le respect des standards, garantissant une base de code homogène.
+<div class="l-divider"></div>
 
-                            L’outil <a class="link-s" href="https://github.com/Roxas004/StageDocs/blob/main/Stage%20n%C2%B01/qa-phpinsights.md" target="_blank"><strong>PHP Insights</strong></a> m’a permis d’analyser la qualité globale du projet,
-                            en évaluant la lisibilité, la complexité et les bonnes pratiques.
-
-                            Avec <a class="link-s" href="https://github.com/Roxas004/StageDocs/blob/main/Stage%20n%C2%B01/qa-phpstan.md" target="_blank"><strong>PHPStan</strong></a>,
-                            j’ai effectué une analyse statique afin de détecter en amont les erreurs potentielles et d’améliorer la robustesse du code.
-
-                            J’ai également intégré <a class="link-s" href="https://github.com/Roxas004/StageDocs/blob/main/Stage%20n%C2%B01/qa-rector.md" target="_blank"><strong>Rector</strong></a>,
-                            qui facilite la refactorisation automatique et la modernisation du code selon les dernières versions de PHP et Symfony.
-
-                            Enfin, <a class="link-s" href="https://github.com/Roxas004/StageDocs/blob/main/Stage%20n%C2%B01/qa-renovate.md" target="_blank"><strong>Renovate</strong></a> a été configuré pour automatiser la mise à jour des dépendances,
-                            assurant ainsi la sécurité et la stabilité du projet sur le long terme.
-
-                            L’ensemble de ces outils m’a permis de maintenir un <strong>haut niveau de qualité logicielle</strong> et d’optimiser <strong>la productivité du développement</strong>.
-                        </p>
-                    </div>
-                </div>
+<!-- ============ CONTACT ============ -->
+<div id="contact" class="l-section">
+    <div class="l-container">
+        <div class="reveal" style="text-align:center; margin-bottom:2.5rem;">
+            <p class="l-section-tag" style="justify-content:center; display:flex;">Contact</p>
+            <h2 class="l-section-title">Contactez-moi</h2>
+        </div>
+        <div class="l-contact-grid reveal">
+            <div class="l-contact-card">
+                <span class="material-symbols-outlined">mail</span>
+                <span class="l-contact-label">E-Mail</span>
+                <a href="/cdn-cgi/l/email-protection#a7c6dfc2cbc6cbcac2cec3c6d5c8d4c6e7c0cac6cecb89c4c8ca" class="l-contact-value"><span class="__cf_email__" data-cfemail="27465f424b464b4a424e43465548544667404a464e4b0944484a">[email&#160;protected]</span></a>
+            </div>
+            <div class="l-contact-card">
+                <span class="material-symbols-outlined">call</span>
+                <span class="l-contact-label">Téléphone</span>
+                <span class="l-contact-value">07.86.89.58.90</span>
+            </div>
+            <div class="l-contact-card">
+                <span class="material-symbols-outlined">account_box</span>
+                <span class="l-contact-label">GitHub</span>
+                <a href="https://github.com/Roxas004" target="_blank" class="l-contact-value">github.com/Roxas004</a>
             </div>
         </div>
+    </div>
+</div>
 
-        <div class="color-band"></div>
+<!-- ============ NAV BUTTONS ============ -->
+<div class="l-nav-buttons">
+    <button class="l-btn l-btn-outline" onclick="location.href='../index.html'">← Accueil</button>
+    <button class="l-btn l-btn-fill" onclick="location.href='crawlservice.html'">Stage n°2 →</button>
+</div>
 
-        <!-- Section Portfolio avec texte -->
-        <div id="Infra" class="section">
-            <div class="boxed text-center">
-                <h2>Infra</h2>
-                <div class="flex" style="justify-content: center">
-                    <div class="w60 wm100 portfolio-txt">
-                        <ul class="text-left">
-                            <li>
-                                <a class="link-s" href="https://github.com/Roxas004/StageDocs/blob/main/Stage%20n%C2%B01/infra-adr.md" target="_blank"><strong>Les architectures Decision Records (ADR)</strong></a>
-                                sont des documents servant à <strong>consigner les décisions techniques importantes</strong> prises au cours du développement d’un projet,
-                                ainsi que leur <strong>contexte</strong> et leurs <strong>conséquences</strong>. Leur but est de garder une <strong>trace claire du raisonnement</strong>
-                                ayant conduit à un choix donné (technologie, architecture, outil, etc.), afin de faciliter la compréhension et la continuité du projet dans le temps.
-                                J’ai mis en place ce système dans Legolas pour assurer une <strong>traçabilité des choix techniques</strong>,
-                                éviter les rediscussion inutiles et permettre à tout contributeur actuel ou futur de comprendre <strong>pourquoi</strong> une décision a été prise. Cette pratique favorise <strong>la transparence,
-                                la cohérence technique et une meilleure communication</strong> au sein de l’équipe de développement.
-                                Les membres de l’équipe peuvent ainsi se référer aux
-                                <a class="link-s" href="https://github.com/Roxas004/Stage/blob/main/Save%20projet/Moi/docs/adr/template.md" target="_blank"><strong>template</strong></a> fourni pour documenter de futures décisions importantes.
-                            </li><br>
-                            <li>
-                                <p>
-                                    <a class="link-s" href="https://github.com/Roxas004/StageDocs/blob/main/Stage%20n%C2%B01/infra-ci.md" target="_blank"><strong>La Continuous Integration (CI) </strong></a>
-                                    est une pratique de développement visant à <strong>fusionner régulièrement les modifications de code</strong> dans un dépôt partagé et à valider automatiquement ces changements.
-                                    Dans le cadre du projet Legolas, j’ai mis en place une <strong>CI</strong> pour détecter rapidement les erreurs, améliorer la qualité du code grâce aux tests et analyses statiques,
-                                    et faciliter la collaboration entre les développeurs. Le pipeline CI inclut des étapes de <strong>build, tests unitaires, analyse statique</strong> (avec PHPStan et Rector) et <strong>déploiement automatique</strong>,
-                                    garantissant ainsi un processus de développement <strong>fiable, rapide et reproductible</strong>.
-                                </p><br>
-                                <h5>Exemple Pipeline qui rate :</h5>
-                                <a href="../img/Stage/S1/pipe_fail.png" target="_blank">
-                                    <img src="../img/Stage/S1/pipe_fail.png" alt="pipe fail" class="image">
-                                </a><br>
-                                <h5>Exemple Pipeline qui passe :</h5>
-                                <a href="../img/Stage/S1/pipe_pass.png" target="_blank">
-                                    <img src="../img/Stage/S1/pipe_pass.png" alt="pipe fail" class="image">
-                                </a>
-                            </li><br>
-                            <li>
-                                <p>
-                                    <a class="link-s" href="https://github.com/Roxas004/StageDocs/blob/main/Stage%20n%C2%B01/infra-docker.md" target="_blank"><strong>Docker </strong></a>
-                                    est une <strong>plateforme de conteneurisation</strong> que j’ai utilisée dans le projet Legolas pour assurer <strong>la portabilité, l’isolation et la cohérence</strong> de l’environnement de développement,
-                                    de test et de production. Chaque application est exécutée dans un <strong>conteneur</strong> regroupant le code, les dépendances et la configuration nécessaire,
-                                    garantissant qu’elle fonctionne de manière identique sur tous les systèmes. J’ai utilisé <strong>Docker Compose</strong> pour orchestrer les services (web, base de données).
-                                    Cela a permis d’améliorer la <strong>productivité</strong>, de réduire les problèmes liés aux différences d’environnement et de faciliter le déploiement continu.
-                                </p><br>
-                                <h5>Mon Docker Compose:</h5>
-                                <a href="../img/Stage/S1/docker_compose.png" target="_blank">
-                                    <img src="../img/Stage/S1/docker_compose.png" alt="docker compose" class="image-code">
-                                </a>
-                            </li><br>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+<script src="../js/app.js"></script>
+<script>
+    const revealEls = document.querySelectorAll('.reveal');
+    revealEls.forEach(el => el.classList.add('hidden'));
 
-        <div class="color-band"></div>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.remove('hidden');
+                e.target.classList.add('visible');
+                observer.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.08 });
 
-        <!-- Section Portfolio avec texte -->
-        <div id="Makefile" class="section">
-            <div class="boxed text-center">
-                <h2>Makefile</h2>
-                <div class="flex" style="justify-content: center">
-                    <div class="w60 wm100 portfolio-txt">
-                        <p class="text-left">
-                            <a class="link-s" href="https://github.com/Roxas004/StageDocs/blob/main/Stage%20n%C2%B01/dx-makefile.md" target="_blank"><strong>Le Makefile </strong></a>
-                            est un outil que j’ai intégré dans le projet Legolas pour automatiser les tâches répétitives du développement, telles que la compilation, l’analyse du code,
-                            les tests ou le nettoyage des fichiers temporaires. Chaque tâche est définie comme une cible (target) avec ses commandes associées, permettant de lancer plusieurs opérations avec une seule commande make.
-                            Grâce à ce système, j’ai pu standardiser et simplifier le workflow de l’équipe, par exemple pour exécuter des QA ou de Docker,
-                            tout en assurant que chaque développeur dispose d’une méthode cohérente et reproductible pour effectuer les tâches courantes du projet.
-                        </p><br>
-                        <h5 class="text-left">Mon Makefile dans l'invite de commande :</h5>
-                        <a href="../img/Stage/S1/makefile_cmd.png" target="_blank">
-                            <img src="../img/Stage/S1/makefile_cmd.png" alt="Makefile" class="image-code">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+    revealEls.forEach(el => observer.observe(el));
+</script>
 
-        <div class="color-band"></div>
-
-        <!-- Section Portfolio avec texte -->
-        <div id="DB" class="section">
-            <div class="boxed text-center">
-                <h2>Base de Données</h2>
-                <div class="flex" style="justify-content: center">
-                    <div class="w60 wm100 portfolio-txt">
-
-                        <p class="text-left">
-                            Pour la persistance des données, j'ai choisi <strong>PostgreSQL</strong>,
-                            hébergé dans un conteneur Docker. Avant de coder, j'ai réalisé la <strong>conception</strong>
-                            de la base de données (MCD) pour définir clairement les relations entre les utilisateurs,
-                            les événements et les inscriptions.
-                        </p>
-
-                        <h3 class="text-left">Schéma Relationnel</h3>
-                        <a href="../img/Stage/S1/database_schema.png" target="_blank">
-                            <img src="../img/Stage/S1/database_schema.png" alt="Schéma de la base de données" class="image-code">
-                        </a>
-
-                        <br><br>
-
-                        <h3 class="text-left">Implémentation avec Doctrine (ORM)</h3>
-                        <p class="text-left">
-                            Plutôt que d'écrire du SQL brut, j'ai utilisé l'ORM <strong>Doctrine</strong> intégré à Symfony.
-                            Cela m'a permis de manipuler les données sous forme d'<strong>Entités PHP</strong>.
-                        </p>
-
-                        <ul class="text-left">
-                            <li>
-                                <strong>Entités & Repository :</strong> Chaque table est représentée par une classe PHP (ex: <code>Event.php</code>),
-                                ce qui sécurise les requêtes et facilite la maintenance.
-                            </li>
-                            <li>
-                                <strong>Migrations :</strong> J'ai utilisé le système de migrations pour versionner l'évolution
-                                de la base de données au fil du projet.
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="color-band"></div>
-
-        <!-- Section Portfolio avec texte -->
-        <div id="index" class="section">
-            <div class="boxed text-center">
-                <h2>Page d'accueil (Dashboard)</h2>
-                <div class="flex" style="justify-content: center">
-                    <div class="w60 wm100 portfolio-txt">
-                        <p class="text-left">
-                            La page d'accueil de l'application agit comme un véritable <strong>Tableau de Bord</strong> pour les membres du CSE.
-                            L'objectif était de proposer une interface <strong>intuitive et épurée</strong>, permettant aux utilisateurs de voir en un coup d'œil les événements à venir.
-                        </p>
-
-                        <h3 class="text-left">Interface Utilisateur (UI)</h3>
-                        <a href="../img/Stage/S1/home_page_view.png" target="_blank">
-                            <img src="../img/Stage/S1/home_page_view.png" alt="Aperçu de la page d'accueil" class="image-code">
-                        </a>
-
-                        <h3 class="text-left">Aspects Techniques</h3>
-                        <ul class="text-left">
-                            <li>
-                                <strong>Moteur de Template Twig :</strong> J'ai utilisé Twig pour générer le HTML dynamiquement.
-                                Cela permet d'hériter d'un layout de base (<code>base.html.twig</code>) pour ne pas répéter le code de la barre de navigation et du pied de page.
-                            </li>
-                            <li>
-                                <strong>Composants Reutilisables :</strong> L'affichage des événements (les "cartes" visibles ci-dessus)
-                                a été géré via des <em>partials</em> Twig, ce qui permet de réutiliser ce même design sur la page de recherche ou de profil.
-                            </li>
-                            <li>
-                                <strong>Responsive Design :</strong> Grâce aux media queries CSS, l'affichage s'adapte parfaitement
-                                aux écrans d'ordinateurs comme aux smartphones, un critère essentiel pour l'accessibilité du CSE.
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="color-band"></div>
-
-        <!-- Section Portfolio avec texte -->
-        <div id="activity" class="section">
-            <div class="boxed text-center">
-                <h2>Activité or projet</h2>
-                <div class="flex" style="justify-content: center">
-                    <div class="w60 wm100 portfolio-txt">
-                        <ul>
-                            <li>
-                                Reunions du vendredi
-                            </li>
-                            <li>
-                                Presentation IA
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Section de contact avec informations et icônes -->
-        <div id="contact" class="section dark">
-            <div class="boxed text-center">
-                <h2>Contactez-moi</h2>
-                <div class="flex toColumn space-between mgap20">
-                    <div class="w32 wm100 contact">
-                        <span class="material-symbols-outlined icon">mail</span>
-                        <span class="label">E-Mail</span>
-                        <span class="value">axelalmeidarosa@gmail.com</span>
-                    </div>
-                    <div class="w32 wm100 contact">
-                        <span class="material-symbols-outlined">call</span>
-                        <span class="label">Téléphone</span>
-                        <span class="value">07.86.89.58.90</span>
-                    </div>
-                    <div class="w32 wm100 contact">
-                        <span class="material-symbols-outlined">account_box</span>
-                        <span class="label">GitHub</span>
-                        <a href="https://github.com/Roxas004"><span class="value">https://github.com/Roxas004</span></a>                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="navigation-buttons">
-            <button onclick="location.href='../index.html'">Accueil</button>
-            <button onclick="location.href=''">Stage n°2</button>
-        </div>
-    </body>
-        
-    <!-- Inclusion du fichier JavaScript pour la logique de la page -->
-    <script src="../js/app.js"></script>
+</body>
 </html>
