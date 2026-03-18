@@ -3,15 +3,17 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tableau de synthèse</title>
+    <title>Tableau de synthèse — Rosa Axel</title>
     <link rel="shortcut icon" type="png" href="../img/Layout/portfolio-logo-64.png" />
     <meta name="description" content="Mon tableau de synthèse BTS SIO" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/tableauDeSynthèse.css" type="text/css">
 </head>
 
 <body>
+
+<!-- ===================== HEADER ===================== -->
 <header>
     <div class="boxed">
         <div class="flex aligncenter space-between">
@@ -21,15 +23,18 @@
             <a href="../index.html" class="header-logo">
                 <img src="../img/Layout/portfolio-logo.png" alt="Logo du portfolio">
             </a>
-            <ul class="header-menu">
+            <ul class="header-menu" id="main-menu">
                 <li><a href="../index.html">Accueil</a></li>
-                <li><a href="#Tableau-de-synthèse">Tableau de synthèse</a></li>
+                <li><a href="#tableau-section">Tableau</a></li>
+                <li><a href="#competences-section">Compétences</a></li>
+                <li><a href="#pdf-section">PDF</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </div>
 </header>
 
+<!-- ===================== HERO ===================== -->
 <div id="accueil" class="slider">
     <img src="../img/Layout/slider.jpg" class="slider-background" alt="Image de fond">
     <div class="slider-content">
@@ -38,64 +43,149 @@
     </div>
 </div>
 
-<div id="Tableau-de-synthèse" class="section">
+<!-- ===================== INTRO ===================== -->
+<div class="page-intro">
     <div class="boxed">
-        <h2>Mon Tableau de Synthèse</h2>
-        <p class="section-intro">
-            Ce tableau récapitule l'ensemble de mes compétences, projets et réalisations effectués
-            durant ma formation en BTS SIO option SLAM. Il permet d'avoir une vue d'ensemble claire
-            de mon parcours académique et professionnel.
-        </p>
-
-        <div class="tableau-container">
-            <div class="tableau-card">
-                <div class="tableau-image-container">
-                    <img src="../img/Tableau-synthese/Tableau-de-synthèse-.jpg"
-                         alt="Tableau de synthèse"
-                         class="tableau-image"
-                         onclick="window.open(this.src, '_blank')">
+        <div class="intro-inner">
+            <div class="intro-label">Épreuve E4 — BTS SIO SLAM</div>
+            <h2 class="intro-title">Tableau de Synthèse</h2>
+            <p class="intro-desc">
+                Ce tableau récapitule l'ensemble de mes compétences, projets et réalisations effectués
+                durant ma formation en BTS SIO option SLAM. Il permet d'avoir une vue d'ensemble claire
+                de mon parcours académique et professionnel.
+            </p>
+            <div class="intro-stats">
+                <div class="stat-item">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">Années de formation</span>
                 </div>
-                <div class="tableau-info">
-                    <h3>Vue d'ensemble de ma formation</h3>
-                    <p>
-                        Ce document présente de manière structurée mes compétences techniques,
-                        mes projets réalisés, ainsi que mes stages et expériences professionnelles.
-                    </p>
-
-                    <div class="features-grid">
-                        <div class="feature-item">
-                            <span class="material-symbols-outlined">code</span>
-                            <h4>Compétences techniques</h4>
-                        </div>
-                        <div class="feature-item">
-                            <span class="material-symbols-outlined">folder</span>
-                            <h4>Projets réalisés</h4>
-                        </div>
-                        <div class="feature-item">
-                            <span class="material-symbols-outlined">work</span>
-                            <h4>Expériences pro</h4>
-                        </div>
-                    </div>
-
-                    <div class="download-section">
-                        <a href="../img/Tableau-synthese/Tableau%20de%20synthèse%20des%20réalisations%20professionnelles%20%20-%20Tableau%20de%20synthèse%20Épreuve%20E4.pdf"
-                           class="download-button"
-                           target="_blank"
-                          ><!-- download="Tableau-de-synthèse.pdf"-->
-                            <span class="material-symbols-outlined">download</span>
-                            Télécharger le tableau
-                        </a>
-                    </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number">6+</span>
+                    <span class="stat-label">Projets réalisés</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">Stages en entreprise</span>
                 </div>
             </div>
         </div>
+    </div>
+</div>
 
+<!-- ===================== TABLEAU IMAGE ===================== -->
+<div id="tableau-section" class="section">
+    <div class="boxed">
+        <div class="section-header">
+            <span class="section-tag">Document officiel</span>
+            <h2>Vue d'ensemble</h2>
+            <p class="section-sub">Cliquez sur l'image pour l'ouvrir en plein écran</p>
+        </div>
+
+        <div class="tableau-wrapper">
+            <div class="tableau-image-block">
+                <img src="../img/Tableau-synthese/Tableau-de-synthèse-.jpg"
+                     alt="Tableau de synthèse"
+                     class="tableau-image"
+                     onclick="openLightbox(this.src)"
+                     title="Cliquer pour agrandir">
+                <div class="image-overlay" onclick="openLightbox('../img/Tableau-synthese/Tableau-de-synthèse-.jpg')">
+                    <span class="material-symbols-outlined">zoom_in</span>
+                    <span>Agrandir</span>
+                </div>
+            </div>
+
+            <div class="tableau-aside">
+                <div class="aside-card">
+                    <span class="material-symbols-outlined aside-icon">code</span>
+                    <div>
+                        <h4>Compétences techniques</h4>
+                        <p>Langages, frameworks et outils maîtrisés</p>
+                        <div class="tag-row">
+                            <span class="tag">HTML/CSS</span>
+                            <span class="tag">PHP</span>
+                            <span class="tag">Java</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">SQL</span>
+                            <span class="tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="aside-card">
+                    <span class="material-symbols-outlined aside-icon">folder_open</span>
+                    <div>
+                        <h4>Projets réalisés</h4>
+                        <p>Applications web, outils et développements</p>
+                        <div class="tag-row">
+                            <span class="tag">Portfolio</span>
+                            <span class="tag">CrawlService</span>
+                            <span class="tag">Legolas</span>
+                            <span class="tag">HealthyDrivers</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="aside-card">
+                    <span class="material-symbols-outlined aside-icon">work_outline</span>
+                    <div>
+                        <h4>Expériences professionnelles</h4>
+                        <p>Stages et missions en entreprise</p>
+                        <div class="tag-row">
+                            <span class="tag">Ekino — Stage 1</span>
+                            <span class="tag">Ekino — Stage 2</span>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===================== PDF IFRAME ===================== -->
+<div id="pdf-section" class="section alt-bg">
+    <div class="boxed">
+        <div class="section-header">
+            <span class="section-tag">Consultation</span>
+            <h2>Aperçu du document</h2>
+            <p class="section-sub">Le document complet est disponible directement ci-dessous</p>
+        </div>
+
+        <div class="pdf-wrapper">
+            <iframe
+                    src="../img/Tableau-synthese/Tableau%20de%20synth%C3%A8se%20des%20r%C3%A9alisations%20professionnelles%20%20-%20Tableau%20de%20synth%C3%A8se%20%C3%89preuve%20E4.pdf"
+                    class="pdf-iframe"
+                    title="Tableau de synthèse PDF">
+                <p>Votre navigateur ne supporte pas l'affichage des PDF.
+                    <a href="../img/Tableau-synthese/Tableau%20de%20synth%C3%A8se%20des%20r%C3%A9alisations%20professionnelles%20%20-%20Tableau%20de%20synth%C3%A8se%20%C3%89preuve%20E4.pdf" target="_blank">Télécharger le PDF</a>
+                </p>
+            </iframe>
+            <div class="pdf-actions">
+                <a href="../img/Tableau-synthese/Tableau%20de%20synth%C3%A8se%20des%20r%C3%A9alisations%20professionnelles%20%20-%20Tableau%20de%20synth%C3%A8se%20%C3%89preuve%20E4.pdf"
+                   class="download-button"
+                   target="_blank">
+                    <span class="material-symbols-outlined">download</span>
+                    Télécharger le tableau
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===================== INFO CARDS ===================== -->
+<div class="section">
+    <div class="boxed">
+        <div class="section-header">
+            <span class="section-tag">Contexte</span>
+            <h2>À propos de ce document</h2>
+        </div>
         <div class="info-cards">
             <div class="info-card">
-                <h4>
+                <div class="info-card-icon">
                     <span class="material-symbols-outlined">info</span>
-                    Pourquoi ce tableau ?
-                </h4>
+                </div>
+                <h4>Pourquoi ce tableau ?</h4>
                 <p>
                     Le tableau de synthèse est un document essentiel du BTS SIO qui permet de
                     présenter de manière organisée l'ensemble de mes apprentissages et réalisations
@@ -104,10 +194,10 @@
             </div>
 
             <div class="info-card">
-                <h4>
+                <div class="info-card-icon">
                     <span class="material-symbols-outlined">checklist</span>
-                    Contenu du tableau
-                </h4>
+                </div>
+                <h4>Contenu du tableau</h4>
                 <ul>
                     <li>Compétences développées</li>
                     <li>Projets scolaires et personnels</li>
@@ -117,10 +207,10 @@
             </div>
 
             <div class="info-card">
-                <h4>
+                <div class="info-card-icon">
                     <span class="material-symbols-outlined">trending_up</span>
-                    Mon évolution
-                </h4>
+                </div>
+                <h4>Mon évolution</h4>
                 <p>
                     Ce document témoigne de ma progression tout au long de ma formation,
                     montrant l'acquisition progressive de compétences techniques et
@@ -131,6 +221,9 @@
     </div>
 </div>
 
+
+
+<!-- ===================== CONTACT ===================== -->
 <div id="contact" class="section dark">
     <div class="boxed">
         <h2>Contactez-moi</h2>
@@ -143,7 +236,7 @@
             <div class="contact-item">
                 <span class="material-symbols-outlined">call</span>
                 <span class="label">Téléphone</span>
-                <span class="label">XX.XX.XX.XX.XX</span>
+                <span class="value">XX.XX.XX.XX.XX</span>
             </div>
             <div class="contact-item">
                 <span class="material-symbols-outlined">account_box</span>
@@ -156,41 +249,74 @@
     </div>
 </div>
 
+<!-- ===================== NAV BUTTONS ===================== -->
 <div class="navigation-buttons">
-    <button onclick="location.href='../index.html'">Accueil</button>
-    <button onclick="location.href='SLAM.html'">Compétences</button>
-    <button onclick="location.href='veille technologique.html'">Veille Technologique</button>
+    <button onclick="location.href='../index.html'">
+        <span class="material-symbols-outlined">home</span> Accueil
+    </button>
+    <button onclick="location.href='SLAM.html'">
+        <span class="material-symbols-outlined">code</span> Compétences
+    </button>
+    <button onclick="location.href='veille technologique.html'">
+        <span class="material-symbols-outlined">radar</span> Veille
+    </button>
+</div>
+
+<!-- ===================== LIGHTBOX ===================== -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <div class="lightbox-inner">
+        <button class="lightbox-close" onclick="closeLightbox()">
+            <span class="material-symbols-outlined">close</span>
+        </button>
+        <img id="lightbox-img" src="" alt="Tableau agrandi">
+    </div>
+</div>
+
+<!-- ===================== MOBILE MENU ===================== -->
+<div id="mobile-overlay" class="mobile-overlay" onclick="closeMenu()"></div>
+<div id="mobile-menu" class="mobile-menu">
+    <button class="mobile-menu-close" onclick="closeMenu()">
+        <span class="material-symbols-outlined">close</span>
+    </button>
+    <ul>
+        <li><a href="../index.html" onclick="closeMenu()">Accueil</a></li>
+        <li><a href="#tableau-section" onclick="closeMenu()">Tableau</a></li>
+        <li><a href="#competences-section" onclick="closeMenu()">Compétences</a></li>
+        <li><a href="#pdf-section" onclick="closeMenu()">PDF</a></li>
+        <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+    </ul>
 </div>
 
 <script>
-    const openMenu = () => {
-        const menu = document.querySelector('.header-menu');
-        menu.classList.toggle("active");
+    function openLightbox(src) {
+        document.getElementById('lightbox-img').src = src;
+        document.getElementById('lightbox').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+        document.getElementById('lightbox').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
-        if (menu.classList.contains("active")) {
-            document.querySelector("header .material-symbols-outlined").innerHTML = "close";
-        } else {
-            document.querySelector("header .material-symbols-outlined").innerHTML = "menu";
-        }
+    function openMenu() {
+        document.getElementById('mobile-menu').classList.add('open');
+        document.getElementById('mobile-overlay').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+        document.getElementById('mobile-menu').classList.remove('open');
+        document.getElementById('mobile-overlay').classList.remove('active');
+        document.body.style.overflow = '';
     }
 
-    document.querySelectorAll('.header-menu a').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            if (this.getAttribute('href').startsWith('#')) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                const targetElement = document.getElementById(targetId);
-                const offset = -80;
-                const elementPosition = targetElement.getBoundingClientRect().top + window.scrollY;
-                const offsetPosition = elementPosition + offset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
+    function switchTab(tab) {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        document.querySelector(`[onclick="switchTab('${tab}')"]`).classList.add('active');
+        document.getElementById(`tab-${tab}`).classList.add('active');
+    }
 </script>
+
 </body>
 </html>

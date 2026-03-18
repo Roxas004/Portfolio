@@ -1,104 +1,743 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-    <head>
-        <!-- Spécifie l'encodage des caractères en UTF-8 -->
-        <meta charset="utf-8" />
-        <!-- Configure l'affichage pour une bonne adaptation sur les écrans mobiles -->
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <!-- Titre de la page -->
-        <title>Portfolio</title>
-        <!-- icon de la page -->
-        <link rel="shortcut icon" type="png" href="../img/Layout/portfolio-logo-64.png" />
-        <!-- Balise de description pour le SEO -->
-        <meta name="description" content="Ceci est mon portfolio étudiant" />
-        <!-- Lien vers la police Material Symbols pour les icônes -->
-        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-        <!-- Lien vers la feuille de style CSS du portfolio -->
-        <link rel="stylesheet" href="../styles/styles.css" type="text/css">
-    </head>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HealthyDrivers — Projet BTS SIO</title>
+    <link rel="shortcut icon" type="png" href="../img/Layout/portfolio-logo-64.png" />
+    <meta name="description" content="HealthyDrivers — Application web de livraison de repas sains, développée en BTS SIO avec Laravel et Tailwind CSS." />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <!-- Styles -->
+    <link rel="stylesheet" href="../styles/styles.css" type="text/css">
+    <link rel="stylesheet" href="../styles/healthyDrivers.css" type="text/css">
+</head>
 
-    <body>
-        <!-- En-tête de la page avec le logo et le menu de navigation -->
-        <header>
-            <div class="boxed">
-                <div class="flex aligncenter space-between">
-                    <!-- Bouton du menu pour la version mobile -->
-                    <button onclick="openMenu()" class="header-menu-mobile">
-                        <span class="material-symbols-outlined">menu</span>
-                    </button>
-                    <!-- Logo avec lien vers l'accueil -->
-                    <a href="../index.html" class="header-logo">
-                        <img src="../img/Layout/portfolio-logo.png" alt="Logo Portfolio">
-                    </a>
-                    <!-- Menu de navigation principal -->
-                    <ul class="header-menu">
-                        <li><a href="#accueil">Accueil</a></li>
-                        <li><a href="#Portfolio">Portfolio</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>                    
+<body>
+
+<!-- ===================== HEADER ===================== -->
+<header>
+    <div class="boxed">
+        <div class="flex aligncenter space-between">
+            <button onclick="openMenu()" class="header-menu-mobile">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+            <a href="../index.html" class="header-logo">
+                <img src="../img/Layout/portfolio-logo.png" alt="Logo Portfolio">
+            </a>
+            <ul class="header-menu">
+                <li><a href="#context">Contexte</a></li>
+                <li><a href="#architecture">Architecture</a></li>
+                <li><a href="#features">Fonctionnalités</a></li>
+                <li><a href="#stack">Stack</a></li>
+                <li><a href="#competences">Compétences</a></li>
+                <li><a href="#documentation">Documentation</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<div class="hero">
+    <div class="hero-inner">
+
+        <!-- LEFT: Text -->
+        <div>
+            <div class="hero-badge">Projet BTS SIO — 2025</div>
+            <h1>Healthy<span class="accent">Drivers</span></h1>
+            <p class="hero-desc">
+                Une application web complète de livraison de repas sains — menus personnalisés selon le Nutri-Score,
+                abonnements flexibles, suivi nutritionnel et un coach IA intégré.
+            </p>
+            <div class="hero-meta">
+                <div class="hero-meta-item">
+                    <span class="hero-meta-label">Stack</span>
+                    <span class="hero-meta-value">Laravel · PHP 8 · MySQL</span>
                 </div>
-            </div>
-        </header>
-
-        <!-- Section d'accueil avec image de fond et texte -->
-        <div id="accueil" class="slider">
-            <img src="../img/Layout/slider.jpg" alt="" class="slider-background">
-            <div class="slider-content">
-                <h1>Rosa Axel</h1>
-                <p>Étudiant en BTS SIO</p>
-            </div>
-        </div>
-
-        <!-- Section Portfolio avec texte -->
-        <div id="Portfolio" class="section">
-            <div class="boxed text-center">
-                <h2>Mon Portfolio</h2>
-                <div class="flex" style="justify-content: center">
-                    <div class="w60 wm100 portfolio-txt">
-                        <p class="text-center">
-                            Vous pourrez découvrir ici la rubrique dans laquelle je vais expliquer la réalisation de ce portfolio alors que je n'avais pas d'expérience
-                            en développement en html, css et JavaScript.<br><br>
-                        </p>
-                        <p class="text-left">
-                            Pour commencer....
-                        </p>                              
-                    </div>
-                </div>                      
-            </div>
-        </div>
-
-        <!-- Section de contact avec informations et icônes -->
-        <div id="contact" class="section dark">
-            <div class="boxed text-center">
-                <h2>Contactez-moi</h2>
-                <div class="flex toColumn space-between mgap20">
-                    <div class="w32 wm100 contact">
-                        <span class="material-symbols-outlined icon">mail</span>
-                        <span class="label">E-Mail</span>
-                        <span class="value"></span>
-                    </div>
-                    <div class="w32 wm100 contact">
-                        <span class="material-symbols-outlined">call</span>
-                        <span class="label">Téléphone</span>
-                        <span class="value"></span>
-                    </div>
-                    <div class="w32 wm100 contact">
-                        <span class="material-symbols-outlined">account_box</span>
-                        <span class="label">GitHub</span>
-                        <a href="https://github.com/Roxas004"><span class="value">https://github.com/Roxas004</span></a>                        
-                    </div>
+                <div class="hero-meta-item">
+                    <span class="hero-meta-label">Frontend</span>
+                    <span class="hero-meta-value">Tailwind CSS · Blade</span>
+                </div>
+                <div class="hero-meta-item">
+                    <span class="hero-meta-label">Rôle</span>
+                    <span class="hero-meta-value">Développeur Full-Stack</span>
                 </div>
             </div>
         </div>
 
-        <div class="navigation-buttons">
-            <button onclick="location.href='../index.html'">Accueil</button>
-            <button onclick="location.href='Application-C.html'">Projet 2</button>
-            <button onclick="location.href=''">Projet 3</button>
+        <!-- RIGHT: App Preview -->
+        <div class="hero-visual">
+            <div class="app-preview" style="position:relative;">
+                <!-- Fake app bar -->
+                <div class="app-bar">
+                    <span class="app-bar-logo">HealthyDrivers</span>
+                    <div class="app-bar-nav">
+                        <span>Menus</span>
+                        <span>Concept</span>
+                        <span>Abonnements</span>
+                    </div>
+                </div>
+                <!-- Fake app body -->
+                <div class="app-body">
+                    <div class="app-hero-mini">
+                        <h3>Mangez sain, chaque jour.</h3>
+                        <p>Repas livrés chez vous · Coach nutritionnel inclus</p>
+                        <span class="btn-mini">S'abonner</span>
+                    </div>
+                    <div class="app-cards-row">
+                        <div class="app-menu-card">
+                            <div class="app-menu-img">🥗</div>
+                            <div class="app-menu-info">
+                                <h4>Ratatouille</h4>
+                                <span class="nutri-pill nutri-b">B</span>
+                            </div>
+                        </div>
+                        <div class="app-menu-card">
+                            <div class="app-menu-img">🍝</div>
+                            <div class="app-menu-info">
+                                <h4>Lasagne vég.</h4>
+                                <span class="nutri-pill nutri-c">C</span>
+                            </div>
+                        </div>
+                        <div class="app-menu-card">
+                            <div class="app-menu-img">🍛</div>
+                            <div class="app-menu-info">
+                                <h4>Poulet Curry</h4>
+                                <span class="nutri-pill nutri-b">B</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fake chat button -->
+                <div class="chat-bubble">
+                    <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/></svg>
+                    <span class="chat-dot"></span>
+                </div>
+            </div>
         </div>
-    </body>
-        
-    <!-- Inclusion du fichier JavaScript pour la logique de la page -->
-    <script src="../js/app.js"></script>
+
+    </div>
+</div>
+
+<!-- ===================== CONTEXT ===================== -->
+<section id="context" class="section">
+    <div class="container">
+
+        <div class="reveal">
+            <p class="section-eyebrow">01 — Contexte</p>
+            <h2 class="section-title">Pourquoi ce projet ?</h2>
+            <p class="section-desc">
+                Un projet de BTS SIO qui répond à une vraie problématique : comment aider les gens à bien manger
+                au quotidien, sans prise de tête, grâce au numérique.
+            </p>
+        </div>
+
+        <div class="context-grid reveal">
+            <div class="context-text">
+                <p>
+                    <strong>HealthyDrivers</strong> est une application web de livraison de repas sains développée
+                    dans le cadre du BTS SIO. L'idée de départ est simple : des personnes souhaitent améliorer
+                    leur alimentation mais n'ont ni le temps de cuisiner équilibré, ni les connaissances pour le faire.
+                </p>
+                <p>
+                    L'application propose une solution complète : des <strong>menus variés avec Nutri-Score</strong>,
+                    des abonnements hebdomadaires flexibles, un accès aux recettes adaptées à son régime,
+                    et un <strong>coach nutritionnel IA</strong> disponible à tout moment via un chatbot intégré.
+                </p>
+                <p>
+                    Côté technique, c'est un vrai projet Laravel full-stack : authentification, gestion des utilisateurs,
+                    abonnements avec différents niveaux d'accès, catalogue de menus dynamique depuis une base MySQL,
+                    et un design responsive réalisé avec Tailwind CSS.
+                </p>
+            </div>
+            <div class="context-stat-block">
+                <div class="stat-card">
+                    <div class="stat-icon">🥗</div>
+                    <div class="stat-info">
+                        <span class="stat-label">Menus disponibles</span>
+                        <span class="stat-value">+10 recettes avec Nutri-Score</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📦</div>
+                    <div class="stat-info">
+                        <span class="stat-label">Formules d'abonnement</span>
+                        <span class="stat-value">Économique · Classique · Premium</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🤖</div>
+                    <div class="stat-info">
+                        <span class="stat-label">Coach IA</span>
+                        <span class="stat-value">Chatbot nutritionnel intégré</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🔒</div>
+                    <div class="stat-info">
+                        <span class="stat-label">Accès abonné</span>
+                        <span class="stat-value">Recettes verrouillées sans abonnement</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===================== ARCHITECTURE ===================== -->
+<section id="architecture" class="section section-alt">
+    <div class="container">
+
+        <div class="reveal">
+            <p class="section-eyebrow">02 — Architecture</p>
+            <h2 class="section-title">Comment c'est construit</h2>
+            <p class="section-desc">
+                Une architecture MVC Laravel classique, avec une séparation claire des responsabilités
+                et un pipeline complet : routes → contrôleurs → modèles → vues Blade.
+            </p>
+        </div>
+
+        <div class="arch-grid reveal">
+
+            <div class="arch-card">
+                <div class="arch-num">01</div>
+                <h3>Routing Laravel</h3>
+                <p>
+                    Toutes les URLs sont définies dans <code style="background:var(--cream3);padding:1px 5px;border-radius:3px;font-size:0.82em">routes/web.php</code>.
+                    Les pages publiques (menus, concept, livraison, abonnements) côtoient
+                    les routes protégées par le middleware <code style="background:var(--cream3);padding:1px 5px;border-radius:3px;font-size:0.82em">auth</code>
+                    pour l'espace abonné.
+                </p>
+                <div class="arch-tags">
+                    <span class="arch-tag">routes/web.php</span>
+                    <span class="arch-tag">Middleware auth</span>
+                    <span class="arch-tag">Named routes</span>
+                </div>
+            </div>
+
+            <div class="arch-card">
+                <div class="arch-num">02</div>
+                <h3>Contrôleurs</h3>
+                <p>
+                    Le <code style="background:var(--cream3);padding:1px 5px;border-radius:3px;font-size:0.82em">MenuController</code>
+                    gère le catalogue de menus : liste paginée et vue détaillée via le slug.
+                    Le <code style="background:var(--cream3);padding:1px 5px;border-radius:3px;font-size:0.82em">ProfileController</code>
+                    gère les données utilisateurs authentifiés.
+                </p>
+                <div class="arch-tags">
+                    <span class="arch-tag">MenuController</span>
+                    <span class="arch-tag">ProfileController</span>
+                    <span class="arch-tag">MVC</span>
+                </div>
+            </div>
+
+            <div class="arch-card">
+                <div class="arch-num">03</div>
+                <h3>Modèle Eloquent</h3>
+                <p>
+                    Le modèle <code style="background:var(--cream3);padding:1px 5px;border-radius:3px;font-size:0.82em">Menu</code>
+                    mappe la table MySQL. Chaque menu a un titre, une description, un slug unique,
+                    un Nutri-Score (A–E), un temps de préparation, un comptage de calories
+                    et des ingrédients stockés en JSON.
+                </p>
+                <div class="arch-tags">
+                    <span class="arch-tag">Eloquent ORM</span>
+                    <span class="arch-tag">JSON columns</span>
+                    <span class="arch-tag">Slugs</span>
+                </div>
+            </div>
+
+            <div class="arch-card">
+                <div class="arch-num">04</div>
+                <h3>Vues Blade</h3>
+                <p>
+                    Toutes les pages utilisent le système de templating Blade de Laravel avec un layout partagé
+                    (<code style="background:var(--cream3);padding:1px 5px;border-radius:3px;font-size:0.82em">x-app-layout</code>).
+                    La navigation et le chatbot sont inclus via des composants réutilisables.
+                </p>
+                <div class="arch-tags">
+                    <span class="arch-tag">Blade Templates</span>
+                    <span class="arch-tag">x-app-layout</span>
+                    <span class="arch-tag">Composants</span>
+                </div>
+            </div>
+
+            <div class="arch-card">
+                <div class="arch-num">05</div>
+                <h3>Base de données</h3>
+                <p>
+                    Schéma géré par les migrations Laravel. La table <code style="background:var(--cream3);padding:1px 5px;border-radius:3px;font-size:0.82em">users</code>
+                    a été étendue avec un champ <code style="background:var(--cream3);padding:1px 5px;border-radius:3px;font-size:0.82em">abonnement</code>
+                    (nullable) pour gérer les 3 niveaux d'accès. Les menus sont peuplés via un Seeder dédié.
+                </p>
+                <div class="arch-tags">
+                    <span class="arch-tag">MySQL</span>
+                    <span class="arch-tag">Migrations</span>
+                    <span class="arch-tag">Seeders</span>
+                </div>
+            </div>
+
+            <div class="arch-card">
+                <div class="arch-num">06</div>
+                <h3>Authentification</h3>
+                <p>
+                    Système d'auth généré par Laravel Breeze. Les routes d'abonnement sont protégées :
+                    seul un utilisateur connecté peut souscrire à une formule. Le statut
+                    <code style="background:var(--cream3);padding:1px 5px;border-radius:3px;font-size:0.82em">is_subscribed</code>
+                    conditionne l'accès aux recettes complètes.
+                </p>
+                <div class="arch-tags">
+                    <span class="arch-tag">Laravel Breeze</span>
+                    <span class="arch-tag">Sessions</span>
+                    <span class="arch-tag">Contrôle d'accès</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===================== FEATURES ===================== -->
+<section id="features" class="section">
+    <div class="container">
+
+        <div class="reveal">
+            <p class="section-eyebrow">03 — Fonctionnalités</p>
+            <h2 class="section-title">Ce que fait l'application</h2>
+            <p class="section-desc">
+                De la page d'accueil au détail de recette, chaque écran a été pensé pour guider
+                l'utilisateur vers une alimentation plus saine et un engagement sur le long terme.
+            </p>
+        </div>
+
+        <div class="features-grid reveal">
+
+            <!-- Menus & Nutriscore -->
+            <div class="feature-card">
+                <div class="feature-header">
+                    <div class="feature-icon">🥗</div>
+                    <h3>Catalogue de Menus</h3>
+                </div>
+                <p>Un catalogue dynamique de repas équilibrés, chacun avec son Nutri-Score visuel.</p>
+                <ul class="feature-list">
+                    <li>Affichage du Nutri-Score A→E avec code couleur officiel</li>
+                    <li>Temps de préparation et calories par plat</li>
+                    <li>URL unique par menu via slug (menus/poulet-curry-coco)</li>
+                    <li>Recette complète déverrouillée pour les abonnés</li>
+                </ul>
+                <div class="nutriscore-display" style="margin-top:1rem">
+                    <span class="ns-letter ns-a">A</span>
+                    <span class="ns-letter ns-b">B</span>
+                    <span class="ns-letter ns-c">C</span>
+                    <span class="ns-letter ns-d">D</span>
+                    <span class="ns-letter ns-e">E</span>
+                </div>
+            </div>
+
+            <!-- Abonnements -->
+            <div class="feature-card">
+                <div class="feature-header">
+                    <div class="feature-icon">📦</div>
+                    <h3>Système d'Abonnements</h3>
+                </div>
+                <p>3 formules avec un accès progressif aux fonctionnalités, géré en base de données.</p>
+                <div class="subs-row">
+                    <div class="sub-mini">
+                        <div class="sub-mini-name">Économique</div>
+                        <div class="sub-mini-price">47,99€<span>/mois</span></div>
+                        <div class="sub-mini-detail">6 repas/semaine</div>
+                    </div>
+                    <div class="sub-mini">
+                        <div class="sub-mini-name">Classique</div>
+                        <div class="sub-mini-price">59,99€<span>/mois</span></div>
+                        <div class="sub-mini-detail">10 repas/semaine</div>
+                    </div>
+                    <div class="sub-mini">
+                        <div class="sub-mini-name">Premium</div>
+                        <div class="sub-mini-price">70,00€<span>/mois</span></div>
+                        <div class="sub-mini-detail">14 repas/semaine</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chatbot -->
+            <div class="feature-card">
+                <div class="feature-header">
+                    <div class="feature-icon">🤖</div>
+                    <h3>Coach Nutrition IA</h3>
+                </div>
+                <p>Un chatbot flottant disponible sur toutes les pages, accessible en un clic.</p>
+                <ul class="feature-list">
+                    <li>Bouton flottant persistant (bottom-right) sur tout le site</li>
+                    <li>Interface chat avec historique de conversation</li>
+                    <li>Réponses du coach personnalisées aux objectifs nutritionnels</li>
+                    <li>Design intégré aux couleurs Healthy Drivers</li>
+                </ul>
+            </div>
+
+            <!-- Livraison & Concept -->
+            <div class="feature-card">
+                <div class="feature-header">
+                    <div class="feature-icon">🚚</div>
+                    <h3>Livraison & Concept</h3>
+                </div>
+                <p>Des pages informatives pensées pour convaincre et rassurer l'utilisateur.</p>
+                <ul class="feature-list">
+                    <li>Page Concept : mission, valeurs, personnalisation</li>
+                    <li>Page Livraison : chaîne du froid, domicile ou bureau</li>
+                    <li>Transport frigorifique garantissant la fraîcheur</li>
+                    <li>Coach nutritionniste en ligne inclus</li>
+                </ul>
+            </div>
+
+            <!-- Auth & Accès conditionnel (featured) -->
+            <div class="feature-card featured">
+                <div class="feature-header">
+                    <div class="feature-icon">🔐</div>
+                    <h3>Authentification & Accès Conditionnel</h3>
+                </div>
+                <p>
+                    Un des points techniques clés du projet : l'accès aux recettes complètes est conditionné par le statut d'abonnement.
+                    Côté backend, le champ <code style="background:var(--cream2);padding:1px 6px;border-radius:3px;font-size:0.82em">is_subscribed</code> sur le modèle
+                    <code style="background:var(--cream2);padding:1px 6px;border-radius:3px;font-size:0.82em">User</code> est vérifié dans la vue Blade pour afficher soit
+                    la recette complète, soit un mur d'abonnement avec un appel à l'action vers les offres.
+                    Les routes d'inscription à une formule sont protégées par le middleware <code style="background:var(--cream2);padding:1px 6px;border-radius:3px;font-size:0.82em">auth</code>.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===================== STACK ===================== -->
+<section id="stack" class="section section-alt">
+    <div class="container">
+
+        <div class="reveal">
+            <p class="section-eyebrow">04 — Stack & Technologies</p>
+            <h2 class="section-title">Les outils utilisés</h2>
+            <p class="section-desc">
+                Un stack moderne centré sur l'écosystème PHP/Laravel, complété par Tailwind CSS
+                pour un frontend soigné sans sur-ingénierie.
+            </p>
+        </div>
+
+        <div class="stack-grid reveal">
+
+            <div class="stack-card">
+                <span class="stack-icon">⚡</span>
+                <div class="stack-name">Laravel</div>
+                <div class="stack-role">Framework PHP — MVC, routing, Eloquent, Blade</div>
+            </div>
+
+            <div class="stack-card">
+                <span class="stack-icon">🐘</span>
+                <div class="stack-name">PHP 8</div>
+                <div class="stack-role">Langage backend — controllers, models, migrations</div>
+            </div>
+
+            <div class="stack-card">
+                <span class="stack-icon">🗄️</span>
+                <div class="stack-name">MySQL</div>
+                <div class="stack-role">Base de données — users, menus, abonnements</div>
+            </div>
+
+            <div class="stack-card">
+                <span class="stack-icon">🎨</span>
+                <div class="stack-name">Tailwind CSS</div>
+                <div class="stack-role">Framework CSS utility-first — design responsive</div>
+            </div>
+
+            <div class="stack-card">
+                <span class="stack-icon">🔪</span>
+                <div class="stack-name">Blade</div>
+                <div class="stack-role">Moteur de templates Laravel — layouts, composants</div>
+            </div>
+
+            <div class="stack-card">
+                <span class="stack-icon">🔑</span>
+                <div class="stack-name">Breeze</div>
+                <div class="stack-role">Auth Laravel — inscription, connexion, profil</div>
+            </div>
+
+            <div class="stack-card">
+                <span class="stack-icon">📦</span>
+                <div class="stack-name">Composer</div>
+                <div class="stack-role">Gestionnaire de dépendances PHP</div>
+            </div>
+
+            <div class="stack-card">
+                <span class="stack-icon">🌐</span>
+                <div class="stack-name">Apache</div>
+                <div class="stack-role">Serveur web — hébergement local de l'appli</div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===================== COMPETENCES BTS ===================== -->
+<section id="competences" class="section">
+    <div class="container">
+
+        <div class="reveal">
+            <p class="section-eyebrow">05 — Compétences BTS SIO</p>
+            <h2 class="section-title">Ce que ce projet valide</h2>
+            <p class="section-desc">
+                HealthyDrivers mobilise un large spectre des compétences attendues en BTS SIO option SLAM,
+                de la conception à la mise en production.
+            </p>
+        </div>
+
+        <div class="skills-accordion reveal">
+
+            <div class="skill-item">
+                <div class="skill-header">
+                    <span class="skill-code">B1.1</span>
+                    <span class="skill-title">Analyse et modélisation d'un besoin métier</span>
+                </div>
+                <div class="skill-body">
+                    <p>
+                        Identification du besoin (livraison de repas sains, abonnements, accès différencié),
+                        conception du modèle de données (menus, users, abonnements), définition des cas d'usage
+                        et des règles métier (accès conditionnel aux recettes).
+                    </p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Analyse besoin</span>
+                        <span class="skill-tag">Modélisation BDD</span>
+                        <span class="skill-tag">Cas d'usage</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-header">
+                    <span class="skill-code">B2.1</span>
+                    <span class="skill-title">Conception et développement d'une solution applicative</span>
+                </div>
+                <div class="skill-body">
+                    <p>
+                        Développement complet d'une application web MVC avec Laravel : création des routes,
+                        contrôleurs, modèles Eloquent, vues Blade. Gestion des migrations et des seeders
+                        pour initialiser la base de données.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Laravel MVC</span>
+                        <span class="skill-tag">PHP 8</span>
+                        <span class="skill-tag">Eloquent ORM</span>
+                        <span class="skill-tag">Migrations</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-header">
+                    <span class="skill-code">B2.2</span>
+                    <span class="skill-title">Gestion des données — SQL et persistance</span>
+                </div>
+                <div class="skill-body">
+                    <p>
+                        Conception et administration d'une base MySQL via phpMyAdmin et les migrations Laravel.
+                        Requêtes Eloquent pour la lecture et mise à jour des données utilisateurs et menus.
+                        Stockage d'ingrédients en JSON.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">SQL</span>
+                        <span class="skill-tag">Seeders</span>
+                        <span class="skill-tag">JSON</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-header">
+                    <span class="skill-code">B2.3</span>
+                    <span class="skill-title">Développement web — Frontend & Responsive</span>
+                </div>
+                <div class="skill-body">
+                    <p>
+                        Intégration des interfaces avec Tailwind CSS et Blade. Design responsive,
+                        composants réutilisables (navigation, chatbot), gestion des layouts partagés.
+                        Respect de la charte graphique (vert, orange, crème).
+                    </p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Tailwind CSS</span>
+                        <span class="skill-tag">Blade</span>
+                        <span class="skill-tag">Responsive</span>
+                        <span class="skill-tag">UI/UX</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-header">
+                    <span class="skill-code">B3.1</span>
+                    <span class="skill-title">Cybersécurité — Authentification & Contrôle d'accès</span>
+                </div>
+                <div class="skill-body">
+                    <p>
+                        Mise en place du système d'authentification Laravel Breeze (inscription, connexion, sessions).
+                        Protection des routes sensibles par middleware. Contrôle d'accès granulaire
+                        selon le type d'abonnement de l'utilisateur.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Laravel Breeze</span>
+                        <span class="skill-tag">Middleware auth</span>
+                        <span class="skill-tag">Sessions</span>
+                        <span class="skill-tag">CSRF</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-item">
+                <div class="skill-header">
+                    <span class="skill-code">B4.1</span>
+                    <span class="skill-title">Déploiement & Administration système</span>
+                </div>
+                <div class="skill-body">
+                    <p>
+                        Installation et configuration d'un environnement Apache + PHP + MySQL sous Linux Ubuntu.
+                        Configuration des VirtualHosts, gestion des permissions, utilisation de Composer et NPM.
+                        Exécution des commandes Artisan pour initialiser l'application.
+                    </p>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Apache</span>
+                        <span class="skill-tag">Linux Ubuntu</span>
+                        <span class="skill-tag">Composer</span>
+                        <span class="skill-tag">php artisan</span>
+                        <span class="skill-tag">npm</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===================== DOCUMENTATION ===================== -->
+<section id="documentation" class="section section-alt">
+    <div class="container">
+
+        <div class="reveal">
+            <p class="section-eyebrow">06 — Documentation</p>
+            <h2 class="section-title">Documentation du projet</h2>
+            <p class="section-desc">
+                Retrouvez ici l'ensemble des documents techniques et fonctionnels produits dans le cadre du projet HealthyDrivers.
+            </p>
+        </div>
+
+        <div class="docs-grid reveal">
+
+            <!-- Placeholder doc 1 -->
+            <a href="#" class="doc-card" target="_blank">
+                <div class="doc-icon">📄</div>
+                <div class="doc-info">
+                    <div class="doc-name">Document 1</div>
+                    <div class="doc-type">À compléter</div>
+                </div>
+                <span class="doc-arrow">→</span>
+            </a>
+
+            <!-- Placeholder doc 2 -->
+            <a href="#" class="doc-card" target="_blank">
+                <div class="doc-icon">📄</div>
+                <div class="doc-info">
+                    <div class="doc-name">Document 2</div>
+                    <div class="doc-type">À compléter</div>
+                </div>
+                <span class="doc-arrow">→</span>
+            </a>
+
+            <!-- Placeholder doc 3 -->
+            <a href="#" class="doc-card" target="_blank">
+                <div class="doc-icon">📄</div>
+                <div class="doc-info">
+                    <div class="doc-name">Document 3</div>
+                    <div class="doc-type">À compléter</div>
+                </div>
+                <span class="doc-arrow">→</span>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===================== CONTACT ===================== -->
+<section id="contact" class="section section-dark">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-eyebrow">Contact</p>
+            <h2 class="section-title">Me contacter</h2>
+            <p class="section-desc">Des questions sur ce projet ? N'hésitez pas.</p>
+        </div>
+        <div class="contact-grid reveal">
+            <a href="mailto:" class="contact-item">
+                <span class="contact-item-icon">✉️</span>
+                <div class="contact-label">E-Mail</div>
+                <div class="contact-value">contact@example.com</div>
+            </a>
+            <a href="tel:" class="contact-item">
+                <span class="contact-item-icon">📱</span>
+                <div class="contact-label">Téléphone</div>
+                <div class="contact-value">XX.XX.XX.XX.XX</div>
+            </a>
+            <a href="https://github.com/Roxas004" target="_blank" class="contact-item">
+                <span class="contact-item-icon">💻</span>
+                <div class="contact-label">GitHub</div>
+                <div class="contact-value">github.com/Roxas004</div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== NAVIGATION BUTTONS ===================== -->
+<div class="nav-buttons">
+    <a href="../index.html" class="nav-btn">
+        <span class="material-symbols-outlined" style="font-size:1.1rem">home</span>
+        Accueil
+    </a>
+    <a href="PersonnelApp.html" class="nav-btn">
+        <span class="material-symbols-outlined" style="font-size:1.1rem">arrow_back</span>
+        Projet précédent
+    </a>
+    <a href="" class="nav-btn primary">
+        Projet suivant
+        <span class="material-symbols-outlined" style="font-size:1.1rem">arrow_forward</span>
+    </a>
+</div>
+
+<!-- ===================== SCRIPTS ===================== -->
+<script src="../js/app.js"></script>
+<script>
+    // Reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => entry.target.classList.add('visible'), i * 80);
+                io.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    reveals.forEach(el => io.observe(el));
+</script>
+
+</body>
 </html>

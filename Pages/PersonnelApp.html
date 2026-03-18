@@ -3,14 +3,19 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Projet M2L</title>
+    <title>Projet Personnel — M2L</title>
     <link rel="shortcut icon" type="png" href="../img/Layout/portfolio-logo-64.png" />
-    <meta name="description" content="Projet de gestion des employés M2L" />
+    <meta name="description" content="Projet de gestion des employés M2L — Application Java multi-utilisateurs" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../styles/styles.css" type="text/css">
+    <link rel="stylesheet" href="../styles/personnel.css" type="text/css">
+
 </head>
 
 <body>
+
+<!-- ===== HEADER ===== -->
 <header>
     <div class="boxed">
         <div class="flex aligncenter space-between">
@@ -21,272 +26,621 @@
                 <img src="../img/Layout/portfolio-logo.png" alt="Logo Portfolio">
             </a>
             <ul class="header-menu">
-                <li><a href="../index.html">Accueil</a></li>
-                <li><a href="#presentation">Présentation</a></li>
-                <li><a href="#conception">Conception</a></li>
+                <li><a href="#contexte">Contexte</a></li>
+                <li><a href="#roles">Habilitations</a></li>
+                <li><a href="#architecture">Architecture</a></li>
+                <li><a href="#bdd">Base de Données</a></li>
                 <li><a href="#realisation">Réalisation</a></li>
-                <li><a href="#technologies">Technologies</a></li>
+                <li><a href="#stack">Technologies</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </div>
 </header>
 
-<div id="accueil" class="slider">
-    <img src="../img/Layout/slider.jpg" class="slider-background" alt="Image de fond">
-    <div class="slider-content">
-        <h1>Rosa Axel</h1>
-        <p>Étudiant en BTS SIO</p>
-    </div>
-</div>
+<!-- ===== HERO ===== -->
+<div class="hero">
+    <div class="hero-inner">
+        <div>
+            <div class="hero-badge">
+                <span class="hero-badge-dot"></span>
+                PROJET SCOLAIRE — BTS SIO
+            </div>
+            <h1>Application<br><em>Personnel</em><br>M2L</h1>
+            <p class="hero-desc">
+                Refonte d'une application Java mono-utilisateur en solution <strong>multi-utilisateurs</strong> avec base de données MySQL, authentification sécurisée et trois niveaux d'habilitation distincts.
+            </p>
+            <div class="hero-meta">
+                <span class="hero-tag">Java</span>
+                <span class="hero-tag">JDBC</span>
+                <span class="hero-tag">MySQL</span>
+                <span class="hero-tag">Architecture 3-tiers</span>
+                <span class="hero-tag">BCrypt</span>
+            </div>
+        </div>
 
-<div id="presentation" class="section">
-    <div class="boxed text-center">
-        <h2>Projet M2L - Gestion des Employés des Ligues</h2>
-
-        <div class="flex" style="justify-content: center">
-            <div class="w60 wm100">
-                <div class="project-section">
-                    <h3>📋 Contexte du Projet</h3>
-                    <p class="text-left">
-                        La Maison des Ligues de Lorraine (M2L) souhaitait moderniser son système de gestion des employés.
-                        L'objectif était de transformer une application mono-utilisateur en ligne de commande en une solution
-                        multi-utilisateurs avec une base de données centralisée et différents niveaux d'habilitation.
-                    </p>
+        <!-- Terminal -->
+        <div class="hero-visual">
+            <div class="terminal">
+                <div class="terminal-bar">
+                    <span class="t-dot r"></span>
+                    <span class="t-dot y"></span>
+                    <span class="t-dot g"></span>
+                    <span class="terminal-title">Personnel v2.0 — CLI</span>
                 </div>
-
-                <div class="project-section">
-                    <h3>🎯 Objectifs du Projet</h3>
-                    <ul class="feature-list">
-                        <li>Transformer l'application mono-utilisateur en solution multi-utilisateurs</li>
-                        <li>Implémenter une base de données relationnelle</li>
-                        <li>Créer un système d'authentification avec trois niveaux d'accès</li>
-                        <li>Conserver l'architecture 3-tiers existante</li>
-                        <li>Permettre la gestion décentralisée par ligue</li>
-                    </ul>
-                </div>
-
-                <div class="project-section">
-                    <h3>👥 Niveaux d'Habilitation</h3>
-                    <div class="text-left">
-                        <p><strong>1. Employé Simple :</strong></p>
-                        <p style="margin-left: 30px;">Accès en lecture seule à l'annuaire des employés</p>
-
-                        <p style="margin-top: 20px;"><strong>2. Administrateur de Ligue :</strong></p>
-                        <p style="margin-left: 30px;">Gestion complète des employés de sa propre ligue via application bureau</p>
-
-                        <p style="margin-top: 20px;"><strong>3. Super-Administrateur :</strong></p>
-                        <p style="margin-left: 30px;">Accès total à tous les employés et gestion des comptes administrateurs via ligne de commande</p>
-                    </div>
+                <div class="terminal-body">
+                    <div><span class="t-prompt">$</span> <span class="t-cmd">java -jar Personnel.jar</span></div>
+                    <div class="t-blank"></div>
+                    <div class="t-out">Connexion à MySQL… <span class="t-ok">OK</span></div>
+                    <div class="t-out">Chargement des ligues… <span class="t-ok">OK</span></div>
+                    <div class="t-blank"></div>
+                    <div><span class="t-prompt">login&gt;</span> <span class="t-cmd">root</span></div>
+                    <div><span class="t-prompt">pass&gt;</span>  <span class="t-cmd">••••••</span></div>
+                    <div class="t-blank"></div>
+                    <div class="t-ok">✓ Connecté en tant que super-admin</div>
+                    <div class="t-blank"></div>
+                    <div class="t-out">1. Gérer les ligues</div>
+                    <div class="t-out">2. Gérer les administrateurs</div>
+                    <div class="t-out">3. Gérer les employés</div>
+                    <div class="t-out">4. Quitter</div>
+                    <div class="t-blank"></div>
+                    <div><span class="t-prompt">choix&gt;</span> <span class="t-warn">_</span></div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="color-band"></div>
+<div class="divider"></div>
 
-<div id="conception" class="section dark">
-    <div class="boxed text-center">
-        <h2>Conception de la Base de Données</h2>
+<!-- ===== CONTEXTE ===== -->
+<section id="contexte" class="section">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-eyebrow">01 — Contexte</p>
+            <h2 class="section-title">La Maison des Ligues de Lorraine</h2>
+            <p class="section-desc">Un responsable M2L utilise une application pour gérer les employés des ligues sportives. L'objectif : transformer une application en ligne de commande mono-utilisateur en une solution robuste, multi-utilisateurs, avec base de données centralisée.</p>
+        </div>
 
-        <div class="flex" style="justify-content: center">
-            <div class="w60 wm100">
-                <div class="project-section">
-                    <h3>📊 Modèle Conceptuel de Données (MCD)</h3>
-                    <p class="text-left">
-                        J'ai conçu un MCD pour structurer les données de l'application. Le modèle prend en compte
-                        les entités principales : Employés, Ligues, et Utilisateurs avec leurs rôles respectifs.
-                    </p>
+        <div class="context-grid reveal">
+            <div class="context-text">
+                <p>L'application initiale, écrite en Java et fonctionnant <strong>uniquement en ligne de commande</strong>, était mono-utilisateur et utilisait une sérialisation fichier. Elle ne permettait pas la gestion décentralisée par ligue.</p>
+                <p>Le projet consistait à <strong>conserver l'architecture 3-tiers existante</strong> et d'y ajouter une couche JDBC pour la persistance MySQL, un système d'authentification sécurisé avec <strong>BCrypt</strong>, et trois niveaux d'habilitation distincts.</p>
+                <p>Chaque ligue peut désormais être gérée par son propre administrateur, de façon autonome, tandis que le super-administrateur conserve une vue et un contrôle total sur l'ensemble du système.</p>
+            </div>
 
-                    <div class="mcd-container">
-                        <p class="text-center" style="color: #666; font-style: italic; font-size: 1.2rem;">
-                            <img src="../img/Projet/Projet_scolaire/P2/Nouveau%20MCD.jpg" alt="Modèle Conceptuel de Données M2L" style="max-width: 100%; height: auto;">
-                        </p>
-                    </div>
-
-                    <h4 style="text-align: left;">Entités Principales :</h4>
-                    <ul class="feature-list">
-                        <li><strong>LIGUE :</strong> id_ligue, nom_ligue</li>
-                        <li><strong>PERSONNELS :</strong> id_personnel, nom_personnel, prénom_personnel, email_personnel, role_personnel, password_personnel, date_arrivée, date_depart</li>
-                    </ul>
+            <div class="context-info-card">
+                <div class="info-row">
+                    <span class="info-label">Type</span>
+                    <span class="info-badge">Projet scolaire</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Contexte</span>
+                    <span class="info-value">BTS SIO — PPE</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Langage</span>
+                    <span class="info-value">Java 8</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Base de données</span>
+                    <span class="info-value">MySQL 8</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Build</span>
+                    <span class="info-value">Maven 3</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Sécurité</span>
+                    <span class="info-value">BCrypt (jbcrypt 0.4)</span>
+                </div>
+                <div class="info-row">
+                    <span class="info-label">Repo GitHub</span>
+                    <a href="https://github.com/ImOriane/personnel/tree/master/Personnel" target="_blank" class="info-value" style="color: var(--accent); text-decoration: none;">github.com/ImOriane ↗</a>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 
-<div class="color-band"></div>
+<div class="divider"></div>
 
-<div id="realisation" class="section">
-    <div class="boxed text-center">
-        <h2>Réalisation et Développement</h2>
+<!-- ===== RÔLES & HABILITATIONS ===== -->
+<section id="roles" class="section alt">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-eyebrow">02 — Habilitations</p>
+            <h2 class="section-title">Trois niveaux d'accès</h2>
+            <p class="section-desc">L'application distingue trois profils utilisateurs avec des droits progressifs, du simple employé lecture seule jusqu'au super-administrateur à accès total.</p>
+        </div>
 
-        <div class="flex" style="justify-content: center">
-            <div class="w60 wm100">
-                <div class="project-section">
-                    <h3>🔧 Ressources Fournies</h3>
-                    <ul class="feature-list">
-                        <li>Code source Java de l'application initiale sur <a href="https://github.com/alexandreMesle/personnel/tree/master/Personnel" target="_blank">
-                            GitHub
-                        </a></li>
-                        <li>Architecture 3-tiers existante à respecter</li>
-                        <li><a href="https://github.com/alexandreMesle/CommandLine" target="_blank">
-                            Bibliothèque de dialogue
-                        </a>  en ligne de commande</li>
-                        <li><a href="https://enseignement.alexandre-mesle.com/PPE/personnel/javadoc/personnel/package-summary.html" target="_blank">
-                            Documentation technique
-                        </a> de base</li>
-                    </ul>
+        <div class="roles-grid reveal">
+            <!-- Employé -->
+            <div class="role-card lvl1">
+                <p class="role-level">Niveau 01</p>
+                <h3 class="role-title">Employé Simple</h3>
+                <ul class="role-perms">
+                    <li><span class="perm-icon perm-allow">✓</span>Ouvrir l'application</li>
+                    <li><span class="perm-icon perm-allow">✓</span>Consulter l'annuaire des employés</li>
+                    <li><span class="perm-icon perm-allow">✓</span>Voir les ligues existantes</li>
+                    <li><span class="perm-icon perm-deny">✗</span>Aucun droit d'écriture</li>
+                    <li><span class="perm-icon perm-deny">✗</span>Ne peut pas modifier de données</li>
+                </ul>
+            </div>
+
+            <!-- Admin de ligue -->
+            <div class="role-card lvl2">
+                <p class="role-level">Niveau 02</p>
+                <h3 class="role-title">Administrateur de Ligue</h3>
+                <ul class="role-perms">
+                    <li><span class="perm-icon perm-allow">✓</span>Tous les droits de l'employé simple</li>
+                    <li><span class="perm-icon perm-allow">✓</span>Gérer les employés de sa propre ligue</li>
+                    <li><span class="perm-icon perm-allow">✓</span>Ajouter / modifier / supprimer un employé</li>
+                    <li><span class="perm-icon perm-allow">✓</span>Interface bureau dédiée</li>
+                    <li><span class="perm-icon perm-deny">✗</span>Limité à sa ligue uniquement</li>
+                </ul>
+            </div>
+
+            <!-- Super-admin -->
+            <div class="role-card lvl3">
+                <p class="role-level">Niveau 03</p>
+                <h3 class="role-title">Super-Administrateur</h3>
+                <ul class="role-perms">
+                    <li><span class="perm-icon perm-allow">✓</span>Accès en écriture à tous les employés</li>
+                    <li><span class="perm-icon perm-allow">✓</span>Gérer les comptes administrateurs des ligues</li>
+                    <li><span class="perm-icon perm-allow">✓</span>Créer / supprimer des ligues</li>
+                    <li><span class="perm-icon perm-allow">✓</span>Accès via ligne de commande</li>
+                    <li><span class="perm-icon perm-allow">✓</span>Compte root unique et sécurisé</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===== ARCHITECTURE ===== -->
+<section id="architecture" class="section">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-eyebrow">03 — Architecture</p>
+            <h2 class="section-title">Architecture 3-tiers conservée</h2>
+            <p class="section-desc">Le projet imposait de conserver l'architecture applicative existante. La couche données a été remplacée par une implémentation JDBC, sans altérer les couches supérieures.</p>
+        </div>
+
+        <div class="arch-visual reveal">
+            <div class="arch-layer">
+                <div class="arch-num">01</div>
+                <div class="arch-content">
+                    <p class="arch-tag">Couche Présentation</p>
+                    <h3 class="arch-name">Interface CLI</h3>
+                    <p class="arch-desc">Interface en ligne de commande gérée par la bibliothèque <em>CommandLineMenus</em>. Les menus s'adaptent dynamiquement selon le rôle de l'utilisateur connecté.</p>
+                    <div class="arch-chips">
+                        <span class="arch-chip">CommandLineMenus</span>
+                        <span class="arch-chip">Menus adaptatifs</span>
+                        <span class="arch-chip">Login / Session</span>
+                    </div>
                 </div>
+            </div>
 
-                <div class="project-section text-left">
-                    <h3 class="text-center">💻 Travail Réalisé</h3>
-
-                    <h4>1. Conception de la Base de Données</h4>
-                    <ul class="feature-list">
-                        <li>Création du MCD et du MLD</li>
-                        <li>Implémentation de la base de données MySQL</li>
-<!--                        <li>Création des tables avec contraintes d'intégrité</li>-->
-                    </ul>
-
-                    <h4>2. Couche d'Accès aux Données (DAO)</h4>
-                    <ul class="feature-list">
-                        <li>Développement des classes DAO pour chaque entité</li>
-                        <li>Implémentation des méthodes CRUD</li>
-                        <li>Gestion des connexions à la base de données</li>
-                    </ul>
-
-<!--                    <h4>3. Système d'Authentification</h4>-->
-<!--                    <ul class="feature-list">-->
-<!--                        <li>Création d'un système de login/mot de passe</li>-->
-<!--                        <li>Hashage sécurisé des mots de passe</li>-->
-<!--                        <li>Gestion des sessions utilisateur</li>-->
-<!--                        <li>Contrôle d'accès selon les rôles</li>-->
-<!--                    </ul>-->
-
-                    <h4>3. Interface Utilisateur</h4>
-                    <ul class="feature-list">
-                        <li>Amélioration de l'interface en ligne de commande</li>
-                        <li>Menus adaptés selon le niveau d'habilitation</li>
-                        <li>Messages d'erreur et de confirmation clairs</li>
-                    </ul>
+            <div class="arch-layer">
+                <div class="arch-num">02</div>
+                <div class="arch-content">
+                    <p class="arch-tag">Couche Métier</p>
+                    <h3 class="arch-name">Logique Applicative</h3>
+                    <p class="arch-desc">Les classes <code>GestionPersonnel</code>, <code>Ligue</code> et <code>Employe</code> encapsulent les règles métier : gestion des rôles, contrôle des droits, validation des données.</p>
+                    <div class="arch-chips">
+                        <span class="arch-chip">GestionPersonnel</span>
+                        <span class="arch-chip">Ligue</span>
+                        <span class="arch-chip">Employe</span>
+                        <span class="arch-chip">Passerelle (interface)</span>
+                    </div>
                 </div>
+            </div>
 
-                <div class="project-section">
-                    <h3>📸 Captures d'Écran</h3>
-
-                    <div style="margin: 20px 0;">
-                        <h4>Menu Principal</h4>
-                        <img src="../img/Projet/Projet_scolaire/P2/ScreenAccueil.png" alt="Modèle Conceptuel de Données M2L" style="max-width: 100%; height: auto;">
+            <div class="arch-layer">
+                <div class="arch-num">03</div>
+                <div class="arch-content">
+                    <p class="arch-tag">Couche Données</p>
+                    <h3 class="arch-name">JDBC → MySQL</h3>
+                    <p class="arch-desc">La classe <code>JDBC</code> implémente l'interface <code>Passerelle</code>, remplaçant la sérialisation fichier. Elle gère toutes les opérations SQL (CRUD) via <code>PreparedStatement</code> pour éviter les injections.</p>
+                    <div class="arch-chips">
+                        <span class="arch-chip">JDBC.java</span>
+                        <span class="arch-chip">PreparedStatement</span>
+                        <span class="arch-chip">MySQL Connector 8</span>
+                        <span class="arch-chip">Credentials.java</span>
                     </div>
-
-                    <div style="margin: 20px 0;">
-                        <h4>Gestion des Ligues</h4>
-                        <img src="../img/Projet/Projet_scolaire/P2/Personnel_Ligue.gif" alt="Modèle Conceptuel de Données M2L" style="max-width: 100%; height: auto;">
-                    </div>
-
-                    <div style="margin: 20px 0;">
-                        <h4>Gestion des Employés</h4>
-                        <img src="../img/Projet/Projet_scolaire/P2/Personnel_Emp.gif" alt="Modèle Conceptuel de Données M2L" style="max-width: 100%; height: auto;">
-                    </div>
-
-
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 
-<div class="color-band"></div>
+<div class="divider"></div>
 
-<div id="technologies" class="section dark">
-    <div class="boxed text-center">
-        <h2>Technologies Utilisées</h2>
+<!-- ===== BASE DE DONNÉES ===== -->
+<section id="bdd" class="section alt">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-eyebrow">04 — Base de Données</p>
+            <h2 class="section-title">Conception & Modélisation</h2>
+            <p class="section-desc">Le MCD a été conçu pour représenter les entités principales du système et leurs relations, avant d'être traduit en schéma relationnel MySQL.</p>
+        </div>
 
-        <div class="flex" style="justify-content: center">
-            <div class="w60 wm100">
-                <div class="project-section">
-                    <div class="text-center">
-                        <span class="tech-badge">Java</span>
-                        <span class="tech-badge">JDBC</span>
-                        <span class="tech-badge">MySQL</span>
-                        <span class="tech-badge">Architecture 3-tiers</span>
-                        <span class="tech-badge">Eclipse IDE</span>
-                        <span class="tech-badge">Git / GitHub</span>
+        <div class="bdd-grid reveal">
+            <div>
+                <p style="font-family: var(--mono); font-size: 0.65rem; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.2rem;">Schéma Relationnel</p>
+
+                <!-- Table LIGUE -->
+                <div class="entity-card">
+                    <div class="entity-header">
+                        <span class="entity-name">ligue</span>
+                        <span class="entity-pk">TABLE</span>
                     </div>
-
-                    <div style="margin-top: 40px;">
-                        <h3>🏗️ Architecture 3-Tiers</h3>
-                        <ul class="feature-list">
-                            <li><strong>Couche Présentation :</strong> Interface en ligne de commande pour l'interaction utilisateur</li>
-                            <li><strong>Couche Métier :</strong> Logique applicative et règles de gestion</li>
-<!--                            <li><strong>Couche Données :</strong> Accès à la base de données via DAO</li>-->
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="project-section">
-                    <h3>📚 Ressources et Documentation</h3>
-                    <div class="text-center">
-                        <a href="https://github.com/ImOriane/personnel/tree/master/Personnel" class="github-link" target="_blank">
-                            <span class="material-symbols-outlined" style="vertical-align: middle;">code</span>
-                            Voir le Code Source
-                        </a>
-                        <a href="#" class="github-link" target="_blank">
-                            <span class="material-symbols-outlined" style="vertical-align: middle;">description</span>
-                            Documentation Technique
-                        </a>
+                    <div class="entity-fields">
+                        <div class="field-row">
+                            <span class="field-key pk"></span>
+                            <span class="field-name">id_ligue</span>
+                            <span class="field-type">INT AUTO_INCREMENT</span>
+                        </div>
+                        <div class="field-row">
+                            <span class="field-key regular"></span>
+                            <span class="field-name">nom</span>
+                            <span class="field-type">VARCHAR(100)</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="project-section">
-                    <h3>🎓 Compétences Développées</h3>
-                    <ul class="feature-list">
-                        <li>Conception et modélisation de bases de données</li>
-                        <li>Programmation orientée objet en Java</li>
-<!--                        <li>Implémentation du pattern DAO</li>-->
-                        <li>Gestion de la sécurité et des habilitations</li>
-                        <li>Architecture logicielle 3-tiers</li>
-                        <li>Travail sur code existant et refactoring</li>
-                    </ul>
+                <!-- Table PERSONNELS -->
+                <div class="entity-card">
+                    <div class="entity-header">
+                        <span class="entity-name">personnels</span>
+                        <span class="entity-pk">TABLE</span>
+                    </div>
+                    <div class="entity-fields">
+                        <div class="field-row">
+                            <span class="field-key pk"></span>
+                            <span class="field-name">id_personnel_</span>
+                            <span class="field-type">INT AUTO_INCREMENT</span>
+                        </div>
+                        <div class="field-row">
+                            <span class="field-key regular"></span>
+                            <span class="field-name">nom_perso</span>
+                            <span class="field-type">VARCHAR(100)</span>
+                        </div>
+                        <div class="field-row">
+                            <span class="field-key regular"></span>
+                            <span class="field-name">prenom_perso</span>
+                            <span class="field-type">VARCHAR(100)</span>
+                        </div>
+                        <div class="field-row">
+                            <span class="field-key regular"></span>
+                            <span class="field-name">mail_perso</span>
+                            <span class="field-type">VARCHAR(150)</span>
+                        </div>
+                        <div class="field-row">
+                            <span class="field-key regular"></span>
+                            <span class="field-name">role_perso</span>
+                            <span class="field-type">ENUM('root','admin','utilisateur')</span>
+                        </div>
+                        <div class="field-row">
+                            <span class="field-key regular"></span>
+                            <span class="field-name">password_perso</span>
+                            <span class="field-type">VARCHAR(255) — BCrypt</span>
+                        </div>
+                        <div class="field-row">
+                            <span class="field-key regular"></span>
+                            <span class="field-name">date_arrivée</span>
+                            <span class="field-type">DATE</span>
+                        </div>
+                        <div class="field-row">
+                            <span class="field-key regular"></span>
+                            <span class="field-name">date_depart_</span>
+                            <span class="field-type">DATE NULL</span>
+                        </div>
+                        <div class="field-row">
+                            <span class="field-key fk"></span>
+                            <span class="field-name">id_ligue</span>
+                            <span class="field-type">INT — FK → ligue</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="display:flex; gap: 12px; margin-top: 0.75rem; font-family: var(--mono); font-size: 0.62rem; color: var(--muted);">
+                    <span><span style="display:inline-block;width:8px;height:8px;background:var(--accent);border-radius:2px;margin-right:5px;"></span>Clé primaire</span>
+                    <span><span style="display:inline-block;width:8px;height:8px;background:var(--blue);border-radius:2px;margin-right:5px;"></span>Clé étrangère</span>
+                </div>
+            </div>
+
+            <!-- MCD Image -->
+            <div>
+                <p style="font-family: var(--mono); font-size: 0.65rem; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.2rem;">Modèle Conceptuel de Données</p>
+                <div class="mcd-img-wrap" onclick="openModal('../img/Projet/Projet_scolaire/P2/Nouveau%20MCD.jpg')" style="cursor:pointer;">
+                    <img src="../img/Projet/Projet_scolaire/P2/Nouveau%20MCD.jpg" alt="MCD M2L Personnel" loading="lazy">
+                    <div class="mcd-caption">Cliquer pour agrandir — MCD Personnel M2L</div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 
-<div class="color-band"></div>
+<div class="divider"></div>
 
-<div id="contact" class="section dark">
-    <div class="boxed text-center">
-        <h2>Contactez-moi</h2>
-        <div class="flex toColumn space-between mgap20" style="justify-content: center; gap: 30px;">
-            <div class="w32 wm100 contact">
-                <span class="material-symbols-outlined icon">mail</span>
-                <span class="label">E-Mail</span>
-                <span class="value"></span>
+<!-- ===== RÉALISATION ===== -->
+<section id="realisation" class="section">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-eyebrow">05 — Réalisation</p>
+            <h2 class="section-title">Travail réalisé</h2>
+            <p class="section-desc">Le code fourni a été étudié, puis complété par l'implémentation JDBC, la sécurisation des mots de passe et l'adaptation des menus selon les droits.</p>
+        </div>
+
+        <div class="work-grid reveal">
+            <div class="work-card">
+                <div class="work-card-header">
+                    <div class="work-icon"><span class="material-symbols-outlined">storage</span></div>
+                    <h3>Implémentation JDBC</h3>
+                </div>
+                <ul class="work-list">
+                    <li>Classe <code>JDBC.java</code> implémentant l'interface <code>Passerelle</code></li>
+                    <li>Requêtes préparées (<code>PreparedStatement</code>) pour chaque opération CRUD</li>
+                    <li>Chargement complet des ligues et employés au démarrage</li>
+                    <li>Gestion des rôles root, admin et utilisateur depuis la BDD</li>
+                </ul>
             </div>
-            <div class="w32 wm100 contact">
+
+            <div class="work-card">
+                <div class="work-card-header">
+                    <div class="work-icon"><span class="material-symbols-outlined">lock</span></div>
+                    <h3>Sécurité & Authentification</h3>
+                </div>
+                <ul class="work-list">
+                    <li>Hashage des mots de passe avec <strong>BCrypt</strong> (jbcrypt 0.4)</li>
+                    <li>Vérification par <code>BCrypt.checkpw()</code> à la connexion</li>
+                    <li>Contrôle des droits d'accès dans chaque action</li>
+                    <li>Gestion de l'exception <code>DroitsInsuffisants</code></li>
+                </ul>
+            </div>
+
+            <div class="work-card">
+                <div class="work-card-header">
+                    <div class="work-icon"><span class="material-symbols-outlined">terminal</span></div>
+                    <h3>Interface Adaptative</h3>
+                </div>
+                <ul class="work-list">
+                    <li>Menus CLI différents selon le rôle connecté</li>
+                    <li>Messages d'erreur et confirmations clairs</li>
+                    <li>Bibliothèque <code>CommandLineMenus</code> pour la navigation</li>
+                </ul>
+            </div>
+
+            <div class="work-card">
+                <div class="work-card-header">
+                    <div class="work-icon"><span class="material-symbols-outlined">schema</span></div>
+                    <h3>Modélisation BDD</h3>
+                </div>
+                <ul class="work-list">
+                    <li>Conception du MCD et du MLD</li>
+                    <li>Création des tables MySQL avec contraintes d'intégrité</li>
+                    <li>Gestion des clés étrangères et des relations</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Screenshots -->
+        <div style="margin-top: 3rem;" class="reveal">
+            <p style="font-family: var(--mono); font-size: 0.65rem; color: var(--accent); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.5rem;">Captures d'écran</p>
+            <div class="screenshots-grid">
+                <div class="screenshot-wrap" onclick="openModal('../img/Projet/Projet_scolaire/P2/ScreenAccueil.png')">
+                    <img src="../img/Projet/Projet_scolaire/P2/ScreenAccueil.png" alt="Menu Principal" loading="lazy">
+                    <div class="screenshot-cap">Menu Principal</div>
+                </div>
+                <div class="screenshot-wrap" onclick="openModal('../img/Projet/Projet_scolaire/P2/Personnel_Ligue.gif')">
+                    <img src="../img/Projet/Projet_scolaire/P2/Personnel_Ligue.gif" alt="Gestion des Ligues" loading="lazy">
+                    <div class="screenshot-cap">Gestion des Ligues</div>
+                </div>
+                <div class="screenshot-wrap" onclick="openModal('../img/Projet/Projet_scolaire/P2/Personnel_Emp.gif')">
+                    <img src="../img/Projet/Projet_scolaire/P2/Personnel_Emp.gif" alt="Gestion des Employés" loading="lazy">
+                    <div class="screenshot-cap">Gestion des Employés</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===== STACK ===== -->
+<section id="stack" class="section alt">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-eyebrow">06 — Technologies</p>
+            <h2 class="section-title">Stack utilisée</h2>
+        </div>
+
+        <div class="stack-grid reveal">
+            <div class="stack-item">
+                <div class="stack-icon">☕</div>
+                <div class="stack-name">Java 8</div>
+                <div class="stack-role">Langage principal</div>
+            </div>
+            <div class="stack-item">
+                <div class="stack-icon">🗄️</div>
+                <div class="stack-name">MySQL 8</div>
+                <div class="stack-role">Base de données</div>
+            </div>
+            <div class="stack-item">
+                <div class="stack-icon">🔌</div>
+                <div class="stack-name">JDBC</div>
+                <div class="stack-role">Connectivité BDD</div>
+            </div>
+            <div class="stack-item">
+                <div class="stack-icon">🔐</div>
+                <div class="stack-name">BCrypt</div>
+                <div class="stack-role">Hashage mots de passe</div>
+            </div>
+            <div class="stack-item">
+                <div class="stack-icon">📦</div>
+                <div class="stack-name">Maven</div>
+                <div class="stack-role">Build & dépendances</div>
+            </div>
+        </div>
+
+        <!-- Compétences -->
+        <div style="margin-top: 3.5rem;" class="reveal">
+            <p class="section-eyebrow">07 — Compétences développées</p>
+            <h2 class="section-title" style="font-size: 1.8rem; margin-bottom: 2rem;">Ce que j'ai appris</h2>
+            <div class="skills-list">
+                <div class="skill-row">
+                    <div class="skill-dot"></div>
+                    <div class="skill-content">
+                        <div class="skill-name">Programmation Orientée Objet</div>
+                        <div class="skill-detail">Travail sur un code existant, compréhension du patron Singleton et du pattern Passerelle.</div>
+                    </div>
+                </div>
+                <div class="skill-row">
+                    <div class="skill-dot"></div>
+                    <div class="skill-content">
+                        <div class="skill-name">Conception de bases de données</div>
+                        <div class="skill-detail">Modélisation MCD → MLD → SQL, contraintes d'intégrité, relations entre tables.</div>
+                    </div>
+                </div>
+                <div class="skill-row">
+                    <div class="skill-dot"></div>
+                    <div class="skill-content">
+                        <div class="skill-name">JDBC & requêtes SQL</div>
+                        <div class="skill-detail">Connexion, PreparedStatement, ResultSet, gestion des exceptions SQL.</div>
+                    </div>
+                </div>
+                <div class="skill-row">
+                    <div class="skill-dot"></div>
+                    <div class="skill-content">
+                        <div class="skill-name">Sécurité applicative</div>
+                        <div class="skill-detail">Hashage BCrypt, contrôle d'accès par rôles, prévention des injections SQL.</div>
+                    </div>
+                </div>
+                <div class="skill-row">
+                    <div class="skill-dot"></div>
+                    <div class="skill-content">
+                        <div class="skill-name">Architecture logicielle</div>
+                        <div class="skill-detail">Compréhension et respect d'une architecture 3-tiers en environnement de production.</div>
+                    </div>
+                </div>
+                <div class="skill-row">
+                    <div class="skill-dot"></div>
+                    <div class="skill-content">
+                        <div class="skill-name">Travail sur code existant</div>
+                        <div class="skill-detail">Lecture, compréhension et extension d'un projet Java fourni, sans en briser l'architecture.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===== RESSOURCES ===== -->
+<section class="section">
+    <div class="container">
+        <div class="reveal">
+            <p class="section-eyebrow">08 — Ressources</p>
+            <h2 class="section-title">Documentation & Sources</h2>
+        </div>
+        <div class="resources-grid reveal">
+            <a href="https://github.com/ImOriane/personnel/tree/master/Personnel" target="_blank" class="resource-link">
+                <div class="resource-icon"><span class="material-symbols-outlined">code</span></div>
+                <div>
+                    <div class="resource-label">Mon dépôt</div>
+                    <div class="resource-name">Code Source GitHub</div>
+                </div>
+            </a>
+            <a href="https://github.com/alexandreMesle/CommandLine" target="_blank" class="resource-link">
+                <div class="resource-icon"><span class="material-symbols-outlined">terminal</span></div>
+                <div>
+                    <div class="resource-label">Bibliothèque</div>
+                    <div class="resource-name">CommandLineMenus</div>
+                </div>
+            </a>
+            <a href="https://enseignement.alexandre-mesle.com/PPE/personnel/javadoc/personnel/package-summary.html" target="_blank" class="resource-link">
+                <div class="resource-icon"><span class="material-symbols-outlined">description</span></div>
+                <div>
+                    <div class="resource-label">Documentation</div>
+                    <div class="resource-name">Javadoc Officielle</div>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="section alt">
+    <div class="container">
+        <div class="reveal" style="text-align:center; margin-bottom:2.5rem;">
+            <p class="section-eyebrow" style="justify-content:center; display:flex;">Contact</p>
+            <h2 class="section-title">Me contacter</h2>
+        </div>
+        <div class="contact-grid reveal">
+            <div class="contact-card">
+                <span class="material-symbols-outlined">mail</span>
+                <span class="contact-label">E-Mail</span>
+                <span class="contact-value"></span>
+            </div>
+            <div class="contact-card">
                 <span class="material-symbols-outlined">call</span>
-                <span class="label">Téléphone</span>
-                <span class="value"></span>
+                <span class="contact-label">Téléphone</span>
+                <span class="contact-value"></span>
             </div>
-            <div class="w32 wm100 contact">
+            <div class="contact-card">
                 <span class="material-symbols-outlined">account_box</span>
-                <span class="label">GitHub</span>
-                <a href="https://github.com/Roxas004" target="_blank"><span class="value">github.com/Roxas004</span></a>
+                <span class="contact-label">GitHub</span>
+                <a href="https://github.com/Roxas004" target="_blank" class="contact-value">github.com/Roxas004</a>
             </div>
         </div>
     </div>
+</section>
+
+<!-- ===== NAV BUTTONS ===== -->
+<div class="nav-buttons">
+    <a href="../index.html" class="nav-btn nav-btn-outline">← Accueil</a>
+    <a href="Portfolio.html" class="nav-btn nav-btn-outline">← Projet 1</a>
+    <a href="" class="nav-btn nav-btn-fill">Projet 3 →</a>
 </div>
 
-<div class="navigation-buttons">
-    <button onclick="location.href='../index.html'">Accueil</button>
-    <button onclick="location.href='Portfolio.html'">Projet 1</button>
-    <button onclick="location.href=''">Projet 3</button>
+<!-- ===== MODAL ===== -->
+<div class="modal" id="modal" onclick="closeModal()">
+    <button class="modal-close-btn" onclick="closeModal()">✕</button>
+    <img id="modal-img" src="" alt="">
 </div>
 
 <script src="../js/app.js"></script>
+<script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) { e.target.classList.add('visible'); }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Modal
+    function openModal(src) {
+        document.getElementById('modal-img').src = src;
+        document.getElementById('modal').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        document.getElementById('modal').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') closeModal();
+    });
+</script>
 </body>
 </html>
