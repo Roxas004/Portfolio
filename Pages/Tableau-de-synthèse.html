@@ -27,7 +27,6 @@
                 <li><a href="../index.html">Accueil</a></li>
                 <li><a href="#tableau-section">Tableau</a></li>
                 <li><a href="#competences-section">Compétences</a></li>
-                <li><a href="#pdf-section">PDF</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -74,29 +73,41 @@
     </div>
 </div>
 
-<!-- ===================== TABLEAU IMAGE ===================== -->
+<!-- ===================== PDF + ASIDE ===================== -->
 <div id="tableau-section" class="section">
     <div class="boxed">
         <div class="section-header">
             <span class="section-tag">Document officiel</span>
             <h2>Vue d'ensemble</h2>
-            <p class="section-sub">Cliquez sur l'image pour l'ouvrir en plein écran</p>
+            <p class="section-sub">Le document complet est disponible directement ci-dessous</p>
         </div>
 
         <div class="tableau-wrapper">
+
+            <!-- PDF à gauche -->
             <div class="tableau-image-block">
-                <img src="../img/Tableau-synthese/Tableau-de-synthèse-.jpg"
-                     alt="Tableau de synthèse"
-                     class="tableau-image"
-                     onclick="openLightbox(this.src)"
-                     title="Cliquer pour agrandir">
-                <div class="image-overlay" onclick="openLightbox('../img/Tableau-synthese/Tableau-de-synthèse-.jpg')">
-                    <span class="material-symbols-outlined">zoom_in</span>
-                    <span>Agrandir</span>
+                <div class="pdf-wrapper">
+                    <iframe
+                            src="../img/Tableau-synthese/Tableau%20de%20synth%C3%A8se%20des%20r%C3%A9alisations%20professionnelles%20%20-%20Tableau%20de%20synth%C3%A8se%20%C3%89preuve%20E4.pdf"
+                            class="pdf-iframe"
+                            title="Tableau de synthèse PDF">
+                        <p>Votre navigateur ne supporte pas l'affichage des PDF.
+                            <a href="../img/Tableau-synthese/Tableau%20de%20synth%C3%A8se%20des%20r%C3%A9alisations%20professionnelles%20%20-%20Tableau%20de%20synth%C3%A8se%20%C3%89preuve%20E4.pdf" target="_blank">Télécharger le PDF</a>
+                        </p>
+                    </iframe>
+                    <div class="pdf-actions">
+                        <a href="../img/Tableau-synthese/Tableau%20de%20synth%C3%A8se%20des%20r%C3%A9alisations%20professionnelles%20%20-%20Tableau%20de%20synth%C3%A8se%20%C3%89preuve%20E4.pdf"
+                           class="download-button"
+                           target="_blank">
+                            <span class="material-symbols-outlined">download</span>
+                            Télécharger le tableau
+                        </a>
+                    </div>
                 </div>
             </div>
 
-            <div class="tableau-aside">
+            <!-- Cards à droite -->
+            <div id="competences-section" class="tableau-aside">
                 <div class="aside-card">
                     <span class="material-symbols-outlined aside-icon">code</span>
                     <div>
@@ -136,39 +147,8 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
-        </div>
-    </div>
-</div>
 
-<!-- ===================== PDF IFRAME ===================== -->
-<div id="pdf-section" class="section alt-bg">
-    <div class="boxed">
-        <div class="section-header">
-            <span class="section-tag">Consultation</span>
-            <h2>Aperçu du document</h2>
-            <p class="section-sub">Le document complet est disponible directement ci-dessous</p>
-        </div>
-
-        <div class="pdf-wrapper">
-            <iframe
-                    src="../img/Tableau-synthese/Tableau%20de%20synth%C3%A8se%20des%20r%C3%A9alisations%20professionnelles%20%20-%20Tableau%20de%20synth%C3%A8se%20%C3%89preuve%20E4.pdf"
-                    class="pdf-iframe"
-                    title="Tableau de synthèse PDF">
-                <p>Votre navigateur ne supporte pas l'affichage des PDF.
-                    <a href="../img/Tableau-synthese/Tableau%20de%20synth%C3%A8se%20des%20r%C3%A9alisations%20professionnelles%20%20-%20Tableau%20de%20synth%C3%A8se%20%C3%89preuve%20E4.pdf" target="_blank">Télécharger le PDF</a>
-                </p>
-            </iframe>
-            <div class="pdf-actions">
-                <a href="../img/Tableau-synthese/Tableau%20de%20synth%C3%A8se%20des%20r%C3%A9alisations%20professionnelles%20%20-%20Tableau%20de%20synth%C3%A8se%20%C3%89preuve%20E4.pdf"
-                   class="download-button"
-                   target="_blank">
-                    <span class="material-symbols-outlined">download</span>
-                    Télécharger le tableau
-                </a>
-            </div>
         </div>
     </div>
 </div>
@@ -221,8 +201,6 @@
     </div>
 </div>
 
-
-
 <!-- ===================== CONTACT ===================== -->
 <div id="contact" class="section dark">
     <div class="boxed">
@@ -262,16 +240,6 @@
     </button>
 </div>
 
-<!-- ===================== LIGHTBOX ===================== -->
-<div id="lightbox" class="lightbox" onclick="closeLightbox()">
-    <div class="lightbox-inner">
-        <button class="lightbox-close" onclick="closeLightbox()">
-            <span class="material-symbols-outlined">close</span>
-        </button>
-        <img id="lightbox-img" src="" alt="Tableau agrandi">
-    </div>
-</div>
-
 <!-- ===================== MOBILE MENU ===================== -->
 <div id="mobile-overlay" class="mobile-overlay" onclick="closeMenu()"></div>
 <div id="mobile-menu" class="mobile-menu">
@@ -282,23 +250,11 @@
         <li><a href="../index.html" onclick="closeMenu()">Accueil</a></li>
         <li><a href="#tableau-section" onclick="closeMenu()">Tableau</a></li>
         <li><a href="#competences-section" onclick="closeMenu()">Compétences</a></li>
-        <li><a href="#pdf-section" onclick="closeMenu()">PDF</a></li>
         <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
     </ul>
 </div>
 
 <script>
-    function openLightbox(src) {
-        document.getElementById('lightbox-img').src = src;
-        document.getElementById('lightbox').classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-    function closeLightbox() {
-        document.getElementById('lightbox').classList.remove('active');
-        document.body.style.overflow = '';
-    }
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
-
     function openMenu() {
         document.getElementById('mobile-menu').classList.add('open');
         document.getElementById('mobile-overlay').classList.add('active');
@@ -308,13 +264,6 @@
         document.getElementById('mobile-menu').classList.remove('open');
         document.getElementById('mobile-overlay').classList.remove('active');
         document.body.style.overflow = '';
-    }
-
-    function switchTab(tab) {
-        document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-        document.querySelector(`[onclick="switchTab('${tab}')"]`).classList.add('active');
-        document.getElementById(`tab-${tab}`).classList.add('active');
     }
 </script>
 
