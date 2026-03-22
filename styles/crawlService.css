@@ -743,6 +743,70 @@ section {
     font-size: 0.92rem;
     color: var(--text);
 }
+/* ===================== DOCUMENTATION ===================== */
+#documentation { background: var(--bg2); }
+
+.docs-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.doc-card {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.1rem 1.4rem;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.doc-card:hover {
+    border-color: rgba(0,229,160,0.35);
+    transform: translateX(4px);
+    box-shadow: 0 4px 20px rgba(0,229,160,0.08);
+}
+
+.doc-icon {
+    font-size: 1.6rem;
+    flex-shrink: 0;
+}
+
+.doc-info {
+    flex: 1;
+}
+
+.doc-type {
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-bottom: 3px;
+}
+
+.doc-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.doc-arrow {
+    font-family: var(--mono);
+    font-size: 1rem;
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+}
+
+.doc-card:hover .doc-arrow {
+    transform: translateX(4px);
+}
 
 /* ===================== CONTACT ===================== */
 #contact {
@@ -860,6 +924,8 @@ a.contact-value:hover { color: var(--accent); }
     }
 
     .demo-desc { max-width: 100%; }
+
+    .doc-iframe { height: 400px; }
 }
 
 @media (max-width: 600px) {
