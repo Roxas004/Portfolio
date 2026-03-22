@@ -44,8 +44,6 @@ body::before {
     opacity: 0.4;
 }
 
-
-
 /* ===================== HERO ===================== */
 .hero {
     position: relative;
@@ -571,6 +569,111 @@ section {
 .badge-warn { background: rgba(255,204,0,0.12); color: var(--warn); border: 1px solid rgba(255,204,0,0.2); }
 .badge-err { background: rgba(255,77,109,0.12); color: var(--error); border: 1px solid rgba(255,77,109,0.2); }
 
+/* ===================== DEMOS ===================== */
+#demos { background: var(--bg2); }
+
+.demos-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 3rem;
+}
+
+.demo-item {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 3.5rem;
+    align-items: center;
+    padding: 4rem 0;
+}
+
+.demo-item--reverse {
+    grid-template-columns: 1fr 1.4fr;
+}
+
+.demo-item--reverse .demo-video-wrap { order: 2; }
+.demo-item--reverse .demo-info      { order: 1; }
+
+/* Separator */
+.demo-separator {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+}
+
+/* Video wrapper */
+.demo-video-wrap {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    box-shadow:
+            0 20px 60px rgba(0,0,0,0.4),
+            0 0 0 1px rgba(0,229,160,0.04);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.demo-video-wrap:hover {
+    border-color: rgba(0,229,160,0.3);
+    box-shadow:
+            0 25px 70px rgba(0,0,0,0.5),
+            0 0 40px rgba(0,229,160,0.07);
+}
+
+.demo-video-wrap video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Number badge */
+.demo-num {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: var(--mono);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--bg);
+    background: var(--accent);
+    padding: 4px 10px;
+    border-radius: 12px 0 8px 0;
+}
+
+/* Info block */
+.demo-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.demo-tag {
+    font-family: var(--mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0;
+}
+
+.demo-title {
+    font-family: var(--mono);
+    font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.2;
+    margin: 0;
+}
+
+.demo-desc {
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    max-width: 400px;
+    margin: 0;
+}
+
 /* ===================== TECH STACK ===================== */
 #stack { background: var(--bg2); }
 
@@ -743,7 +846,20 @@ a.contact-value:hover { color: var(--accent); }
     .feature-block.full { grid-column: span 1; }
     .hero-visual { display: none; }
     nav ul { display: none; }
-    .menu-mobile-btn { display: block; }
+
+    .demo-item,
+    .demo-item--reverse {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 2.5rem 0;
+    }
+
+    .demo-item--reverse .demo-video-wrap,
+    .demo-item--reverse .demo-info {
+        order: unset;
+    }
+
+    .demo-desc { max-width: 100%; }
 }
 
 @media (max-width: 600px) {
